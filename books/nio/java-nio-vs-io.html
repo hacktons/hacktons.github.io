@@ -1,0 +1,542 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>14. NIO vs. IO · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="java-nio-path.html" />
+    
+    
+    <link rel="prev" href="java-nio-pipe.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="java-nio-tutorial.html">
+            
+                <a href="java-nio-tutorial.html">
+            
+                    
+                    01. Java NIO 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="java-nio-overview.html">
+            
+                <a href="java-nio-overview.html">
+            
+                    
+                    02. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="java-nio-channel.html">
+            
+                <a href="java-nio-channel.html">
+            
+                    
+                    03. Channel通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="java-nio-buffer.html">
+            
+                <a href="java-nio-buffer.html">
+            
+                    
+                    04. Buffer缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="java-nio-scatter-gather.html">
+            
+                <a href="java-nio-scatter-gather.html">
+            
+                    
+                    05. Scatter / Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="java-nio-channel-to-channel-transfers.html">
+            
+                <a href="java-nio-channel-to-channel-transfers.html">
+            
+                    
+                    06. Channel Transfers通道传输接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="java-nio-selector.html">
+            
+                <a href="java-nio-selector.html">
+            
+                    
+                    07. Selector选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="java-nio-filechannel.html">
+            
+                <a href="java-nio-filechannel.html">
+            
+                    
+                    08. FileChannel文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="java-nio-socketchannel.html">
+            
+                <a href="java-nio-socketchannel.html">
+            
+                    
+                    09. SocketChannel套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="java-nio-serversocketchannel.html">
+            
+                <a href="java-nio-serversocketchannel.html">
+            
+                    
+                    10. ServerSocketChannel服务端套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="java-nio-non-blocking-server.html">
+            
+                <a href="java-nio-non-blocking-server.html">
+            
+                    
+                    11. 非阻塞服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="java-nio-datagramchannel.html">
+            
+                <a href="java-nio-datagramchannel.html">
+            
+                    
+                    12. DatagramChannel数据报通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="java-nio-pipe.html">
+            
+                <a href="java-nio-pipe.html">
+            
+                    
+                    13. Pipe管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="java-nio-vs-io.html">
+            
+                <a href="java-nio-vs-io.html">
+            
+                    
+                    14. NIO vs. IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="java-nio-path.html">
+            
+                <a href="java-nio-path.html">
+            
+                    
+                    15. Path路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="java-nio-files.html">
+            
+                <a href="java-nio-files.html">
+            
+                    
+                    16. Files文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="java-nio-asynchronousfilechannel.html">
+            
+                <a href="java-nio-asynchronousfilechannel.html">
+            
+                    
+                    17. AsynchronousFileChannel异步文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >14. NIO vs. IO</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="14-java-nio-vs-io">14. Java NIO vs. IO</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a href="http://tutorials.jenkov.com/java-nio/nio-vs-io.html" target="_blank">http://tutorials.jenkov.com/java-nio/nio-vs-io.html</a></p>
+</blockquote>
+<!-- toc -->
+<ul>
+<li><a href="#nio%E5%92%8Cio%E4%B9%8B%E9%97%B4%E7%9A%84%E4%B8%BB%E8%A6%81%E5%B7%AE%E5%BC%82%EF%BC%88mian-differences-between-java-nio-and-io%EF%BC%89">NIO&#x548C;IO&#x4E4B;&#x95F4;&#x7684;&#x4E3B;&#x8981;&#x5DEE;&#x5F02;&#xFF08;Mian Differences Between Java NIO and IO&#xFF09;</a></li>
+<li><a href="#%E9%9D%A2%E5%90%91%E6%B5%81%E5%92%8C%E9%9D%A2%E5%90%91%E7%BC%93%E5%86%B2%E5%8C%BA%E6%AF%94%E8%BE%83(stream-oriented-vs.-buffer-oriented">&#x9762;&#x5411;&#x6D41;&#x548C;&#x9762;&#x5411;&#x7F13;&#x51B2;&#x533A;&#x6BD4;&#x8F83;(Stream Oriented vs. Buffer Oriented)</a>)</li>
+<li><a href="#%E9%98%BB%E5%A1%9E%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9Eio%E6%AF%94%E8%BE%83%EF%BC%88blocking-vs.-no-blocking-io%EF%BC%89">&#x963B;&#x585E;&#x548C;&#x975E;&#x963B;&#x585E;IO&#x6BD4;&#x8F83;&#xFF08;Blocking vs. No-blocking IO&#xFF09;</a></li>
+<li><a href="#selectors">Selectors</a></li>
+<li><a href="#nio%E5%92%8Cio%E6%98%AF%E5%A6%82%E4%BD%95%E5%BD%B1%E5%93%8D%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%EF%BC%88how-nio-and-io-influences-application-design%EF%BC%89">NIO&#x548C;IO&#x662F;&#x5982;&#x4F55;&#x5F71;&#x54CD;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#xFF08;How NIO and IO Influences Application Design&#xFF09;</a><ul>
+<li><a href="#api%E8%B0%83%E7%94%A8(the-api-calls">API&#x8C03;&#x7528;(The API Calls)</a>)</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%EF%BC%88the-processing-of-data%EF%BC%89">&#x6570;&#x636E;&#x5904;&#x7406;&#xFF08;The Processing of Data&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B0%8F%E7%BB%93">&#x5C0F;&#x7ED3;</a></li>
+</ul>
+<!-- tocstop -->
+<p>&#x5F53;&#x5B66;&#x4E60;Java&#x7684;NIO&#x548C;IO&#x65F6;&#xFF0C;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#x4F1A;&#x8DF3;&#x5165;&#x8111;&#x6D77;&#x5F53;&#x4E2D;&#xFF1A;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x8BE5;&#x7528;IO&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7528;NIO&#xFF1F;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x7B14;&#x8005;&#x4F1A;&#x8BD5;&#x7740;&#x5206;&#x4EAB;&#x4E00;&#x4E9B;&#x7EBF;&#x7D22;&#xFF0C;&#x5305;&#x62EC;&#x4E24;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x4EE5;&#x53CA;&#x4ED6;&#x4EEC;&#x662F;&#x5982;&#x4F55;&#x5F71;&#x54CD;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;&#x7684;&#x3002;</p>
+<h2 id="nio&#x548C;io&#x4E4B;&#x95F4;&#x7684;&#x4E3B;&#x8981;&#x5DEE;&#x5F02;&#xFF08;mian-differences-between-java-nio-and-io&#xFF09;">NIO&#x548C;IO&#x4E4B;&#x95F4;&#x7684;&#x4E3B;&#x8981;&#x5DEE;&#x5F02;&#xFF08;Mian Differences Between Java NIO and IO&#xFF09;</h2>
+<p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x8868;&#x683C;&#x6982;&#x62EC;&#x4E86;NIO&#x548C;IO&#x7684;&#x4E3B;&#x8981;&#x5DEE;&#x5F02;&#x3002;&#x6211;&#x4EEC;&#x4F1A;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;&#x5DEE;&#x5F02;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>IO</th>
+<th>NIO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stream<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>oriented</td>
+<td>Buffer<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>oriented</td>
+</tr>
+<tr>
+<td>Blocking<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>IO</td>
+<td>No<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>blocking<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>IO</td>
+</tr>
+<tr>
+<td></td>
+<td>Selectors</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x9762;&#x5411;&#x6D41;&#x548C;&#x9762;&#x5411;&#x7F13;&#x51B2;&#x533A;&#x6BD4;&#x8F83;stream-oriented-vs-buffer-oriented">&#x9762;&#x5411;&#x6D41;&#x548C;&#x9762;&#x5411;&#x7F13;&#x51B2;&#x533A;&#x6BD4;&#x8F83;(Stream Oriented vs. Buffer Oriented)</h2>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x91CD;&#x5927;&#x5DEE;&#x5F02;&#x662F;IO&#x662F;&#x9762;&#x5411;&#x6D41;&#x7684;&#xFF0C;&#x800C;NIO&#x662F;&#x9762;&#x5411;&#x7F13;&#x5B58;&#x533A;&#x7684;&#x3002;&#x8FD9;&#x53E5;&#x8BDD;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#x5462;&#xFF1F;</p>
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>IO&#x9762;&#x5411;&#x6D41;&#x610F;&#x601D;&#x662F;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x4ECE;&#x6D41;&#x5F53;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5B57;&#x8282;&#x3002;&#x600E;&#x4E48;&#x5904;&#x7406;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x5B57;&#x8282;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x4ED6;&#x4EEC;&#x4E0D;&#x4F1A;&#x518D;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x7F13;&#x5B58;&#x3002;&#x518D;&#x6709;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x4E0D;&#x80FD;&#x5728;&#x6D41;&#x6570;&#x636E;&#x4E2D;&#x5411;&#x524D;&#x540E;&#x79FB;&#x52A8;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5411;&#x524D;&#x540E;&#x79FB;&#x52A8;&#x8BFB;&#x53D6;&#x4F4D;&#x7F6E;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x9996;&#x5148;&#x4E3A;&#x5B83;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;&#x533A;&#x3002;</p>
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO&#x662F;&#x9762;&#x5411;&#x7F13;&#x51B2;&#x533A;&#x7684;&#xFF0C;&#x8FD9;&#x6709;&#x4E9B;&#x7EC6;&#x5FAE;&#x5DEE;&#x5F02;&#x3002;&#x6570;&#x636E;&#x662F;&#x88AB;&#x8BFB;&#x53D6;&#x5230;&#x7F13;&#x5B58;&#x5F53;&#x4E2D;&#x4EE5;&#x4FBF;&#x540E;&#x7EED;&#x52A0;&#x5DE5;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x5411;&#x5411;&#x540E;&#x79FB;&#x52A8;&#x3002;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x7ED9;&#x6211;&#x4EEC;&#x5904;&#x7406;&#x6570;&#x636E;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x5927;&#x7684;&#x5F39;&#x6027;&#x7A7A;&#x95F4;&#x3002;&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x4EFB;&#x7136;&#x9700;&#x8981;&#x5728;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x524D;&#x68C0;&#x67E5;&#x7F13;&#x5B58;&#x4E2D;&#x662F;&#x5426;&#x5305;&#x542B;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x3002;&#x53E6;&#x5916;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x5728;&#x5F80;&#x7F13;&#x5B58;&#x4E2D;&#x5199;&#x5165;&#x6570;&#x636E;&#x65F6;&#x907F;&#x514D;&#x8986;&#x76D6;&#x4E86;&#x5DF2;&#x7ECF;&#x5199;&#x5165;&#x4F46;&#x662F;&#x8FD8;&#x672A;&#x88AB;&#x5904;&#x7406;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="&#x963B;&#x585E;&#x548C;&#x975E;&#x963B;&#x585E;io&#x6BD4;&#x8F83;&#xFF08;blocking-vs-no-blocking-io&#xFF09;">&#x963B;&#x585E;&#x548C;&#x975E;&#x963B;&#x585E;IO&#x6BD4;&#x8F83;&#xFF08;Blocking vs. No-blocking IO&#xFF09;</h2>
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>IO&#x7684;&#x5404;&#x79CD;&#x6D41;&#x90FD;&#x662F;&#x963B;&#x585E;&#x7684;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E00;&#x65E6;&#x8C03;&#x7528;&#x4E86;read(),write()&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x7EBF;&#x7A0B;&#x5C31;&#x88AB;&#x963B;&#x585E;&#x4F4F;&#x4E86;&#xFF0C;&#x77E5;&#x9053;&#x8BFB;&#x53D6;&#x5230;&#x6570;&#x636E;&#x6216;&#x8005;&#x6570;&#x636E;&#x5B8C;&#x6574;&#x5199;&#x5165;&#x4E86;&#x3002;&#x5728;&#x6B64;&#x671F;&#x95F4;&#x7EBF;&#x7A0B;&#x4E0D;&#x80FD;&#x505A;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO&#x7684;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;&#x4F7F;&#x5F97;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;channel&#x6765;&#x8BFB;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x662F;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x5DF2;&#x6709;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6216;&#x8005;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x8FD4;&#x56DE;&#x5982;&#x679C;&#x4F46;&#x94B1;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x53EF;&#x8BFB;&#x7684;&#x8BDD;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x7EBF;&#x7A0B;&#x4E0D;&#x4F1A;&#x88AB;&#x963B;&#x585E;&#x4F4F;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5411;&#x4E0B;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x7EBF;&#x7A0B;&#x5728;&#x8C03;&#x7528;&#x975E;&#x963B;&#x585E;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x4F1A;&#x901A;&#x77E5;&#x5904;&#x7406;&#x5176;&#x4ED6;channel&#x4E0A;&#x7684;IO&#x64CD;&#x4F5C;&#x3002;&#x56E0;&#x6B64;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x7BA1;&#x7406;&#x591A;&#x4E2A;channel&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x3002;</p>
+<h2 id="selectors">Selectors</h2>
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO&#x7684;selector&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7EBF;&#x7A0B;&#x76D1;&#x542C;&#x591A;&#x4E2A;channel&#x8F93;&#x5165;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x591A;&#x4E2A;channel&#x5230;selector&#x4E0A;&#xFF0C;&#x7136;&#x540E;&#x7136;&#x540E;&#x7528;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6765;&#x6311;&#x51FA;&#x4E00;&#x4E2A;&#x5904;&#x4E8E;&#x53EF;&#x8BFB;&#x6216;&#x8005;&#x53EF;&#x5199;&#x72B6;&#x6001;&#x7684;channel&#x3002;selector&#x673A;&#x5236;&#x4F7F;&#x5F97;&#x5355;&#x7EBF;&#x7A0B;&#x7BA1;&#x7406;&#x8FC7;&#x4E2A;channel&#x53D8;&#x5F97;&#x5BB9;&#x6613;&#x3002;</p>
+<h2 id="nio&#x548C;io&#x662F;&#x5982;&#x4F55;&#x5F71;&#x54CD;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#xFF08;how-nio-and-io-influences-application-design&#xFF09;">NIO&#x548C;IO&#x662F;&#x5982;&#x4F55;&#x5F71;&#x54CD;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x7684;&#xFF08;How NIO and IO Influences Application Design&#xFF09;</h2>
+<p>&#x5F00;&#x53D1;&#x4E2D;&#x9009;&#x62E9;NIO&#x6216;&#x8005;IO&#x4F1A;&#x5728;&#x591A;&#x65B9;&#x9762;&#x5F71;&#x54CD;&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#xFF1A;</p>
+<ol>
+<li>&#x4F7F;&#x7528;NIO&#x3001;IO&#x7684;API&#x8C03;&#x7528;&#x7C7B;</li>
+<li>&#x6570;&#x636E;&#x5904;&#x7406;</li>
+<li>&#x5904;&#x7406;&#x6570;&#x636E;&#x9700;&#x8981;&#x7684;&#x7EBF;&#x7A0B;&#x6570;</li>
+</ol>
+<h3 id="api&#x8C03;&#x7528;the-api-calls">API&#x8C03;&#x7528;(The API Calls)</h3>
+<p>&#x663E;&#x800C;&#x6613;&#x89C1;&#x4F7F;&#x7528;NIO&#x7684;API&#x63A5;&#x53E3;&#x548C;&#x4F7F;&#x7528;IO&#x65F6;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x4E0D;&#x540C;&#x4E8E;&#x76F4;&#x63A5;&#x51B2;InputStream&#x8BFB;&#x53D6;&#x5B57;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x6570;&#x636E;&#x9700;&#x8981;&#x5148;&#x5199;&#x5165;&#x5230;buffer&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x4ECE;buffer&#x4E2D;&#x5904;&#x7406;&#x5B83;&#x4EEC;&#x3002;</p>
+<h3 id="&#x6570;&#x636E;&#x5904;&#x7406;&#xFF08;the-processing-of-data&#xFF09;">&#x6570;&#x636E;&#x5904;&#x7406;&#xFF08;The Processing of Data&#xFF09;</h3>
+<p>&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x4E5F;&#x968F;&#x7740;&#x662F;NIO&#x6216;IO&#x800C;&#x5F02;&#x3002;
+&#x5728;IO&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;InputStream&#x6216;&#x8005;Reader&#x4E2D;&#x8BFB;&#x53D6;&#x5B57;&#x8282;&#x3002;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x9700;&#x8981;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x6309;&#x884C;&#x6392;&#x5217;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>Name: Anna
+Age: 25
+Email: anna@mailserver.com
+Phone: 1234567890
+</code></pre><p>&#x8FD9;&#x4E2A;&#x5904;&#x7406;&#x6587;&#x672C;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x5927;&#x6982;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code>InputStream input = ... ; // get the InputStream from the client socket
+
+BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+
+String nameLine   = reader.readLine();
+String ageLine    = reader.readLine();
+String emailLine  = reader.readLine();
+String phoneLine  = reader.readLine();
+</code></pre><h2 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h2>
+<p>NIO&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x53EA;&#x7528;&#x4E00;&#x6761;&#x7EBF;&#x7A0B;&#x6765;&#x7BA1;&#x7406;&#x591A;&#x4E2A;&#x901A;&#x9053;&#xFF08;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x6216;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;&#x968F;&#x4E4B;&#x800C;&#x6765;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x89E3;&#x6790;&#x6570;&#x636E;&#x76F8;&#x5BF9;&#x4E8E;&#x963B;&#x585E;&#x6D41;&#x6765;&#x8BF4;&#x53EF;&#x80FD;&#x4F1A;&#x53D8;&#x5F97;&#x66F4;&#x52A0;&#x7684;&#x590D;&#x6742;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x540C;&#x65F6;&#x7BA1;&#x7406;&#x6210;&#x5343;&#x4E0A;&#x4E07;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x8FD9;&#x4E9B;&#x94FE;&#x63A5;&#x53EA;&#x53D1;&#x9001;&#x5C11;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#x804A;&#x5929;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x7528;NIO&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x662F;&#x6709;&#x4F18;&#x52BF;&#x7684;&#x3002;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x7EF4;&#x6301;&#x5927;&#x91CF;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x4F8B;&#x5982;P2P&#x7F51;&#x7EDC;&#xFF0C;&#x7528;&#x5355;&#x7EBF;&#x7A0B;&#x6765;&#x7BA1;&#x7406;&#x8FD9;&#x4E9B;
+&#x94FE;&#x63A5;&#x4E5F;&#x662F;&#x6709;&#x4F18;&#x52BF;&#x7684;&#x3002;&#x8FD9;&#x79CD;&#x5355;&#x7EBF;&#x7A0B;&#x591A;&#x8FDE;&#x63A5;&#x7684;&#x8BBE;&#x8BA1;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x56FE;&#x63CF;&#x8FF0;&#xFF1A;</p>
+<p><img src="http://tutorials.jenkov.com/images/java-nio/nio-vs-io-3.png" alt="nio-vs-io-3.png"></p>
+<p><strong>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO: A<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>single<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>thread<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>managing<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>multiple<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>connections</strong></p>
+<p>&#x5982;&#x679C;&#x94FE;&#x63A5;&#x6570;&#x4E0D;&#x662F;&#x5F88;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x6BCF;&#x4E2A;&#x94FE;&#x63A5;&#x7684;&#x5360;&#x7528;&#x8F83;&#x5927;&#x5E26;&#x5BBD;&#xFF0C;&#x6BCF;&#x6B21;&#x90FD;&#x8981;&#x53D1;&#x9001;&#x5927;&#x91CF;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;IO&#x8BBE;&#x8BA1;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x80FD;&#x662F;&#x6700;&#x597D;&#x7684;&#x9009;&#x62E9;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x7ECF;&#x5178;IO&#x670D;&#x52A1;&#x8BBE;&#x8BA1;&#x56FE;&#xFF1A;</p>
+<p><img src="http://tutorials.jenkov.com/images/java-nio/nio-vs-io-4.png" alt="nio-vs-io-4.png"></p>
+<p><strong>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>IO: A<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>classic<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>IO<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>server<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>design - one<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>connection<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>handled<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>by<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>one<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>thread.</strong></p>
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="java-nio-pipe.html" class="navigation navigation-prev " aria-label="Previous page: 13. Pipe管道">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="java-nio-path.html" class="navigation navigation-next " aria-label="Next page: 15. Path路径">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"14. NIO vs. IO","level":"1.15","depth":1,"next":{"title":"15. Path路径","level":"1.16","depth":1,"path":"java-nio-path.md","ref":"java-nio-path.md","articles":[]},"previous":{"title":"13. Pipe管道","level":"1.14","depth":1,"path":"java-nio-pipe.md","ref":"java-nio-pipe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","livereload"],"pluginsConfig":{"toc":{"addClass":true,"className":"toc"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java-nio-vs-io.md","mtime":"2018-04-16T05:10:16.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-16T05:10:53.924Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

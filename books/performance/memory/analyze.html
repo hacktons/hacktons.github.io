@@ -1,0 +1,797 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>内存使用分析 · Android性能优化漫谈</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="leak.html" />
+    
+    
+    <link rel="prev" href="gc.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速分析：NimbleDroid指南</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../nimbledroid/">
+            
+                <a href="../nimbledroid/">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    NimbleDroid初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../nimbledroid/service.html">
+            
+                <a href="../nimbledroid/service.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    NimbleDroid产品功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../nimbledroid/app-launch.html">
+            
+                <a href="../nimbledroid/app-launch.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    App启动分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../nimbledroid/reports.html">
+            
+                <a href="../nimbledroid/reports.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    读懂分析报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../nimbledroid/use-nimbledroid.html">
+            
+                <a href="../nimbledroid/use-nimbledroid.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    案例：使用NimbleDroid分析App
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">卡顿优化与监控</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../laggy/fps.html">
+            
+                <a href="../laggy/fps.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    帧率与流畅度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../laggy/layout-inspector.html">
+            
+                <a href="../laggy/layout-inspector.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Layout Inspector与页面布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../laggy/systrace.html">
+            
+                <a href="../laggy/systrace.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Systrace使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../laggy/inspect-gpu-rendering.html">
+            
+                <a href="../laggy/inspect-gpu-rendering.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    GPU 绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../laggy/cpu-profile.html">
+            
+                <a href="../laggy/cpu-profile.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    CPU Profile分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../laggy/strict-mode.html">
+            
+                <a href="../laggy/strict-mode.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    严格模式也能干大事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../laggy/block-detect.html">
+            
+                <a href="../laggy/block-detect.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    卡顿检测工具分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../laggy/anr.html">
+            
+                <a href="../laggy/anr.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    ANR常规分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">内存占用与泄漏分析</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="gc.html">
+            
+                <a href="gc.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    内存分配与回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="analyze.html">
+            
+                <a href="analyze.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    内存使用分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="leak.html">
+            
+                <a href="leak.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    内存泄漏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="monitor.html">
+            
+                <a href="monitor.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    内存监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安装包瘦身</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                        <b>5.1.</b>
+                    
+                    瘦身思路与方向介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Lint工具
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                        <b>5.3.</b>
+                    
+                    图片优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                        <b>5.4.</b>
+                    
+                    Andresguard工具使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" >
+            
+                <span>
+            
+                    
+                        <b>5.5.</b>
+                    
+                    内置js/html资源压缩
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" >
+            
+                <span>
+            
+                    
+                        <b>5.6.</b>
+                    
+                    安装包大小监控
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他优化</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                        <b>6.1.</b>
+                    
+                    网络请求优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    流量消耗统计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <span>
+            
+                    
+                        <b>6.3.</b>
+                    
+                    减少耗电
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" >
+            
+                <span>
+            
+                    
+                        <b>6.4.</b>
+                    
+                    耗电量监控：Battery Historian 2.x
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控平台</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" >
+            
+                <span>
+            
+                    
+                        <b>7.1.</b>
+                    
+                    业内一些公司的平台化实践
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                        <b>7.2.</b>
+                    
+                    天眼监控平台的功能和使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                        <b>7.3.</b>
+                    
+                    分析监控平台的个模块实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >内存使用分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;"><b></b>&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#java-heap"><b></b>Java Heap</a></li><ul><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x4F7F;&#x7528;-memory-profiler"><b></b>&#x4F7F;&#x7528; Memory Profiler</a></li><li><span class="title-icon fa fa-angle-right"></span><a href="#hprof&#x8F6C;&#x6362;"><b></b>HPROF&#x8F6C;&#x6362;</a></li><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x4F7F;&#x7528;android-device-monitor"><b></b>&#x4F7F;&#x7528;Android Device Monitor</a></li></ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#mat"><b></b>MAT</a></li><ul><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x4F7F;&#x7528;&#x59FF;&#x52BF;"><b></b>&#x4F7F;&#x7528;&#x59FF;&#x52BF;</a></li><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x5B9E;&#x7528;&#x529F;&#x80FD;"><b></b>&#x5B9E;&#x7528;&#x529F;&#x80FD;</a></li></ul></ul></ul></div><a href="#&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;"><a name="&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5206;&#x6790;</h1>
+<p>&#x4E86;&#x89E3;&#x4E86;&#x5185;&#x5B58;&#x5927;&#x81F4;&#x7684;&#x5206;&#x914D;&#x7B56;&#x7565;&#x548C;&#x56DE;&#x6536;&#x7B97;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x5185;&#x5B58;&#x6709;&#x4E86;&#x4E00;&#x70B9;&#x8BA4;&#x8BC6;&#x3002;&#x90A3;&#x4E48;&#x5728;&#x5DE5;&#x4F5C;&#x5F53;&#x4E2D;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4E0E;&#x5F00;&#x53D1;&#x5173;&#x7CFB;&#x66F4;&#x52A0;&#x5BC6;&#x5207;&#x7684;&#x662F;&#x5806;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x7684;&#x5206;&#x6790;&#xFF0C;&#x672C;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x8D77;&#x6765;&#x770B;&#x770B;&#xFF0C;&#x5982;&#x4F55;&#x5206;&#x6790;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x3002;</p>
+<h2 id="java-heap"><a name="java-heap" class="anchor-navigation-ex-anchor" href="#java-heap"><i class="fa fa-link" aria-hidden="true"></i></a>Java Heap</h2>
+<p>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5BF9;&#x8C61;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x5206;&#x914D;&#x5728;&#x5806;&#x4E0A;&#x9762;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5206;&#x6790;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x60C5;&#x51B5;&#x80AF;&#x5B9A;&#x5C31;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x5806;&#x7684;&#x6570;&#x636E;&#x4E86;&#x3002;&#x5728;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x83B7;&#x53D6;Java Heap&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x5DE5;&#x5177;&#x6765;&#x53EF;&#x89C6;&#x5316;&#x5206;&#x6790;&#x3002;</p>
+<p>&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5806;&#x6570;&#x636E;&#x4E00;&#x822C;&#x4E5F;&#x53EB;&#x505A;Dump Heap</p>
+<h3 id="&#x4F7F;&#x7528;-memory-profiler"><a name="&#x4F7F;&#x7528;-memory-profiler" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;-memory-profiler"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528; Memory Profiler</h3>
+<p>&#x5728;&#x5F00;&#x59CB;&#x8BFE;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8BB2;&#x8FC7;&#xFF0C;&#x8FD9;&#x95E8;&#x8BFE;&#x7A0B;&#x662F;&#x57FA;&#x4E8E;Android Studio 3.x&#x6765;&#x8BB2;&#x89E3;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;AS&#x81EA;&#x5E26;&#x7684;&#x5185;&#x5B58;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x6765;&#x67E5;&#x770B;&#xFF0C;&#x4FDD;&#x5B58;heap&#x6570;&#x636E;&#x3002;</p>
+<p>&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>View &gt; Tool Windows &gt; Android Profiler &#xFF1A;&#x6253;&#x5F00;&#x5206;&#x6790;&#x9762;&#x677F;</li>
+<li>Dump Java heap : &#x83B7;&#x53D6;&#x5185;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x5F52;&#x6863;&#x5C55;&#x793A;</li>
+<li>Export capture to file: &#x53E6;&#x5B58;&#x4E3A;HPROF&#x6587;&#x4EF6;</li>
+</ol>
+<p><img src="../assets/memory-profiler-callouts_2x.png" alt="dump heap"></p>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;AS&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4EA7;&#x770B;&#x5185;&#x5B58;&#x4E2D;&#x5BF9;&#x8C61;&#x60C5;&#x51B5;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;HPROF&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x8FDB;&#x884C;&#x5C55;&#x793A;&#x3002;</p>
+<h3 id="hprof&#x8F6C;&#x6362;"><a name="hprof&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#hprof&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>HPROF&#x8F6C;&#x6362;</h3>
+<p>&#x7531;&#x4E8E;androi&#x4E2D;&#x63D0;&#x53D6;&#x7684;hprof&#x4E0D;&#x662F;&#x6807;&#x51C6;&#x7684;java se hprof&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;SDK&#x81EA;&#x5E26;&#x7684;hprof-conv&#x8F6C;&#x6362;&#x5DE5;&#x5177;&#x505A;&#x4E00;&#x4E0B;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x6BD4;&#x5982;jhat&#xFF0C;mat&#x4E4B;&#x7C7B;&#x7684;&#x5DE5;&#x5177;&#x67E5;&#x770B;&#x4E86;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x77E5;&#x9053;hprof-conv&#xFF0C;&#x53EF;&#x4EE5;&#x53BB;<code>android_sdk/platform-tools/</code>&#x76EE;&#x5F55;&#x4E0B;&#x67E5;&#x627E;&#xFF1A;</p>
+<pre><code class="lang-shell">hprof-conv heap-original.hprof heap-converted.hprof
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;android-device-monitor"><a name="&#x4F7F;&#x7528;android-device-monitor" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;android-device-monitor"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;Android Device Monitor</h3>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;Memory Profiler&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x524D;&#x7684;Monitor&#x6765;dump&#x5185;&#x5B58;&#x3002;</p>
+<p><img src="../assets/device-monitor-dump-heap.png" alt="dump heap"></p>
+<h2 id="mat"><a name="mat" class="anchor-navigation-ex-anchor" href="#mat"><i class="fa fa-link" aria-hidden="true"></i></a>MAT</h2>
+<p>MAT&#x662F;&#x4E00;&#x6B3E;&#x5185;&#x5B58;&#x5206;&#x6790;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5B89;&#x88C5;&#x5728;&#x73B0;&#x6709;&#x7684;Eclipse&#x4E2D;&#x5F53;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x5957;&#x4EF6;&#x3002;
+MAT&#x662F;Memory Analyze Tool&#x7684;&#x7B80;&#x79F0;&#xFF0C;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x76F4;&#x89C2;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6666;&#x6DA9;&#x7684;heap&#x6570;&#x636E;&#x5DF2;&#x76F4;&#x65B9;&#x56FE;&#x548C;&#x997C;&#x56FE;&#x7684;&#x5F62;&#x5F0F;&#x5448;&#x73B0;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x59FF;&#x52BF;"><a name="&#x4F7F;&#x7528;&#x59FF;&#x52BF;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x59FF;&#x52BF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x59FF;&#x52BF;</h3>
+<p>MAT&#x7684;&#x4F7F;&#x7528;&#x5E76;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x4E5F;&#x4E0D;&#x5FC5;&#x6B7B;&#x8BB0;&#x786C;&#x80CC;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x81EA;&#x5E26;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;&#x6559;&#x7A0B;<code>Tutorial</code>&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x6211;&#x4EEC;&#x7684;&#x5206;&#x6790;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x4F7F;&#x7528;MAT&#x7684;&#x4E00;&#x822C;&#x6B65;&#x9AA4;&#x5305;&#x62EC;&#xFF1A;</p>
+<ol>
+<li>&#x6253;&#x5F00;Heap&#x6587;&#x4EF6;</li>
+<li>&#x6253;&#x5F00;Class&#x76F4;&#x65B9;&#x56FE;</li>
+<li>&#x6839;&#x636E;Classloader&#x8FDB;&#x884C;&#x6392;&#x5E8F;</li>
+<li>&#x6BD4;&#x8F83;&#x4E24;&#x4EFD;heap&#x5FEB;&#x7167;</li>
+<li>&#x5BFC;&#x51FA;&#x6570;&#x636E;&#x62A5;&#x8868;&#xFF0C;&#x6BD4;&#x5982;HTML,CVS&#xFF0C;TXT</li>
+</ol>
+<p>&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x7528;&#x4E0D;&#x5230;&#x6BCF;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#xFF0C;&#x4E00;&#x822C;&#x901A;&#x8FC7;&#x56FE;&#x8868;&#x67E5;&#x770B;&#x5C31;&#x591F;&#x4E86;&#xFF0C;&#x5F88;&#x5C11;&#x9700;&#x8981;&#x5BFC;&#x51FA;&#x62A5;&#x8868;&#x3002;</p>
+<p>&#x6709;&#x65F6;&#x5019;&#x7C7B;&#x5F88;&#x591A;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x95EE;&#x9898;&#x6392;&#x67E5;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;MAT&#x7684;Dominator tree&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7D2F;&#x7684;&#x8282;&#x70B9;&#x6811;&#x3002;
+&#x76F8;&#x4E92;&#x5F15;&#x7528;&#x6216;&#x6301;&#x6709;&#x7684;&#x7C7B;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x5F62;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x901A;&#x8FC7;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x76F4;&#x8FFD;&#x6EAF;&#x5230;GC roots&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="&#x5B9E;&#x7528;&#x529F;&#x80FD;"><a name="&#x5B9E;&#x7528;&#x529F;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x7528;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x7528;&#x529F;&#x80FD;</h3>
+<p>&#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;MAT&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E00;&#x4EFD;Component Report&#xFF0C;&#x8FD9;&#x4E2A;&#x62A5;&#x544A;&#x4F1A;&#x63D0;&#x53D6;&#x4E00;&#x4E9B;&#x6F5C;&#x5728;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x5982;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#xFF0C;&#x91CD;&#x590D;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7A7A;&#x96C6;&#x5408;&#xFF0C;&#x8F6F;&#x5F15;&#x7528;&#x5206;&#x6790;&#xFF0C;Finalizer&#x5206;&#x6790;&#x7B49;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x5206;&#x6790;&#x4E00;heap&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x5185;&#x5B58;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x6765;&#x5904;&#x7406;&#xFF1A;</p>
+<ol>
+<li>&#x67E5;&#x770B;&#x9884;&#x89C8;&#x6570;&#x636E;quick overview&#xFF1A; &#x662F;&#x5426;&#x6709;&#x5927;&#x5BF9;&#x8C61;&#xFF0C;&#x67E5;&#x770B;top consumers</li>
+<li>&#x8FDB;&#x4E00;&#x6B65;&#x5206;&#x6790;&#x53D1;&#x73B0;&#x7684;&#x5927;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x7684;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x6392;&#x67E5;&#x5F15;&#x7528;&#x5173;&#x7CFB;</li>
+<li>&#x6CA1;&#x6709;&#x5927;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x6790;&#x53EF;&#x7591;&#x7684;&#x5BF9;&#x8C61;&#x7EC4;&#xFF1A;&#x7279;&#x522B;&#x662F;&#x5360;&#x7528;&#x5185;&#x5B58;&#x591A;&#x7684;&#x7EC4;</li>
+<li>&#x5982;&#x4F55;&#x53D1;&#x73B0;&#x5BF9;&#x8C61;&#x7EC4;&#xFF0C;&#x4E5F;&#x6709;&#x4E00;&#x4E9B;&#x5C0F;&#x6280;&#x5DE7;&#x53EF;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x6839;&#x636E;class&#x5206;&#x7EC4;&#x5BF9;&#x8C61;&#xFF0C;&#x67E5;&#x770B;&#x603B;&#x5927;&#x5C0F;&#xFF1B;&#x627E;&#x51FA;&#x6700;&#x5927;&#x7C7B;&#x7684;&#x8282;&#x70B9;&#x6811;&#xFF0C;&#x6267;&#x884C;&#x201C;immediate dominators&#x201D;</li>
+</ol>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2018-04-12
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="gc.html" class="navigation navigation-prev " aria-label="Previous page: 内存分配与回收">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="leak.html" class="navigation navigation-next " aria-label="Next page: 内存泄漏分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"内存使用分析","level":"4.2","depth":1,"next":{"title":"内存泄漏分析","level":"4.3","depth":1,"path":"memory/leak.md","ref":"memory/leak.md","articles":[]},"previous":{"title":"内存分配与回收","level":"4.1","depth":1,"path":"memory/gc.md","ref":"memory/gc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"memory/analyze.md","mtime":"2018-04-12T11:42:21.630Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-12T04:22:46.892Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,952 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>内存监控 · Android性能优化漫谈</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="leak.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速分析：NimbleDroid指南</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../nimbledroid/">
+            
+                <a href="../nimbledroid/">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    NimbleDroid初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../nimbledroid/service.html">
+            
+                <a href="../nimbledroid/service.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    NimbleDroid产品功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../nimbledroid/app-launch.html">
+            
+                <a href="../nimbledroid/app-launch.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    App启动分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../nimbledroid/reports.html">
+            
+                <a href="../nimbledroid/reports.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    读懂分析报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../nimbledroid/use-nimbledroid.html">
+            
+                <a href="../nimbledroid/use-nimbledroid.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    案例：使用NimbleDroid分析App
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">卡顿优化与监控</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../laggy/fps.html">
+            
+                <a href="../laggy/fps.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    帧率与流畅度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../laggy/layout-inspector.html">
+            
+                <a href="../laggy/layout-inspector.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Layout Inspector与页面布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../laggy/systrace.html">
+            
+                <a href="../laggy/systrace.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Systrace使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../laggy/inspect-gpu-rendering.html">
+            
+                <a href="../laggy/inspect-gpu-rendering.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    GPU 绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../laggy/cpu-profile.html">
+            
+                <a href="../laggy/cpu-profile.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    CPU Profile分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../laggy/strict-mode.html">
+            
+                <a href="../laggy/strict-mode.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    严格模式也能干大事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../laggy/block-detect.html">
+            
+                <a href="../laggy/block-detect.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    卡顿检测工具分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../laggy/anr.html">
+            
+                <a href="../laggy/anr.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    ANR常规分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">内存占用与泄漏分析</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="gc.html">
+            
+                <a href="gc.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    内存分配与回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="analyze.html">
+            
+                <a href="analyze.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    内存使用分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="leak.html">
+            
+                <a href="leak.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    内存泄漏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="monitor.html">
+            
+                <a href="monitor.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    内存监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安装包瘦身</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                        <b>5.1.</b>
+                    
+                    瘦身思路与方向介绍
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Lint工具
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                        <b>5.3.</b>
+                    
+                    图片优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                        <b>5.4.</b>
+                    
+                    Andresguard工具使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" >
+            
+                <span>
+            
+                    
+                        <b>5.5.</b>
+                    
+                    内置js/html资源压缩
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" >
+            
+                <span>
+            
+                    
+                        <b>5.6.</b>
+                    
+                    安装包大小监控
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他优化</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                        <b>6.1.</b>
+                    
+                    网络请求优化
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    流量消耗统计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <span>
+            
+                    
+                        <b>6.3.</b>
+                    
+                    减少耗电
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" >
+            
+                <span>
+            
+                    
+                        <b>6.4.</b>
+                    
+                    耗电量监控：Battery Historian 2.x
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控平台</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" >
+            
+                <span>
+            
+                    
+                        <b>7.1.</b>
+                    
+                    业内一些公司的平台化实践
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                        <b>7.2.</b>
+                    
+                    天眼监控平台的功能和使用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                        <b>7.3.</b>
+                    
+                    分析监控平台的个模块实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >内存监控</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5185;&#x5B58;&#x76D1;&#x63A7;"><b></b>&#x5185;&#x5B58;&#x76D1;&#x63A7;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#procstats&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4FE1;&#x606F;"><b></b>procstats&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4FE1;&#x606F;</a></li><ul><li><span class="title-icon fa fa-angle-right"></span><a href="#meminfo&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5FEB;&#x7167;"><b></b>meminfo&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5FEB;&#x7167;</a></li></ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;"><b></b>&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x76D1;&#x63A7;&#x62A5;&#x8868;"><b></b>&#x76D1;&#x63A7;&#x62A5;&#x8868;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#&#x5185;&#x5B58;&#x76D1;&#x63A7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5185;&#x5B58;&#x76D1;&#x63A7;"><a name="&#x5185;&#x5B58;&#x76D1;&#x63A7;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5B58;&#x76D1;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5B58;&#x76D1;&#x63A7;</h1>
+<p>&#x5355;&#x72EC;&#x5206;&#x6790;&#x67D0;&#x4E00;&#x65F6;&#x523B;&#x7684;&#x5185;&#x5B58;&#x60C5;&#x51B5;&#x53EF;&#x4EE5;&#x6392;&#x67E5;&#x6F5C;&#x5728;&#x7684;&#x5185;&#x5B58;&#x4E0D;&#x5408;&#x7406;&#x4F7F;&#x7528;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x9700;&#x8981;&#x5173;&#x6CE8;App&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x5185;&#x5B58;&#x7684;&#x6574;&#x4F53;&#x53D8;&#x5316;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#x671F;&#x95F4;&#x5B9A;&#x671F;&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x901A;&#x8FC7;&#x6574;&#x5408;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x7684;&#x5185;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x66F2;&#x7EBF;&#x62A5;&#x8868;&#xFF1B;&#x518D;&#x6BD4;&#x5982;&#x5C06;&#x6BCF;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x7684;&#x5185;&#x5B58;&#x66F2;&#x7EBF;&#x4F5C;&#x5BF9;&#x6BD4;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x89C2;&#x7684;&#x4E86;&#x89E3;&#x67D0;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#x662F;&#x5426;&#x51FA;&#x73B0;&#x4E86;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x6FC0;&#x589E;&#x3002;</p>
+<h2 id="procstats&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4FE1;&#x606F;"><a name="procstats&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4FE1;&#x606F;" class="anchor-navigation-ex-anchor" href="#procstats&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>procstats&#x83B7;&#x53D6;&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x4FE1;&#x606F;</h2>
+<blockquote>
+<p>&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x7684;&#x5FEB;&#x7167;&#x5462;&#xFF1F;</p>
+</blockquote>
+<p>&#x6839;&#x636E;Android SDK&#x7684;&#x63D0;&#x4F9B;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x7528;adb&#x914D;&#x5957;&#x7684;&#x547D;&#x4EE4;&#x5DE5;&#x5177;&#x6765;&#x83B7;&#x53D6;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x83B7;&#x53D6;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x6574;&#x4E2A;&#x5185;&#x5B58;&#x7684;&#x4F7F;&#x7528;&#x62A5;&#x544A;,&#x53EF;&#x4EE5;&#x7528;<code>procstats</code>&#xFF1A;</p>
+<pre><code class="lang-shell">aven-mac-pro-2:platform-tools aven$ adb shell dumpsys procstats --hours 1
+</code></pre>
+<p>&#x90A3;&#x4E48;procstats&#x652F;&#x6301;&#x4EC0;&#x4E48;&#x53C2;&#x6570;&#xFF1F;<code>--hours 1</code>&#x80AF;&#x5B9A;&#x4EE3;&#x8868;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x65F6;&#x7684;&#x8303;&#x56F4;&#x3002;&#x5176;&#x5B9E;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x5F88;&#x591A;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8BB0;&#x5FC6;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x67E5;&#x770B;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x5C31;&#x597D;&#x4E86;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x5E2E;&#x52A9;&#x547D;&#x4EE4;&#x90FD;&#x662F;<code>-h</code>&#x6216;&#x8005;<code>--help</code>&#x4E4B;&#x7C7B;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-shell">aven-mac-pro-2:platform-tools aven$  adb shell dumpsys procstats -h
+Process stats (procstats) dump options:
+    [--checkin|-c|--csv] [--csv-screen] [--csv-proc] [--csv-mem]
+    [--details] [--full-details] [--current] [--hours N] [--last N]
+    [--max N] --active] [--commit] [--reset] [--clear] [--write] [-h]
+    [--start-testing] [--stop-testing] 
+    [--pretend-screen-on] [--pretend-screen-off] [--stop-pretend-screen]
+    [&lt;package.name&gt;]
+  --checkin: perform a checkin: print and delete old committed states.
+  -c: print only state in checkin format.
+  --csv: output data suitable for putting in a spreadsheet.
+  --csv-screen: on, off.
+  --csv-mem: norm, mod, low, crit.
+  --csv-proc: pers, top, fore, vis, precept, backup,
+    service, home, prev, cached
+  --details: dump per-package details, not just summary.
+  --full-details: dump all timing and active state details.
+  --current: only dump current state.
+  --hours: aggregate over about N last hours.
+  --last: only show the last committed stats at index N (starting at 1).
+  --max: for -a, max num of historical batches to print.
+  --active: only show currently active processes/services.
+  --commit: commit current stats to disk and reset to start new stats.
+  --reset: reset current stats, without committing.
+  --clear: clear all stats; does both --reset and deletes old stats.
+  --write: write current in-memory stats to disk.
+  --read: replace current stats with last-written stats.
+  --start-testing: clear all stats and starting high frequency pss sampling.
+  --stop-testing: stop high frequency pss sampling.
+  --pretend-screen-on: pretend screen is on.
+  --pretend-screen-off: pretend screen is off.
+  --stop-pretend-screen: forget &quot;pretend screen&quot; and use the real state.
+  -a: print everything.
+  -h: print this help text.
+  &lt;package.name&gt;: optional name of package to filter output by.
+``
+
+&#x9ED8;&#x8BA4;procstats&#x6253;&#x5370;&#x51FA;&#x6240;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5BF9;&#x6211;&#x4EEC;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x70B9;&#x591A;&#xFF0C;&#x6BD5;&#x7ADF;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x5C31;&#x662F;&#x60F3;&#x770B;&#x770B;&#x5F85;&#x6D4B;&#x5E94;&#x7528;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x8DDF;&#x4E0A;&#x5E94;&#x7528;&#x7684;&#x5305;&#x540D;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;`-a`&#x6253;&#x51FA;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF1A;
+
+```shell
+aven-mac-pro-2:platform-tools aven$ adb shell dumpsys procstats --hours 3 -a cn.hacktons.leakdemo
+AGGREGATED OVER LAST 3 HOURS:
+Per-Package Stats:
+  * cn.hacktons.leakdemo / u0a86 / v1:
+      Process cn.hacktons.leakdemo (unique, 1 entries):
+        SOn /Norm/Top    : +3h33m17s952ms
+                  TOTAL  : +3h33m17s952ms
+        PSS/USS (1 entries):
+          SOn /Norm/Top    : 49287 samples 13MB 29MB 42MB / 9.1MB 23MB 38MB
+        myID=257eab6 mCommonProcess=257eab6 mPackage=cn.hacktons.leakdemo
+
+  Total procs: 0 shown of 26 total
+
+Summary:
+  * cn.hacktons.leakdemo / u0a86 / v1:
+           TOTAL: 81% (13MB-29MB-42MB/9.1MB-23MB-38MB over 49287)
+             Top: 81% (13MB-29MB-42MB/9.1MB-23MB-38MB over 49287)
+
+Run time Stats:
+  SOn /Norm: +4h22m13s88ms
+      TOTAL: +4h22m13s88ms
+
+Memory usage:
+  Persist: 157MB (54 samples)
+  Top    : 38MB (49328 samples)
+  ImpFg  : 91MB (91 samples)
+  ImpBg  : 89MB (128 samples)
+  Service: 23MB (82 samples)
+  Receivr: 6.8KB (51 samples)
+  LastAct: 12MB (46 samples)
+  CchAct : 63MB (9 samples)
+  CchEmty: 75MB (118 samples)
+  TOTAL  : 547MB
+  ServRst: 70 (13 samples)
+
+          Start time: 2018-03-26 07:13:00
+  Total elapsed time: +4h22m13s92ms (partial) (swapped-out-pss) libart.so
+
+Internal state:
+  mRunning=false
+
+Available pages by page size:
+Zone   0       Unmovable      2     1     2     0     0     0     0     0     0     0     0
+Zone   0     Reclaimable      3     0     4     7     6     5     4     1     0     0     0
+Zone   0         Movable      1     0     1     0     1     1     1     0     0     0     0
+Zone   0         Reserve      0     0     0     0     0     0     0     0     0     0     0
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+Zone   0       Unmovable    142   352   261    51    12     0     0     0     0     0     0
+Zone   0     Reclaimable     18    18    24    17     0     0     0     0     0     0     0
+Zone   0         Movable    100  2635  2270   854   295    55     5     0     0     0     0
+Zone   0         Reserve      0     0     0     0     0     0     0     0     0     0     1
+Zone   0             CMA    839   838   837   625   682   412   189    41     5     2     5
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+Zone   0       Unmovable     39    50    17     5     5     2     1     2     0     2     1
+Zone   0     Reclaimable      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Movable     55   119   896   394   139    60    45    26    10     0     1
+Zone   0         Reserve      0     0     0     0     0     0     0     0     0     0     1
+Zone   0             CMA      0     0     0     0     0     0     0     0     0     0     0
+Zone   0         Isolate      0     0     0     0     0     0     0     0     0     0     0
+</code></pre>
+<h3 id="meminfo&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5FEB;&#x7167;"><a name="meminfo&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5FEB;&#x7167;" class="anchor-navigation-ex-anchor" href="#meminfo&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5FEB;&#x7167;"><i class="fa fa-link" aria-hidden="true"></i></a>meminfo&#x83B7;&#x53D6;&#x5185;&#x5B58;&#x5FEB;&#x7167;</h3>
+<p>&#x9664;&#x4E86;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x7684;&#x8FDB;&#x7A0B;&#x7684;&#x7C97;&#x7565;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>meminfo</code>&#x6765;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x7684;&#x5185;&#x5B58;&#x5FEB;&#x7167;&#x3002;</p>
+<pre><code class="lang-shell">aven-mac-pro-2:Desktop aven$ adb shell dumpsys meminfo cn.hacktons.leakdemo
+Applications Memory Usage (in Kilobytes):
+Uptime: 88948299 Realtime: 88948299
+
+** MEMINFO in pid 12049 [cn.hacktons.leakdemo] **
+                   Pss  Private  Private  SwapPss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap     4102     3840        0        0    13824    12187     1636
+  Dalvik Heap      550      516        0        0     9355     4678     4677
+ Dalvik Other      392      392        0        0                           
+        Stack      228      228        0        0                           
+       Ashmem        5        0        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap     1423      196        0        0                           
+    .apk mmap      396        0        0        0                           
+    .ttf mmap       45        0        0        0                           
+    .dex mmap     3709        4     2316        0                           
+    .oat mmap      285        0        0        0                           
+    .art mmap     3914     3668        0        0                           
+   Other mmap       13        4        0        0                           
+      Unknown      355      328        0        0                           
+        TOTAL    15427     9176     2324        0    23179    16865     6313
+
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:     4184
+         Native Heap:     3840
+                Code:     2516
+               Stack:      228
+            Graphics:        0
+       Private Other:      732
+              System:     3927
+
+               TOTAL:    15427       TOTAL SWAP PSS:        0
+
+ Objects
+               Views:       17         ViewRootImpl:        1
+         AppContexts:        3           Activities:        1
+              Assets:        2        AssetManagers:        3
+       Local Binders:        9        Proxy Binders:       16
+       Parcel memory:        3         Parcel count:       12
+    Death Recipients:        0      OpenSSL Sockets:        0
+            WebViews:        0
+
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x8F93;&#x51FA;&#x66F4;&#x52A0;&#x7EC6;&#x81F4;&#xFF0C;&#x533A;&#x5206;&#x4E86;App&#x4E2D;&#x7684;Native Heap&#xFF0C;Dalvik Heap&#x7B49;&#x3002;</p>
+<p>&#x5B9A;&#x65F6;&#x91C7;&#x96C6;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;meminfo&#x6765;&#x5904;&#x7406;&#x3002;&#x4ED6;&#x6240;&#x652F;&#x6301;&#x7684;&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;-h&#x8F93;&#x51FA;&#xFF1A;</p>
+<pre><code class="lang-shell">aven-mac-pro-2:Desktop aven$ adb shell dumpsys meminfo -h
+meminfo dump options: [-a] [-d] [-c] [-s] [--oom] [process]
+  -a: include all available information for each process.
+  -d: include dalvik details.
+  -c: dump in a compact machine-parseable representation.
+  -s: dump only summary of application memory usage.
+  -S: dump also SwapPss.
+  --oom: only show processes organized by oom adj.
+  --local: only collect details locally, don&apos;t call process.
+  --package: interpret process arg as package, dumping all
+             processes that have loaded that package.
+  --checkin: dump data for a checkin
+If [process] is specified it can be the name or 
+pid of a specific process to dump.
+</code></pre>
+<h2 id="&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;"><a name="&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;</h2>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x5927;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x4F55;&#x8BFB;&#x61C2;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x4E5F;&#x662F;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5BF9;&#x6BD4;&#x7CFB;&#x7EDF;&#x8BBE;&#x7F6E;&#x4E2D;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x9875;&#x9762;&#x6765;&#x63A8;&#x6D4B;&#x542B;&#x4E49;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5206;&#x6790;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x6CE8;&#x91CA;&#x6765;&#x7406;&#x89E3;&#x4E0D;&#x540C;&#x8F93;&#x51FA;&#x7684;&#x542B;&#x4E49;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x6E90;&#x4EE3;&#x7801;&#xFF1A;<a href="http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/com/android/internal/app/ProcessStats.java#ProcessStats" target="_blank">com.android.internal.app.ProcessStats.java</a></p>
+<p>&#x8FD9;&#x4E9B;&#x5DE5;&#x4F5C;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x53EF;&#x597D;&#x81EA;&#x5DF1;&#x53BB;&#x5B8C;&#x6210;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x770B;&#x4E0B;&#x8FD9;&#x6BB5;&#x5E38;&#x89C1;&#x8F93;&#x51FA;&#x7684;&#x542B;&#x4E49;&#xFF1A;</p>
+<pre><code>TOTAL: 81% (13MB-29MB-42MB/9.1MB-23MB-38MB over 49287)
+</code></pre><p>As can be seen in the example below, the output displays what percentage of time the application was running, and the PSS and USS as minPSS-avgPSS-maxPSS/minUSS-avgUSS-maxUSS over the number of samples.</p>
+<p>&#x8FD9;&#x4E00;&#x884C;&#x65E5;&#x5FD7;&#x7684;&#x542B;&#x4E49;&#x5927;&#x81F4;&#x662F;&#xFF1A;&#x5728;&#x6211;&#x4EEC;&#x89C2;&#x5BDF;&#x7684;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#xFF0C;&#x8BE5;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x5360;&#x4E86;81%&#xFF0C;&#x6570;&#x636E;&#x91C7;&#x91C7;&#x6837;&#x603B;&#x8BA1;49287&#x6B21;&#xFF0C;PSS&#x548C;USS&#x7684;&#x60C5;&#x51B5;&#x662F;13MB-29MB-42MB/9.1MB-23MB-38MB</p>
+<p>&#x5173;&#x4E8E;PSS&#x548C;USS&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x4E86;&#x89E3;&#x4E0B;&#xFF0C;&#x4E00;&#x822C;&#x5728;linux&#x4E2D;&#x7ECF;&#x5E38;&#x89C1;&#x5230;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x8F93;&#x51FA;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<ul>
+<li>PSS: proportional set size&#x7684;&#x7F29;&#x5199;&#xFF0C;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x603B;&#x548C;&#xFF0C;&#x5305;&#x62EC;&#x72EC;&#x5360;&#x7684;&#x79C1;&#x6709;&#x5185;&#x5B58;&#x548C;&#x8FDB;&#x7A0B;&#x95F4;&#x5171;&#x4EAB;&#x7684;&#x5185;&#x5B58;</li>
+<li>USS: unique set size&#x7684;&#x7F29;&#x5199;&#xFF0C;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x72EC;&#x5360;&#x5185;&#x5B58;&#xFF0C;&#x548C;&#x4E0A;&#x9762;&#x7684;PSS&#x7684;&#x5DEE;&#x5F02;&#x5C31;&#x5728;&#x4E8E;&#x4E0D;&#x5305;&#x542B;&#x5171;&#x4EAB;&#x5185;&#x5B58;</li>
+</ul>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#xFF1A;</p>
+<p>&#x67D0;&#x4E00;&#x65F6;&#x523B;&#xFF0C;&#x8FDB;&#x7A0B;cn.hacktons.leakdemo&#x7684;&#x975E;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x4E3A;23MB&#xFF0C;&#x8FDB;&#x7A0B;cn.android.system&#x7684;&#x975E;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x4E3A;50MB,
+cn.hacktons.leakdemo&#x548C;cn.android.system&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x662F;12MB&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5F97;&#x51FA;&#x4EE5;&#x4E0B;PSS&#x6570;&#x636E;&#xFF1A;</p>
+<ul>
+<li>cn.hacktons.leakdemo PSS = 23MB + 12/2MB = 29MB</li>
+<li>cn.android.system PSS = 50MB + 12/2MB = 56MB</li>
+</ul>
+<p>&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x5BF9;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x7B80;&#x5355;&#x4E8C;&#x7B49;&#x5206;&#x7684;&#x505A;&#x6CD5;&#x4E5F;&#x5E76;&#x4E0D;&#x662F;&#x9501;&#x4E00;&#x5B9A;&#x5171;&#x4EAB;&#x4F7F;&#x7528;&#x7684;&#x53EA;&#x6709;1/2&#xFF0C;&#x8FD9;&#x662F;&#x8BA1;&#x7B97;&#x4F7F;&#x7528;&#x91CF;&#x65F6;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x800C;&#x5DF2;&#x3002;</p>
+<h2 id="&#x76D1;&#x63A7;&#x62A5;&#x8868;"><a name="&#x76D1;&#x63A7;&#x62A5;&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x76D1;&#x63A7;&#x62A5;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76D1;&#x63A7;&#x62A5;&#x8868;</h2>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://android-developers.googleblog.com/2014/01/process-stats-understanding-how-your.html" target="_blank">https://android-developers.googleblog.com/2014/01/process-stats-understanding-how-your.html</a></li>
+<li><a href="https://blog.csdn.net/a396901990/article/details/38390135" target="_blank">https://blog.csdn.net/a396901990/article/details/38390135</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Proportional_set_size" target="_blank">https://en.wikipedia.org/wiki/Proportional_set_size</a></li>
+<li><a href="https://www.zybuluo.com/defias/note/592309" target="_blank">https://www.zybuluo.com/defias/note/592309</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2018-04-14
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="leak.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 内存泄漏分析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"内存监控","level":"4.4","depth":1,"next":{"title":"瘦身思路与方向介绍","level":"5.1","depth":1,"ref":"","articles":[]},"previous":{"title":"内存泄漏分析","level":"4.3","depth":1,"path":"memory/leak.md","ref":"memory/leak.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"memory/monitor.md","mtime":"2018-04-14T08:47:28.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-12T04:22:46.892Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

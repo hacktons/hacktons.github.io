@@ -1,0 +1,496 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>12. DatagramChannel数据报通道 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="java-nio-pipe.html" />
+    
+    
+    <link rel="prev" href="java-nio-non-blocking-server.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="java-nio-tutorial.html">
+            
+                <a href="java-nio-tutorial.html">
+            
+                    
+                    01. Java NIO 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="java-nio-overview.html">
+            
+                <a href="java-nio-overview.html">
+            
+                    
+                    02. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="java-nio-channel.html">
+            
+                <a href="java-nio-channel.html">
+            
+                    
+                    03. Channel通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="java-nio-buffer.html">
+            
+                <a href="java-nio-buffer.html">
+            
+                    
+                    04. Buffer缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="java-nio-scatter-gather.html">
+            
+                <a href="java-nio-scatter-gather.html">
+            
+                    
+                    05. Scatter / Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="java-nio-channel-to-channel-transfers.html">
+            
+                <a href="java-nio-channel-to-channel-transfers.html">
+            
+                    
+                    06. Channel Transfers通道传输接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="java-nio-selector.html">
+            
+                <a href="java-nio-selector.html">
+            
+                    
+                    07. Selector选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="java-nio-filechannel.html">
+            
+                <a href="java-nio-filechannel.html">
+            
+                    
+                    08. FileChannel文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="java-nio-socketchannel.html">
+            
+                <a href="java-nio-socketchannel.html">
+            
+                    
+                    09. SocketChannel套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="java-nio-serversocketchannel.html">
+            
+                <a href="java-nio-serversocketchannel.html">
+            
+                    
+                    10. ServerSocketChannel服务端套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="java-nio-non-blocking-server.html">
+            
+                <a href="java-nio-non-blocking-server.html">
+            
+                    
+                    11. 非阻塞服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="java-nio-datagramchannel.html">
+            
+                <a href="java-nio-datagramchannel.html">
+            
+                    
+                    12. DatagramChannel数据报通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="java-nio-pipe.html">
+            
+                <a href="java-nio-pipe.html">
+            
+                    
+                    13. Pipe管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="java-nio-vs-io.html">
+            
+                <a href="java-nio-vs-io.html">
+            
+                    
+                    14. NIO vs. IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="java-nio-path.html">
+            
+                <a href="java-nio-path.html">
+            
+                    
+                    15. Path路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="java-nio-files.html">
+            
+                <a href="java-nio-files.html">
+            
+                    
+                    16. Files文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="java-nio-asynchronousfilechannel.html">
+            
+                <a href="java-nio-asynchronousfilechannel.html">
+            
+                    
+                    17. AsynchronousFileChannel异步文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >12. DatagramChannel数据报通道</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="12-java-nio-datagramchannel&#x6570;&#x636E;&#x62A5;&#x901A;&#x9053;">12. Java NIO DatagramChannel&#x6570;&#x636E;&#x62A5;&#x901A;&#x9053;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a href="http://tutorials.jenkov.com/java-nio/datagram-channel.html" target="_blank">http://tutorials.jenkov.com/java-nio/datagram-channel.html</a></p>
+</blockquote>
+<!-- toc -->
+<ul>
+<li><a href="#%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AAdatagramchannel%EF%BC%88opening-a-datagramchannel%EF%BC%89">&#x6253;&#x5F00;&#x4E00;&#x4E2A;DatagramChannel&#xFF08;Opening a DatagramChannel&#xFF09;</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E6%95%B0%E6%8D%AE%EF%BC%88receiving-data%EF%BC%89">&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF08;Receiving Data&#xFF09;</a></li>
+<li><a href="#%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%EF%BC%88sending-data%EF%BC%89">&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF08;Sending Data&#xFF09;</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E7%89%B9%E5%AE%9A%E6%9C%BA%E5%99%A8%E5%9C%B0%E5%9D%80%EF%BC%88connecting-to-a-specific-address%EF%BC%89">&#x94FE;&#x63A5;&#x7279;&#x5B9A;&#x673A;&#x5668;&#x5730;&#x5740;&#xFF08;Connecting to a Specific Address&#xFF09;</a></li>
+</ul>
+<!-- tocstop -->
+<p>&#x4E00;&#x4E2A;Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>DatagramChannel&#x6B7B;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x3001;&#x63A5;&#x6536;UDP&#x6570;&#x636E;&#x5305;&#x7684;&#x901A;&#x9053;&#x3002;&#x7531;&#x4E8E;UDP&#x662F;&#x9762;&#x5411;&#x65E0;&#x8FDE;&#x63A5;&#x7684;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x53EF;&#x7528;&#x50CF;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x901A;&#x9053;&#x4E00;&#x6837;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x6570;&#x636E;&#x3002;&#x6B63;&#x786E;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x53D1;&#x9001;&#x3001;&#x63A5;&#x6536;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<h2 id="&#x6253;&#x5F00;&#x4E00;&#x4E2A;datagramchannel&#xFF08;opening-a-datagramchannel&#xFF09;">&#x6253;&#x5F00;&#x4E00;&#x4E2A;DatagramChannel&#xFF08;Opening a DatagramChannel&#xFF09;</h2>
+<p>&#x6253;&#x5F00;&#x4E00;&#x4E2A;DatagramChannel&#x4F60;&#x8FD9;&#x4E48;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code>DatagramChannel channel = DatagramChannel.open();
+channel.socket().bind(new InetSocketAddress(9999));
+</code></pre><p>&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6253;&#x5F00;&#x4E86;&#x4E00;&#x4E2A;DatagramChannel&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5728;9999&#x7AEF;&#x53E3;&#x4E0A;&#x6536;&#x53D1;UDP&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<h2 id="&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF08;receiving-data&#xFF09;">&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF08;Receiving Data&#xFF09;</h2>
+<p>&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF0C;&#x76F4;&#x63A5;&#x8C03;&#x7528;DatagramChannel&#x7684;receive()&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>ByteBuffer buf = ByteBuffer.allocate(48);
+buf.clear();
+
+**channel.receive(buf);**
+</code></pre><p>receive()&#x65B9;&#x6CD5;&#x4F1A;&#x628A;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x5305;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x81F3;&#x7ED9;&#x5B9A;&#x7684;Buffer&#x4E2D;&#x3002;&#x5982;&#x679C;&#x6570;&#x636E;&#x5305;&#x7684;&#x5185;&#x5BB9;&#x8D85;&#x8FC7;&#x4E86;Buffer&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5269;&#x4F59;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x88AB;&#x76F4;&#x63A5;&#x4E22;&#x5F03;&#x3002;</p>
+<h2 id="&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF08;sending-data&#xFF09;">&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF08;Sending Data&#xFF09;</h2>
+<p>&#x53D1;&#x9001;&#x6570;&#x636E;&#x662F;&#x901A;&#x8FC7;DatagramChannel&#x7684;send()&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>String newData = &quot;New String to wrte to file...&quot;               +System.currentTimeMillis();
+ByteBuffer buf = ByteBuffer.allocate(48);
+buf.clear();
+buf.put(newData.getBytes());
+buf.flip();
+
+**int byteSent = channel.send(buf, new InetSocketAddress(&quot;jenkov.com&quot;, 80));**
+</code></pre><p>&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x4F1A;&#x5427;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x53D1;&#x9001;&#x5230;&#x201C;jenkov.com&#x201D;&#x670D;&#x52A1;&#x5668;&#x7684;UDP&#x7AEF;&#x53E3;80.&#x76EE;&#x524D;&#x8FD9;&#x4E2A;&#x7AEF;&#x53E3;&#x6CA1;&#x6709;&#x88AB;&#x4EFB;&#x4F55;&#x7A0B;&#x5E8F;&#x76D1;&#x542C;&#xFF0C;&#x6240;&#x4EE5;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x3002;&#x5F53;&#x53D1;&#x9001;&#x4E86;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x4F1A;&#x6536;&#x5230;&#x6570;&#x636E;&#x5305;&#x662F;&#x5426;&#x88AB;&#x63A5;&#x6536;&#x7684;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x8FD9;&#x662F;&#x7531;&#x4E8E;UDP&#x672C;&#x8EAB;&#x4E0D;&#x4FDD;&#x8BC1;&#x4EFB;&#x4F55;&#x6570;&#x636E;&#x7684;&#x53D1;&#x9001;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="&#x94FE;&#x63A5;&#x7279;&#x5B9A;&#x673A;&#x5668;&#x5730;&#x5740;&#xFF08;connecting-to-a-specific-address&#xFF09;">&#x94FE;&#x63A5;&#x7279;&#x5B9A;&#x673A;&#x5668;&#x5730;&#x5740;&#xFF08;Connecting to a Specific Address&#xFF09;</h2>
+<p>DatagramChannel&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x5230;&#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x7279;&#x5B9A;&#x5730;&#x5740;&#x7684;&#x3002;&#x7531;&#x4E8E;UDP&#x662F;&#x9762;&#x5411;&#x65E0;&#x8FDE;&#x63A5;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x94FE;&#x63A5;&#x65B9;&#x5F0F;&#x5E76;&#x4E0D;&#x4F1A;&#x521B;&#x5EFA;&#x5B9E;&#x9645;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x8FD9;&#x548C;TCP&#x901A;&#x9053;&#x7C7B;&#x4F3C;&#x3002;&#x786E;&#x5207;&#x7684;&#x8BF4;&#xFF0C;&#x4ED6;&#x4F1A;&#x9501;&#x5B9A;DatagramChannel,&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x7279;&#x5B9A;&#x7684;&#x5730;&#x5740;&#x6765;&#x6536;&#x53D1;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<p>&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x5148;&#xFF1A;</p>
+<pre><code>channel.connect(new InetSocketAddress(&quot;jenkov.com&quot;), 80));
+</code></pre><p>&#x5F53;&#x8FDE;&#x63A5;&#x4E0A;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5411;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x901A;&#x9053;&#x90A3;&#x6837;&#x8C03;&#x7528;read()&#x548C;Writer()&#x65B9;&#x6CD5;&#x3002;&#x533A;&#x522B;&#x662F;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5199;&#x60C5;&#x51B5;&#x5F97;&#x4E0D;&#x5230;&#x4FDD;&#x8BC1;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>int bytesRead = channel.read(buf);
+</code></pre><pre><code>int bytesWritten = channel.write(buf);
+</code></pre><script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="java-nio-non-blocking-server.html" class="navigation navigation-prev " aria-label="Previous page: 11. 非阻塞服务器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="java-nio-pipe.html" class="navigation navigation-next " aria-label="Next page: 13. Pipe管道">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"12. DatagramChannel数据报通道","level":"1.13","depth":1,"next":{"title":"13. Pipe管道","level":"1.14","depth":1,"path":"java-nio-pipe.md","ref":"java-nio-pipe.md","articles":[]},"previous":{"title":"11. 非阻塞服务器","level":"1.12","depth":1,"path":"java-nio-non-blocking-server.md","ref":"java-nio-non-blocking-server.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","livereload"],"pluginsConfig":{"toc":{"addClass":true,"className":"toc"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java-nio-datagramchannel.md","mtime":"2018-04-16T05:10:16.437Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-16T05:10:53.924Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

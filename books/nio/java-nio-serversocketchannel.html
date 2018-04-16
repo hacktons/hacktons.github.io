@@ -1,0 +1,502 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>10. ServerSocketChannel服务端套接字通道 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="java-nio-non-blocking-server.html" />
+    
+    
+    <link rel="prev" href="java-nio-socketchannel.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="java-nio-tutorial.html">
+            
+                <a href="java-nio-tutorial.html">
+            
+                    
+                    01. Java NIO 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="java-nio-overview.html">
+            
+                <a href="java-nio-overview.html">
+            
+                    
+                    02. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="java-nio-channel.html">
+            
+                <a href="java-nio-channel.html">
+            
+                    
+                    03. Channel通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="java-nio-buffer.html">
+            
+                <a href="java-nio-buffer.html">
+            
+                    
+                    04. Buffer缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="java-nio-scatter-gather.html">
+            
+                <a href="java-nio-scatter-gather.html">
+            
+                    
+                    05. Scatter / Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="java-nio-channel-to-channel-transfers.html">
+            
+                <a href="java-nio-channel-to-channel-transfers.html">
+            
+                    
+                    06. Channel Transfers通道传输接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="java-nio-selector.html">
+            
+                <a href="java-nio-selector.html">
+            
+                    
+                    07. Selector选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="java-nio-filechannel.html">
+            
+                <a href="java-nio-filechannel.html">
+            
+                    
+                    08. FileChannel文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="java-nio-socketchannel.html">
+            
+                <a href="java-nio-socketchannel.html">
+            
+                    
+                    09. SocketChannel套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="java-nio-serversocketchannel.html">
+            
+                <a href="java-nio-serversocketchannel.html">
+            
+                    
+                    10. ServerSocketChannel服务端套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="java-nio-non-blocking-server.html">
+            
+                <a href="java-nio-non-blocking-server.html">
+            
+                    
+                    11. 非阻塞服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="java-nio-datagramchannel.html">
+            
+                <a href="java-nio-datagramchannel.html">
+            
+                    
+                    12. DatagramChannel数据报通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="java-nio-pipe.html">
+            
+                <a href="java-nio-pipe.html">
+            
+                    
+                    13. Pipe管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="java-nio-vs-io.html">
+            
+                <a href="java-nio-vs-io.html">
+            
+                    
+                    14. NIO vs. IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="java-nio-path.html">
+            
+                <a href="java-nio-path.html">
+            
+                    
+                    15. Path路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="java-nio-files.html">
+            
+                <a href="java-nio-files.html">
+            
+                    
+                    16. Files文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="java-nio-asynchronousfilechannel.html">
+            
+                <a href="java-nio-asynchronousfilechannel.html">
+            
+                    
+                    17. AsynchronousFileChannel异步文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >10. ServerSocketChannel服务端套接字通道</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="10-java-nio-serversocketchannel&#x670D;&#x52A1;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x901A;&#x9053;">10. Java NIO ServerSocketChannel&#x670D;&#x52A1;&#x7AEF;&#x5957;&#x63A5;&#x5B57;&#x901A;&#x9053;</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a href="http://tutorials.jenkov.com/java-nio/server-socket-channel.html" target="_blank">http://tutorials.jenkov.com/java-nio/server-socket-channel.html</a></p>
+</blockquote>
+<!-- toc -->
+<ul>
+<li><a href="#%E6%89%93%E5%BC%80serversocketchannel">&#x6253;&#x5F00;ServerSocketChannel</a></li>
+<li><a href="#%E5%85%B3%E9%97%ADserversocketchannel">&#x5173;&#x95ED;ServerSocketChannel</a></li>
+<li><a href="#%E7%9B%91%E5%90%AC%E9%93%BE%E6%8E%A5">&#x76D1;&#x542C;&#x94FE;&#x63A5;</a></li>
+</ul>
+<!-- tocstop -->
+<p>&#x5728;Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO&#x4E2D;&#xFF0C;ServerSocketChannel&#x662F;&#x7528;&#x4E8E;&#x76D1;&#x542C;TCP&#x94FE;&#x63A5;&#x8BF7;&#x6C42;&#x7684;&#x901A;&#x9053;&#xFF0C;&#x6B63;&#x5982;Java&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;ServerSocket&#x4E00;&#x6837;&#x3002;</p>
+<p>ServerSocketChannel&#x5B9E;&#x73B0;&#x7C7B;&#x4F4D;&#x4E8E;java.nio.channels&#x5305;&#x4E0B;&#x9762;&#x3002;
+&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;&#xFF1A;</p>
+<pre><code>ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+serverSocketChannel.socket().bin(new InetSocketAddress(9999));
+while(true) {
+  SocketChannel socketChannel = serverSocketChannel.accept();
+  //do something with socketChannel...
+}
+</code></pre><h2 id="&#x6253;&#x5F00;serversocketchannel">&#x6253;&#x5F00;ServerSocketChannel</h2>
+<p>&#x6253;&#x5F00;&#x4E00;&#x4E2A;ServerSocketChannel&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8C03;&#x7528;&#x4ED6;&#x7684;open()&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+</code></pre><h2 id="&#x5173;&#x95ED;serversocketchannel">&#x5173;&#x95ED;ServerSocketChannel</h2>
+<p>&#x5173;&#x95ED;&#x4E00;&#x4E2A;ServerSocketChannel&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8C03;&#x7528;&#x4ED6;&#x7684;close()&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>serverSocketChannel.close();
+</code></pre><h2 id="&#x76D1;&#x542C;&#x94FE;&#x63A5;">&#x76D1;&#x542C;&#x94FE;&#x63A5;</h2>
+<p>&#x901A;&#x8FC7;&#x8C03;&#x7528;accept()&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5F00;&#x59CB;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#x4E0A;&#x7684;&#x8BF7;&#x6C42;&#x8FDE;&#x63A5;&#x3002;&#x5F53;accept()&#x8FD4;&#x56DE;&#x65F6;&#xFF0C;&#x4ED6;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;SocketChannel&#x8FDE;&#x63A5;&#x5B9E;&#x4F8B;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;accept()&#x662F;&#x963B;&#x585E;&#x64CD;&#x4F5C;&#xFF0C;&#x4ED6;&#x4F1A;&#x963B;&#x585E;&#x5E26;&#x53BB;&#x7EBF;&#x7A0B;&#x77E5;&#x9053;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#xFF1B;
+&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x662F;&#x4E0D;&#x6EE1;&#x8DB3;&#x4E8E;&#x76D1;&#x542C;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4F1A;&#x628A;accept()&#x7684;&#x8C03;&#x7528;&#x653E;&#x5230;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x5C31;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>while(true){
+    SocketChannel socketChannel = serverSocketChannel.accept();
+    //do something with socketChannel...
+}
+</code></pre><p>&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x5FAA;&#x73AF;&#x4F53;&#x5185;&#x52A0;&#x4E0A;&#x5408;&#x9002;&#x7684;&#x4E2D;&#x65AD;&#x903B;&#x8F91;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x5728;while&#x5FAA;&#x73AF;&#x4E2D;&#x5199;true&#xFF0C;&#x4EE5;&#x6B64;&#x6765;&#x7ED3;&#x675F;&#x5FAA;&#x73AF;&#x76D1;&#x542C;&#xFF1B;</p>
+<h2 id="&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;">&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;</h2>
+<p>&#x5B9E;&#x9645;&#x4E0A;ServerSocketChannel&#x662F;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;&#x7684;&#x3002;&#x5728;&#x975E;&#x963B;&#x585E;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x8C03;&#x7528;accept()&#x51FD;&#x6570;&#x4F1A;&#x7ACB;&#x523B;&#x8FD4;&#x56DE;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D;&#x6CA1;&#x6709;&#x8BF7;&#x6C42;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x7A7A;null&#x3002;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x624B;&#x52A8;&#x68C0;&#x67E5;&#x8FD4;&#x56DE;&#x7684;SocketChannel&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+
+serverSocketChannel.socket().bind(new InetSocketAddress(9999));
+serverSocketChannel.configureBlocking(false);
+
+while(true){
+    SocketChannel socketChannel = serverSocketChannel.accept();
+
+    if(socketChannel != null){
+        //do something with socketChannel...
+    }
+}
+</code></pre><script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="java-nio-socketchannel.html" class="navigation navigation-prev " aria-label="Previous page: 09. SocketChannel套接字通道">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="java-nio-non-blocking-server.html" class="navigation navigation-next " aria-label="Next page: 11. 非阻塞服务器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"10. ServerSocketChannel服务端套接字通道","level":"1.11","depth":1,"next":{"title":"11. 非阻塞服务器","level":"1.12","depth":1,"path":"java-nio-non-blocking-server.md","ref":"java-nio-non-blocking-server.md","articles":[]},"previous":{"title":"09. SocketChannel套接字通道","level":"1.10","depth":1,"path":"java-nio-socketchannel.md","ref":"java-nio-socketchannel.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","livereload"],"pluginsConfig":{"toc":{"addClass":true,"className":"toc"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java-nio-serversocketchannel.md","mtime":"2018-04-16T05:10:16.439Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-16T05:10:53.924Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
