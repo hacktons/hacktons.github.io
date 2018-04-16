@@ -1,0 +1,667 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>16. Files文件 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="java-nio-asynchronousfilechannel.html" />
+    
+    
+    <link rel="prev" href="java-nio-path.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="java-nio-tutorial.html">
+            
+                <a href="java-nio-tutorial.html">
+            
+                    
+                    01. Java NIO 教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="java-nio-overview.html">
+            
+                <a href="java-nio-overview.html">
+            
+                    
+                    02. 概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="java-nio-channel.html">
+            
+                <a href="java-nio-channel.html">
+            
+                    
+                    03. Channel通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="java-nio-buffer.html">
+            
+                <a href="java-nio-buffer.html">
+            
+                    
+                    04. Buffer缓冲区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="java-nio-scatter-gather.html">
+            
+                <a href="java-nio-scatter-gather.html">
+            
+                    
+                    05. Scatter / Gather
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="java-nio-channel-to-channel-transfers.html">
+            
+                <a href="java-nio-channel-to-channel-transfers.html">
+            
+                    
+                    06. Channel Transfers通道传输接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="java-nio-selector.html">
+            
+                <a href="java-nio-selector.html">
+            
+                    
+                    07. Selector选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="java-nio-filechannel.html">
+            
+                <a href="java-nio-filechannel.html">
+            
+                    
+                    08. FileChannel文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="java-nio-socketchannel.html">
+            
+                <a href="java-nio-socketchannel.html">
+            
+                    
+                    09. SocketChannel套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="java-nio-serversocketchannel.html">
+            
+                <a href="java-nio-serversocketchannel.html">
+            
+                    
+                    10. ServerSocketChannel服务端套接字通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="java-nio-non-blocking-server.html">
+            
+                <a href="java-nio-non-blocking-server.html">
+            
+                    
+                    11. 非阻塞服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="java-nio-datagramchannel.html">
+            
+                <a href="java-nio-datagramchannel.html">
+            
+                    
+                    12. DatagramChannel数据报通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="java-nio-pipe.html">
+            
+                <a href="java-nio-pipe.html">
+            
+                    
+                    13. Pipe管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="java-nio-vs-io.html">
+            
+                <a href="java-nio-vs-io.html">
+            
+                    
+                    14. NIO vs. IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="java-nio-path.html">
+            
+                <a href="java-nio-path.html">
+            
+                    
+                    15. Path路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="java-nio-files.html">
+            
+                <a href="java-nio-files.html">
+            
+                    
+                    16. Files文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="java-nio-asynchronousfilechannel.html">
+            
+                <a href="java-nio-asynchronousfilechannel.html">
+            
+                    
+                    17. AsynchronousFileChannel异步文件通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >16. Files文件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="16-java-nio-files">16. Java NIO Files</h1>
+<blockquote>
+<p>&#x539F;&#x6587;&#x94FE;&#x63A5;&#xFF1A;<a href="http://tutorials.jenkov.com/java-nio/files.html" target="_blank">http://tutorials.jenkov.com/java-nio/files.html</a></p>
+</blockquote>
+<!-- toc -->
+<ul>
+<li><a href="#files.exists(">Files.exists()</a>)</li>
+<li><a href="#files.createdirectory(">Files.createDirectory()</a>)</li>
+<li><a href="#files.copy(">Files.copy()</a>)<ul>
+<li><a href="#%E8%A6%86%E7%9B%96%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E6%96%87%E4%BB%B6(overwriting-existing-files">&#x8986;&#x76D6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;(Overwriting Existing Files)</a>)</li>
+</ul>
+</li>
+<li><a href="#files.move(">Files.move()</a>)</li>
+<li><a href="#files.delete(">Files.delete()</a>)</li>
+<li><a href="#files.walkfiletree(">Files.walkFileTree()</a>)<ul>
+<li><a href="#searching-for-files">Searching For Files</a></li>
+<li><a href="#deleting-directies-recursively">Deleting Directies Recursively</a></li>
+</ul>
+</li>
+<li><a href="#additional-methods-in-the-files-class">Additional Methods in the Files Class</a></li>
+</ul>
+<!-- tocstop -->
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO&#x4E2D;&#x7684;Files&#x7C7B;&#xFF08;java.nio.file.Files&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x672C;&#x8282;&#x6559;&#x7A0B;&#x5C06;&#x8986;&#x76D6;&#x5927;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x3002;Files&#x7C7B;&#x5305;&#x542B;&#x4E86;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x672C;&#x6587;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x7684;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x67E5;&#x8BE2;JavaDoc&#x6587;&#x6863;&#x3002;</p>
+<p>java.nio.file.Files&#x7C7B;&#x662F;&#x548C;java.nio.file.Path&#x76F8;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x7528;Files&#x4E4B;&#x524D;&#x786E;&#x4FDD;&#x4F60;&#x5DF2;&#x7ECF;&#x7406;&#x89E3;&#x4E86;Path&#x7C7B;&#x3002;</p>
+<h2 id="filesexists">Files.exists()</h2>
+<p>Files.exits()&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x68C0;&#x67E5;&#x7ED9;&#x5B9A;&#x7684;Path&#x5728;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;
+&#x5728;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x539F;&#x672C;&#x4E0D;&#x5B58;&#x5728;&#x7684;Payh&#x662F;&#x53EF;&#x884C;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4F60;&#x60F3;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x90A3;&#x4E48;&#x95F2;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;Path&#x5B9E;&#x4F8B;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x76EE;&#x5F55;&#x3002;</p>
+<p>&#x7531;&#x4E8E;Path&#x5B9E;&#x4F8B;&#x53EF;&#x80FD;&#x6307;&#x5411;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x7528;Files.exists()&#x6765;&#x786E;&#x8BA4;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;Files.exists()&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>Path path = Paths.get(&quot;data/logging.properties&quot;);
+
+boolean pathExists =
+        Files.exists(path,
+            new LinkOption[]{ LinkOption.NOFOLLOW_LINKS});
+</code></pre><p>&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;Path&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;Files.exists()&#x6765;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x771F;&#x5B9E;&#x5B58;&#x5728;&#x3002;</p>
+<p>&#x6CE8;&#x610F;Files.exists()&#x7684;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x4ED6;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x76F4;&#x63A5;&#x5F71;&#x54CD;&#x5230;Files.exists()&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x5B58;&#x5728;&#x3002;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#x5185;&#x5305;&#x542B;&#x4E86;LinkOptions.NOFOLLOW_LINKS&#xFF0C;&#x8868;&#x793A;&#x68C0;&#x6D4B;&#x65F6;&#x4E0D;&#x5305;&#x542B;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="filescreatedirectory">Files.createDirectory()</h2>
+<p>Files.createDirectory()&#x4F1A;&#x521B;&#x5EFA;Path&#x8868;&#x793A;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>Path path = Paths.get(&quot;data/subdir&quot;);
+
+try {
+    Path newDir = Files.createDirectory(path);
+} catch(FileAlreadyExistsException e){
+    // the directory already exists.
+} catch (IOException e) {
+    //something else went wrong
+    e.printStackTrace();
+}
+</code></pre><p>&#x7B2C;&#x4E00;&#x884C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;Path&#x5B9E;&#x4F8B;&#xFF0C;&#x8868;&#x793A;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55;&#x3002;&#x63A5;&#x7740;&#x7528;try-catch&#x628A;Files.createDirectory()&#x7684;&#x8C03;&#x7528;&#x6355;&#x83B7;&#x4F4F;&#x3002;&#x5982;&#x679C;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x503C;&#x5C31;&#x662F;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x76EE;&#x5F55;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x629B;&#x51FA;java.nio.file.FileAlreadyExistException&#x5F02;&#x5E38;&#x3002;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x5176;&#x4ED6;&#x95EE;&#x9898;&#xFF0C;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;IOException&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#xFF0C;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55;&#x7684;&#x7236;&#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x629B;&#x51FA;IOException&#x3002;&#x7236;&#x76EE;&#x5F55;&#x6307;&#x7684;&#x662F;&#x4F60;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55;&#x6240;&#x5728;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x76EE;&#x5F55;&#x7684;&#x4E0A;&#x4E00;&#x7EA7;&#x7236;&#x76EE;&#x5F55;&#x3002;</p>
+<h2 id="filescopy">Files.copy()</h2>
+<p>Files.copy()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5427;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4ECE;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>Path sourcePath      = Paths.get(&quot;data/logging.properties&quot;);
+Path destinationPath = Paths.get(&quot;data/logging-copy.properties&quot;);
+
+try {
+    Files.copy(sourcePath, destinationPath);
+} catch(FileAlreadyExistsException e) {
+    //destination file already exists
+} catch (IOException e) {
+    //something else went wrong
+    e.printStackTrace();
+}
+</code></pre><p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x5F53;&#x4E2D;&#xFF0C;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E86;&#x539F;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7684;Path&#x5B9E;&#x4F8B;&#x3002;&#x7136;&#x540E;&#x628A;&#x5B83;&#x4EEC;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4F20;&#x9012;&#x7ED9;Files.copy(),&#x63A5;&#x7740;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5C31;&#x4F1A;&#x629B;&#x51FA;java.nio.file.FileAlreadyExistsException&#x5F02;&#x5E38;&#x3002;&#x7C7B;&#x4F3C;&#x7684;&#x5410;&#x8FC7;&#x4E2D;&#x95F4;&#x51FA;&#x9519;&#x4E86;&#xFF0C;&#x4E5F;&#x4F1A;&#x629B;&#x51FA;IOException&#x3002;</p>
+<h3 id="&#x8986;&#x76D6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;overwriting-existing-files">&#x8986;&#x76D6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x6587;&#x4EF6;(Overwriting Existing Files)</h3>
+<p>copy&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x8986;&#x76D6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x5177;&#x4F53;&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>Path sourcePath      = Paths.get(&quot;data/logging.properties&quot;);
+Path destinationPath = Paths.get(&quot;data/logging-copy.properties&quot;);
+
+try {
+    Files.copy(sourcePath, destinationPath,
+            StandardCopyOption.REPLACE_EXISTING);
+} catch(FileAlreadyExistsException e) {
+    //destination file already exists
+} catch (IOException e) {
+    //something else went wrong
+    e.printStackTrace();
+}
+</code></pre><p>&#x6CE8;&#x610F;copy&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="filesmove">Files.move()</h2>
+<p>Java<a href="GLOSSARY.html#" class="glossary-term" title=""> </a>NIO&#x7684;Files&#x7C7B;&#x4E5F;&#x5305;&#x542B;&#x4E86;&#x79FB;&#x52A8;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x79FB;&#x52A8;&#x6587;&#x4EF6;&#x548C;&#x91CD;&#x547D;&#x540D;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x4F1A;&#x6539;&#x53D8;&#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x4F4D;&#x7F6E;&#x3002;java.io.File&#x7C7B;&#x4E2D;&#x7684;renameTo()&#x65B9;&#x6CD5;&#x4E0E;&#x4E4B;&#x529F;&#x80FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<pre><code>Path sourcePath      = Paths.get(&quot;data/logging-copy.properties&quot;);
+Path destinationPath = Paths.get(&quot;data/subdir/logging-moved.properties&quot;);
+
+try {
+    Files.move(sourcePath, destinationPath,
+            StandardCopyOption.REPLACE_EXISTING);
+} catch (IOException e) {
+    //moving file failed.
+    e.printStackTrace();
+}
+</code></pre><p>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x6E90;&#x8DEF;&#x5F84;&#x548C;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x7684;&#xFF0C;&#x539F;&#x8DEF;&#x5F84;&#x6307;&#x7684;&#x662F;&#x9700;&#x8981;&#x79FB;&#x52A8;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x521D;&#x59CB;&#x8DEF;&#x5F84;&#xFF0C;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&#x662F;&#x6307;&#x9700;&#x8981;&#x79FB;&#x52A8;&#x5230;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;move&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x4E5F;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x8986;&#x76D6;&#x5DF2;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="filesdelete">Files.delete()</h2>
+<p>Files.delete()&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#xFF1A;</p>
+<pre><code>Path path = Paths.get(&quot;data/subdir/logging-moved.properties&quot;);
+
+try {
+    Files.delete(path);
+} catch (IOException e) {
+    //deleting file failed
+    e.printStackTrace();
+}
+</code></pre><p>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x9700;&#x8981;&#x5220;&#x9664;&#x7684;&#x6587;&#x4EF6;&#x7684;path&#x5BF9;&#x8C61;&#x3002;&#x63A5;&#x7740;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;delete&#x4E86;&#x3002;</p>
+<h2 id="fileswalkfiletree">Files.walkFileTree()</h2>
+<p>Files.walkFileTree()&#x65B9;&#x6CD5;&#x5177;&#x6709;&#x9012;&#x5F52;&#x904D;&#x5386;&#x76EE;&#x5F55;&#x7684;&#x529F;&#x80FD;&#x3002;walkFileTree&#x63A5;&#x53D7;&#x4E00;&#x4E2A;Path&#x548C;FileVisitor&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x3002;Path&#x5BF9;&#x8C61;&#x662F;&#x9700;&#x8981;&#x904D;&#x5386;&#x7684;&#x76EE;&#x5F55;&#xFF0C;FileVistor&#x5219;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x904D;&#x5386;&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;FileVisitor&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<pre><code>public interface FileVisitor {
+
+    public FileVisitResult preVisitDirectory(
+        Path dir, BasicFileAttributes attrs) throws IOException;
+
+    public FileVisitResult visitFile(
+        Path file, BasicFileAttributes attrs) throws IOException;
+
+    public FileVisitResult visitFileFailed(
+        Path file, IOException exc) throws IOException;
+
+    public FileVisitResult postVisitDirectory(
+        Path dir, IOException exc) throws IOException {
+
+}
+</code></pre><p>FileVisitor&#x9700;&#x8981;&#x8C03;&#x7528;&#x65B9;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#xFF0C;&#x7136;&#x540E;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;walkFileTree().FileVisitor&#x7684;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#x591A;&#x6B21;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x5904;&#x7406;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x4ED6;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#x7C7B;SimpleFileVisitor&#xFF0C;&#x5B83;&#x5C06;&#x6240;&#x6709;&#x7684;&#x63A5;&#x53E3;&#x505A;&#x4E86;&#x7A7A;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x770B;&#x4E00;&#x4E2A;walkFileTree()&#x7684;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>Files.walkFileTree(path, new FileVisitor&lt;Path&gt;() {
+  @Override
+  public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+    System.out.println(&quot;pre visit dir:&quot; + dir);
+    return FileVisitResult.CONTINUE;
+  }
+
+  @Override
+  public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+    System.out.println(&quot;visit file: &quot; + file);
+    return FileVisitResult.CONTINUE;
+  }
+
+  @Override
+  public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+    System.out.println(&quot;visit file failed: &quot; + file);
+    return FileVisitResult.CONTINUE;
+  }
+
+  @Override
+  public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+    System.out.println(&quot;post visit directory: &quot; + dir);
+    return FileVisitResult.CONTINUE;
+  }
+});
+</code></pre><p>FileVisitor&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x4E0D;&#x540C;&#x65F6;&#x673A;&#x88AB;&#x8C03;&#x7528;&#xFF1A;
+preVisitDirectory()&#x5728;&#x8BBF;&#x95EE;&#x76EE;&#x5F55;&#x524D;&#x88AB;&#x8C03;&#x7528;&#x3002;postVisitDirectory()&#x5728;&#x8BBF;&#x95EE;&#x540E;&#x8C03;&#x7528;&#x3002;</p>
+<p>visitFile()&#x4F1A;&#x5728;&#x6574;&#x4E2A;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x6BCF;&#x6B21;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x90FD;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x4ED6;&#x4E0D;&#x662F;&#x9488;&#x5BF9;&#x76EE;&#x5F55;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x9488;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x3002;visitFileFailed()&#x8C03;&#x7528;&#x5219;&#x662F;&#x5728;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x5931;&#x8D25;&#x7684;&#x65F6;&#x5019;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x7F3A;&#x5C11;&#x5408;&#x9002;&#x7684;&#x6743;&#x9650;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x9519;&#x8BEF;&#x3002;</p>
+<p>&#x4E0A;&#x8FF0;&#x56DB;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;FileVisitResult&#x679A;&#x4E3E;&#x5BF9;&#x8C61;&#x3002;&#x5177;&#x4F53;&#x7684;&#x53EF;&#x9009;&#x679A;&#x4E3E;&#x9879;&#x5305;&#x62EC;&#xFF1A;</p>
+<ul>
+<li>CONTINUE</li>
+<li>TERMINATE</li>
+<li>SKIP_SIBLINGS</li>
+<li>SKIP_SUBTREE</li>
+</ul>
+<p>&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x679A;&#x4E3E;&#x503C;&#x53EF;&#x4EE5;&#x8BA9;&#x8C03;&#x7528;&#x65B9;&#x51B3;&#x5B9A;&#x6587;&#x4EF6;&#x904D;&#x5386;&#x662F;&#x5426;&#x9700;&#x8981;&#x7EE7;&#x7EED;&#x3002;
+CONTINE&#x8868;&#x793A;&#x6587;&#x4EF6;&#x904D;&#x5386;&#x548C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E00;&#x6837;&#x7EE7;&#x7EED;&#x3002;</p>
+<p>TERMINATE&#x8868;&#x793A;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x9700;&#x8981;&#x7EC8;&#x6B62;&#x3002;</p>
+<p>SKIP_SIBLINGS&#x8868;&#x793A;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x7EE7;&#x7EED;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x5176;&#x4ED6;&#x540C;&#x7EA7;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x3002;</p>
+<p>SKIP_SUBTREE&#x8868;&#x793A;&#x7EE7;&#x7EED;&#x8BBF;&#x95EE;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x3002;&#x8FD9;&#x4E2A;&#x679A;&#x4E3E;&#x503C;&#x4EC5;&#x5728;preVisitDirectory()&#x4E2D;&#x8FD4;&#x56DE;&#x624D;&#x6709;&#x6548;&#x3002;&#x5982;&#x679C;&#x5728;&#x53E6;&#x5916;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x8FD4;&#x56DE;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x88AB;&#x7406;&#x89E3;&#x4E3A;CONTINE&#x3002;</p>
+<h3 id="searching-for-files">Searching For Files</h3>
+<p>&#x4E0B;&#x9762;&#x770B;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;walkFileTree()&#x6765;&#x5BFB;&#x627E;&#x4E00;&#x4E2A;README.txt&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code>Path rootPath = Paths.get(&quot;data&quot;);
+String fileToFind = File.separator + &quot;README.txt&quot;;
+
+try {
+  Files.walkFileTree(rootPath, new SimpleFileVisitor&lt;Path&gt;() {
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+      String fileString = file.toAbsolutePath().toString();
+      //System.out.println(&quot;pathString = &quot; + fileString);
+
+      if(fileString.endsWith(fileToFind)){
+        System.out.println(&quot;file found at path: &quot; + file.toAbsolutePath());
+        return FileVisitResult.TERMINATE;
+      }
+      return FileVisitResult.CONTINUE;
+    }
+  });
+} catch(IOException e){
+    e.printStackTrace();
+}
+</code></pre><h3 id="deleting-directies-recursively">Deleting Directies Recursively</h3>
+<p>Files.walkFileTree()&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4EE5;&#x53CA;&#x5185;&#x90E8;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x548C;&#x5B50;&#x76EE;&#x3002;Files.delete()&#x53EA;&#x7528;&#x7528;&#x4E8E;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7A7A;&#x76EE;&#x5F55;&#x3002;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x904D;&#x5386;&#x76EE;&#x5F55;&#xFF0C;&#x7136;&#x540E;&#x5728;visitFile()&#x63A5;&#x53E3;&#x4E2D;&#x4E09;&#x6B21;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x6700;&#x540E;&#x5728;postVisitDirectory()&#x5185;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x672C;&#x8EAB;&#x3002;</p>
+<pre><code>Path rootPath = Paths.get(&quot;data/to-delete&quot;);
+
+try {
+  Files.walkFileTree(rootPath, new SimpleFileVisitor&lt;Path&gt;() {
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+      System.out.println(&quot;delete file: &quot; + file.toString());
+      Files.delete(file);
+      return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+      Files.delete(dir);
+      System.out.println(&quot;delete dir: &quot; + dir.toString());
+      return FileVisitResult.CONTINUE;
+    }
+  });
+} catch(IOException e){
+  e.printStackTrace();
+}
+</code></pre><h2 id="additional-methods-in-the-files-class">Additional Methods in the Files Class</h2>
+<p>java.nio.file.Files&#x7C7B;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x5F88;&#x6709;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;&#x521B;&#x5EFA;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#xFF0C;&#x786E;&#x5B9A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;&#x53CA;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x7B49;&#x3002;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x53EF;&#x4EE5;&#x67E5;&#x9605;JavaDoc&#x4E2D;&#x7684;API&#x8BF4;&#x660E;&#x3002;</p>
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="java-nio-path.html" class="navigation navigation-prev " aria-label="Previous page: 15. Path路径">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="java-nio-asynchronousfilechannel.html" class="navigation navigation-next " aria-label="Next page: 17. AsynchronousFileChannel异步文件通道">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"16. Files文件","level":"1.17","depth":1,"next":{"title":"17. AsynchronousFileChannel异步文件通道","level":"1.18","depth":1,"path":"java-nio-asynchronousfilechannel.md","ref":"java-nio-asynchronousfilechannel.md","articles":[]},"previous":{"title":"15. Path路径","level":"1.16","depth":1,"path":"java-nio-path.md","ref":"java-nio-path.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","livereload"],"pluginsConfig":{"toc":{"addClass":true,"className":"toc"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java-nio-files.md","mtime":"2018-04-16T05:10:16.437Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-16T05:10:53.924Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,608 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6. 重试拦截器分析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="okhttp-bridge-interceptor.html" />
+    
+    
+    <link rel="prev" href="okhttp-interceptor-chain.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="okhttp-overview.html">
+            
+                <a href="okhttp-overview.html">
+            
+                    
+                    1. OkHttp初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="okhttp-okhttpclient.html">
+            
+                <a href="okhttp-okhttpclient.html">
+            
+                    
+                    2. OkHttpClient实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="okhttp-realcall.html">
+            
+                <a href="okhttp-realcall.html">
+            
+                    
+                    3. Call/RealCall源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="okhttp-dispatcher.html">
+            
+                <a href="okhttp-dispatcher.html">
+            
+                    
+                    4. 任务调度Dispatcher
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="okhttp-interceptor-chain.html">
+            
+                <a href="okhttp-interceptor-chain.html">
+            
+                    
+                    5. 链式拦截器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="okhttp-retry-and-followup-interceptors.html">
+            
+                <a href="okhttp-retry-and-followup-interceptors.html">
+            
+                    
+                    6. 重试拦截器分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="okhttp-bridge-interceptor.html">
+            
+                <a href="okhttp-bridge-interceptor.html">
+            
+                    
+                    7. 桥接拦截器分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="okhttp-cacheinterceptor.html">
+            
+                <a href="okhttp-cacheinterceptor.html">
+            
+                    
+                    8. 缓存拦截器分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >6. 重试拦截器分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><img src="http://7u2jir.com1.z0.glb.clouddn.com/img/2018-01-02-01.png" alt="img"></p>
+<h2 id="&#x524D;&#x8A00;">&#x524D;&#x8A00;</h2>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;<code>OkHttp</code>&#x81EA;&#x5E26;&#x4E86;5&#x4E2A;&#x539F;&#x751F;&#x62E6;&#x622A;&#x5668;&#xFF0C;&#x672C;&#x6587;&#x4E00;&#x8D77;&#x5206;&#x6790;&#x9ED8;&#x8BA4;&#x7684;<code>&#x91CD;&#x5B9A;&#x5411;&#x62E6;&#x622A;&#x5668;</code>&#x7684;&#x4F5C;&#x7528;&#x548C;&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="retryandfollowupinterceptor">RetryAndFollowUpInterceptor</h2>
+<p>&#x91CD;&#x8BD5;/&#x91CD;&#x5B9A;&#x5411;&#x62E6;&#x622A;&#x5668;&#xFF0C;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x52A0;&#x5165;&#x5217;&#x8868;&#x7684;&#x62E6;&#x622A;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x81EA;&#x52A8;&#x5904;&#x7406;&#x91CD;&#x5B9A;&#x5411;&#x548C;&#x8BF7;&#x6C42;&#x91CD;&#x8BD5;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x88AB;&#x53D6;&#x6D88;&#x4E86;&#x4F1A;&#x5411;&#x4E0A;&#x629B;&#x51FA;IO&#x5F02;&#x5E38;&#x3002;&#x5176;&#x9ED8;&#x8BA4;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x4E3A;<code>20</code>,&#x8FD9;&#x4E2A;&#x6B21;&#x6570;&#x548C;&#x5927;&#x591A;&#x6570;&#x7A0B;&#x5E8F;&#x7684;&#x4E00;&#x81F4;&#x3002;</p>
+<pre><code class="lang-java"> <span class="hljs-comment">/**
+  * How many redirects and auth challenges should we attempt? Chrome follows 21 redirects; Firefox,
+  * curl, and wget follow 20; Safari follows 16; and HTTP/1.0 recommends 5.
+  */</span>
+ <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> MAX_FOLLOW_UPS = <span class="hljs-number">20</span>;
+</code></pre>
+<p>&#x5B9E;&#x73B0;&#x91CD;&#x8BD5;&#x7684;&#x4E3B;&#x8981;&#x601D;&#x8DEF;&#x662F;<code>&#x65E0;&#x9650;&#x5FAA;&#x73AF;</code>+<code>&#x8BA1;&#x6B65;&#x5668;</code>&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x9519;&#x8BEF;&#x60C5;&#x51B5;&#xFF0C;&#x4F1A;&#x5411;&#x4E0A;&#x629B;&#x5F02;&#x5E38;&#xFF1B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> followUpCount = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>) {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">if</span> (++followUpCount &gt; MAX_FOLLOW_UPS) {
+    streamAllocation.release();
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ProtocolException(<span class="hljs-string">&quot;Too many follow-up requests: &quot;</span> + followUpCount);
+  }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x5728;&#x4E8E;&#xFF0C;&#x8BF7;&#x6C42;&#x4E0B;&#x4E00;&#x4E2A;&#x62E6;&#x622A;&#x5668;&#xFF0C;&#x6839;&#x636E;&#x5176;&#x8FD4;&#x56DE;&#x7684;Resposne&#x505A;&#x76F8;&#x5E94;&#x5904;&#x7406;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">try</span> {
+  response = realChain.proceed(request, streamAllocation, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+  releaseConnection = <span class="hljs-keyword">false</span>;
+} <span class="hljs-keyword">catch</span> (RouteException e) {
+  <span class="hljs-comment">// The attempt to connect via a route failed. The request will not have been sent.</span>
+  <span class="hljs-keyword">if</span> (!recover(e.getLastConnectException(), <span class="hljs-keyword">false</span>, request)) {
+    <span class="hljs-keyword">throw</span> e.getLastConnectException();
+  }
+  releaseConnection = <span class="hljs-keyword">false</span>;
+  <span class="hljs-keyword">continue</span>;
+} <span class="hljs-keyword">catch</span> (IOException e) {
+  <span class="hljs-comment">// An attempt to communicate with a server failed. The request may have been sent.</span>
+  <span class="hljs-keyword">boolean</span> requestSendStarted = !(e <span class="hljs-keyword">instanceof</span> ConnectionShutdownException);
+  <span class="hljs-keyword">if</span> (!recover(e, requestSendStarted, request)) <span class="hljs-keyword">throw</span> e;
+  releaseConnection = <span class="hljs-keyword">false</span>;
+  <span class="hljs-keyword">continue</span>;
+} <span class="hljs-keyword">finally</span> {
+  <span class="hljs-comment">// We&apos;re throwing an unchecked exception. Release any resources.</span>
+  <span class="hljs-keyword">if</span> (releaseConnection) {
+    streamAllocation.streamFailed(<span class="hljs-keyword">null</span>);
+    streamAllocation.release();
+  }
+}
+</code></pre>
+<p>&#x5728;&#x6574;&#x4E2A;&#x94FE;&#x5F0F;&#x8C03;&#x7528;&#x62E6;&#x622A;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;<code>Chain</code>&#x548C;<code>Interceptor</code>&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>RealCall, RealInterceptorChain:</p>
+<p><code>chain.proceed(originalRequest)</code> =&gt; <code>next Interceptor&#xFF08;RetryAndFollowUpInterceptor&#xFF09;</code> =&gt; <code>realChain.proceed(request, streamAllocation, null, null)</code> =&gt; <code>next Interceptor(BridgeInterceptor)</code> =&gt;</p>
+<h2 id="&#x4E0A;&#x629B;&#x5F02;&#x5E38;&#x5206;&#x6790;">&#x4E0A;&#x629B;&#x5F02;&#x5E38;&#x5206;&#x6790;</h2>
+<p>&#x79D1;&#x5B66;&#x6765;&#x8BB2;&#xFF0C;&#x91CD;&#x8BD5;&#x5668;&#x4E0D;&#x4F1A;&#x5BF9;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x91CD;&#x8BD5;&#xFF0C;&#x56E0;&#x6B64;&#x9488;&#x5BF9;&#x6709;&#x4E9B;&#x65E2;&#x5B9A;&#x60C5;&#x51B5;&#x4F1A;&#x76F4;&#x63A5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x4E2D;&#x65AD;&#x91CD;&#x8BD5;&#x673A;&#x5236;&#xFF1B;&#x90A3;&#x4E48;&#x90FD;&#x6709;&#x54EA;&#x4E9B;&#x4E2D;&#x65AD;&#x60C5;&#x51B5;&#x5462;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x9010;&#x4E00;&#x5206;&#x6790;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x5F02;&#x5E38;&#x7684;&#x4E0A;&#x629B;&#x903B;&#x8F91;&#x3002;</p>
+<ul>
+<li>RouteException</li>
+</ul>
+<p>&#x5728;chain&#x6267;&#x884C;proceed&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x5BF9;&#x5176;&#x52A0;catch&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x6355;&#x83B7;&#x5224;&#x65AD;&#x5373;&#x4E3A;<code>RouteException</code>&#xFF0C;&#x4EE3;&#x8868;&#x94FE;&#x8DEF;&#x5F02;&#x5E38;&#x3002;</p>
+<pre><code class="lang-java">} <span class="hljs-keyword">catch</span> (RouteException e) {
+<span class="hljs-comment">// The attempt to connect via a route failed. The request will not have been sent.</span>
+<span class="hljs-keyword">if</span> (!recover(e.getLastConnectException(), <span class="hljs-keyword">false</span>, request)) {
+  <span class="hljs-keyword">throw</span> e.getLastConnectException();
+}
+releaseConnection = <span class="hljs-keyword">false</span>;
+<span class="hljs-keyword">continue</span>;
+}
+</code></pre>
+<p>&#x5728;&#x5F02;&#x5E38;&#x5904;&#x7406;case&#x4E2D;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;<code>recover</code>&#x6765;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x4E2A;&#x91CD;&#x8BD5;&#xFF0C;&#x5426;&#x5219;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</p>
+<p><code>recover</code>&#x4E2D;&#x4F1A;&#x4F9D;&#x6B21;&#x5224;&#x65AD;&#x96C6;&#x4E2D;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li>client&#x914D;&#x7F6E;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x91CD;&#x8BD5;</li>
+<li>&#x8BF7;&#x6C42;&#x4F53;&#x662F;&#x5426;&#x53EF;&#x91CD;&#x590D;&#x53D1;&#x9001;</li>
+<li>&#x8BF7;&#x6C42;&#x80FD;&#x5426;&#x6062;&#x590D;&#xFF0C;&#x8FD9;&#x4E00;&#x79CD;&#x5305;&#x542B;&#x51E0;&#x79CD;&#x5F02;&#x5E38;&#xFF1A;ProtocolException&#xFF0C;SocketTimeoutException&#xFF0C;CertificateException&#xFF0C;SSLPeerUnverifiedException</li>
+<li>&#x662F;&#x5426;&#x8FBE;&#x5230;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x4E0A;&#x9650;</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * Report and attempt to recover from a failure to communicate with a server. Returns true if
+ * {<span class="hljs-doctag">@code</span> e} is recoverable, or false if the failure is permanent. Requests with a body can only
+ * be recovered if the body is buffered or if the failure occurred before the request has been
+ * sent.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">recover</span><span class="hljs-params">(IOException e, <span class="hljs-keyword">boolean</span> requestSendStarted, Request userRequest)</span> </span>{
+  streamAllocation.streamFailed(e);
+
+  <span class="hljs-comment">// The application layer has forbidden retries.</span>
+  <span class="hljs-keyword">if</span> (!client.retryOnConnectionFailure()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+  <span class="hljs-comment">// We can&apos;t send the request body again.</span>
+  <span class="hljs-keyword">if</span> (requestSendStarted &amp;&amp; userRequest.body() <span class="hljs-keyword">instanceof</span> UnrepeatableRequestBody) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+  <span class="hljs-comment">// This exception is fatal.</span>
+  <span class="hljs-keyword">if</span> (!isRecoverable(e, requestSendStarted)) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+  <span class="hljs-comment">// No more routes to attempt.</span>
+  <span class="hljs-keyword">if</span> (!streamAllocation.hasMoreRoutes()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+  <span class="hljs-comment">// For failure recovery, use the same route selector with a new connection.</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+</code></pre>
+<ul>
+<li>IOException</li>
+</ul>
+<p>&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;case&#x662F;&#x5E38;&#x89C1;&#x7684;IO&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x901A;&#x8FC7;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;<code>ConnectionShutdownException</code>&#x786E;&#x5B9A;&#x662F;&#x5426;&#x53D1;&#x9001;&#x4E86;&#x8BF7;&#x6C42;&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;<code>recover</code>&#x903B;&#x8F91;&#x3002;</p>
+<pre><code class="lang-java">} <span class="hljs-keyword">catch</span> (IOException e) {
+  <span class="hljs-comment">// An attempt to communicate with a server failed. The request may have been sent.</span>
+  <span class="hljs-keyword">boolean</span> requestSendStarted = !(e <span class="hljs-keyword">instanceof</span> ConnectionShutdownException);
+  <span class="hljs-keyword">if</span> (!recover(e, requestSendStarted, request)) <span class="hljs-keyword">throw</span> e;
+  releaseConnection = <span class="hljs-keyword">false</span>;
+  <span class="hljs-keyword">continue</span>;
+}
+</code></pre>
+<ul>
+<li>ProtocolException</li>
+</ul>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x5224;&#x65AD;&#x91CD;&#x8BD5;&#x6B21;&#x6570;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> (++followUpCount &gt; MAX_FOLLOW_UPS) {
+  streamAllocation.release();
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ProtocolException(<span class="hljs-string">&quot;Too many follow-up requests: &quot;</span> + followUpCount);
+}
+</code></pre>
+<ul>
+<li>HttpRetryException</li>
+</ul>
+<p>&#x5224;&#x65AD;&#x8BF7;&#x6C42;&#x4F53;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x8BF7;&#x6C42;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> (followUp.body() <span class="hljs-keyword">instanceof</span> UnrepeatableRequestBody) {
+  streamAllocation.release();
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> HttpRetryException(<span class="hljs-string">&quot;Cannot retry streamed HTTP body&quot;</span>, response.code());
+}
+</code></pre>
+<ul>
+<li>IllegalStateException</li>
+</ul>
+<p>&#x6700;&#x540E;&#x4E00;&#x79CD;&#x5224;&#x65AD;<code>streamAllocation</code>&#x7684;&#x72B6;&#x6001;</p>
+<pre><code class="lang-java">} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (streamAllocation.codec() != <span class="hljs-keyword">null</span>) {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Closing the body of &quot;</span> + response
+      + <span class="hljs-string">&quot; didn&apos;t close its backing stream. Bad interceptor?&quot;</span>);
+}
+</code></pre>
+<h2 id="&#x91CD;&#x8BD5;&#x91CD;&#x5B9A;&#x5411;&#x72B6;&#x6001;&#x7801;">&#x91CD;&#x8BD5;/&#x91CD;&#x5B9A;&#x5411;&#x72B6;&#x6001;&#x7801;</h2>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x4E86;&#x5F88;&#x591A;&#x91CD;&#x8BD5;&#x7684;&#x903B;&#x8F91;&#x5224;&#x65AD;&#xFF0C;&#x90A3;&#x4E48;&#x5230;&#x5E95;&#x54EA;&#x4E9B;&#x60C5;&#x51B5;&#x4F1A;&#x89E6;&#x53D1;&#x94FE;&#x5F0F;&#x91CD;&#x8BD5;&#x673A;&#x5236;&#x5462;&#xFF1F;&#x8FD9;&#x4E2A;&#x9700;&#x8981;&#x9700;&#x8981;&#x7ED3;&#x5408;HTTP&#x7684;&#x72B6;&#x6001;&#x7801;&#x6765;&#x770B;&#x3002;HTTP&#x7684;&#x76F8;&#x5173;&#x534F;&#x8BAE;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#xFF1A;<a href="https://www.w3.org/Protocols/" target="_blank">https://www.w3.org/Protocols/</a></p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x9010;&#x4E00;&#x5206;&#x6790;<code>OkHttp</code>&#x8BC6;&#x522B;&#x7684;&#x51E0;&#x79CD;&#x5E38;&#x89C1;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_CLIENT_TIMEOUT;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_MOVED_PERM;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_MOVED_TEMP;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_MULT_CHOICE;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_PROXY_AUTH;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_SEE_OTHER;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> okhttp3.internal.http.StatusLine.HTTP_PERM_REDIRECT;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> okhttp3.internal.http.StatusLine.HTTP_TEMP_REDIRECT
+</code></pre>
+<p>&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x72B6;&#x6001;&#x7801;&#x6765;&#x81EA;<code>java.net.HttpURLConnection</code>,&#x4E5F;&#x6709;&#x4E24;&#x4E2A;&#x662F;&#x5B9A;&#x4E49;&#x5728;<code>okhttp3.internal.http.StatusLine</code>&#x91CC;&#x9762;&#x3002;</p>
+<ul>
+<li>HTTP_PROXY_AUTH | 407</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * HTTP Status-Code 407: Proxy Authentication Required.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> HTTP_PROXY_AUTH = <span class="hljs-number">407</span>;
+</code></pre>
+<p>&#x6CE8;&#x91CA;&#x5199;&#x7684;&#x5F88;&#x660E;&#x767D;&#x4E86;&#xFF0C;407&#x662F;server&#x8981;&#x6C42;&#x6743;&#x9650;&#xFF0C;&#x5C5E;&#x4E8E;&#x9274;&#x6743;&#x7C7B;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">case</span> HTTP_PROXY_AUTH:
+  Proxy selectedProxy = route != <span class="hljs-keyword">null</span>
+      ? route.proxy()
+      : client.proxy();
+  <span class="hljs-keyword">if</span> (selectedProxy.type() != Proxy.Type.HTTP) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ProtocolException(<span class="hljs-string">&quot;Received HTTP_PROXY_AUTH (407) code while not using proxy&quot;</span>);
+  }
+  <span class="hljs-keyword">return</span> client.proxyAuthenticator().authenticate(route, userResponse);
+</code></pre>
+<ul>
+<li>HTTP_UNAUTHORIZED | 401</li>
+</ul>
+<p>401&#x662F;&#x9274;&#x6743;&#x5931;&#x8D25;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6743;&#x9650;&#x4E0D;&#x8DB3;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * HTTP Status-Code 401: Unauthorized.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> HTTP_UNAUTHORIZED = <span class="hljs-number">401</span>;
+</code></pre>
+<ul>
+<li>HTTP_PERM_REDIRECT | 308</li>
+</ul>
+<p>&#x91CD;&#x5B9A;&#x5411;&#x8FD9;&#x4E00;&#x5757;&#xFF0C;&#x6709;&#x6C38;&#x4E45;&#x91CD;&#x5B9A;&#x5411;308&#x548C;&#x4E34;&#x65F6;&#x91CD;&#x5B9A;&#x5411;307&#xFF0C;&#x5904;&#x7406;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x53EA;&#x6709;GET/HEAD&#x8BF7;&#x6C42;&#x5141;&#x8BB8;&#x91CD;&#x5B9A;&#x5411;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">case</span> HTTP_PERM_REDIRECT:
+<span class="hljs-keyword">case</span> HTTP_TEMP_REDIRECT:
+  <span class="hljs-comment">// &quot;If the 307 or 308 status code is received in response to a request other than GET</span>
+  <span class="hljs-comment">// or HEAD, the user agent MUST NOT automatically redirect the request&quot;</span>
+  <span class="hljs-keyword">if</span> (!method.equals(<span class="hljs-string">&quot;GET&quot;</span>) &amp;&amp; !method.equals(<span class="hljs-string">&quot;HEAD&quot;</span>)) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  }
+ <span class="hljs-comment">// fall-through</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">/** Numeric status code, 307: Temporary Redirect. */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> HTTP_TEMP_REDIRECT = <span class="hljs-number">307</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> HTTP_PERM_REDIRECT = <span class="hljs-number">308</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> HTTP_CONTINUE = <span class="hljs-number">100</span>;
+</code></pre>
+<ul>
+<li>HTTP_MULT_CHOICE | 300</li>
+</ul>
+<p>&#x5305;&#x62EC;&#x524D;&#x9762;&#x7684;307&#xFF0C;308&#x4EE5;&#x53CA;300&#xFF0C;301&#xFF0C;302&#xFF0C;303&#x90FD;&#x8D2F;&#x7A7F;&#x7EDF;&#x4E00;&#x5904;&#x7406;&#xFF1A;
+&#x5982;&#x679C;&#x914D;&#x7F6E;&#x5141;&#x8BB8;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x5219;&#x6839;&#x636E;header&#x4E2D;&#x7684;<code>Location</code>&#x5B57;&#x6BB5;&#x83B7;&#x53D6;&#x65B0;&#x7684;&#x76EE;&#x6807;url&#xFF0C;&#x6784;&#x9020;&#x65B0;&#x7684;Request&#x3002;</p>
+<pre><code class="lang-java">  <span class="hljs-comment">// fall-through</span>
+<span class="hljs-keyword">case</span> HTTP_MULT_CHOICE:
+<span class="hljs-keyword">case</span> HTTP_MOVED_PERM:
+<span class="hljs-keyword">case</span> HTTP_MOVED_TEMP:
+<span class="hljs-keyword">case</span> HTTP_SEE_OTHER:
+  <span class="hljs-comment">// Does the client allow redirects?</span>
+  <span class="hljs-keyword">if</span> (!client.followRedirects()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+
+  String location = userResponse.header(<span class="hljs-string">&quot;Location&quot;</span>);
+  <span class="hljs-keyword">if</span> (location == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  HttpUrl url = userResponse.request().url().resolve(location);
+
+  <span class="hljs-comment">// Don&apos;t follow redirects to unsupported protocols.</span>
+  <span class="hljs-keyword">if</span> (url == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-comment">// If configured, don&apos;t follow redirects between SSL and non-SSL.</span>
+  <span class="hljs-keyword">boolean</span> sameScheme = url.scheme().equals(userResponse.request().url().scheme());
+  <span class="hljs-keyword">if</span> (!sameScheme &amp;&amp; !client.followSslRedirects()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+
+  <span class="hljs-comment">// Most redirects don&apos;t include a request body.</span>
+  Request.Builder requestBuilder = userResponse.request().newBuilder();
+  <span class="hljs-keyword">if</span> (HttpMethod.permitsRequestBody(method)) {
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> maintainBody = HttpMethod.redirectsWithBody(method);
+    <span class="hljs-keyword">if</span> (HttpMethod.redirectsToGet(method)) {
+      requestBuilder.method(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-keyword">null</span>);
+    } <span class="hljs-keyword">else</span> {
+      RequestBody requestBody = maintainBody ? userResponse.request().body() : <span class="hljs-keyword">null</span>;
+      requestBuilder.method(method, requestBody);
+    }
+    <span class="hljs-keyword">if</span> (!maintainBody) {
+      requestBuilder.removeHeader(<span class="hljs-string">&quot;Transfer-Encoding&quot;</span>);
+      requestBuilder.removeHeader(<span class="hljs-string">&quot;Content-Length&quot;</span>);
+      requestBuilder.removeHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>);
+    }
+  }
+
+  <span class="hljs-comment">// When redirecting across hosts, drop all authentication headers. This</span>
+  <span class="hljs-comment">// is potentially annoying to the application layer since they have no</span>
+  <span class="hljs-comment">// way to retain them.</span>
+  <span class="hljs-keyword">if</span> (!sameConnection(userResponse, url)) {
+    requestBuilder.removeHeader(<span class="hljs-string">&quot;Authorization&quot;</span>);
+  }
+
+  <span class="hljs-keyword">return</span> requestBuilder.url(url).build();
+</code></pre>
+<ul>
+<li>HTTP_CLIENT_TIMEOUT | 408</li>
+</ul>
+<p>&#x6700;&#x540E;&#x4E00;&#x79CD;&#x662F;408,&#x8BF7;&#x6C42;&#x8D85;&#x65F6;&#xFF0C;&#x4ECE;&#x6CE8;&#x91CA;&#x4E0A;&#x770B;&#x8BF4;&#x662F;&#x5B9E;&#x9645;&#x5F88;&#x5C11;&#x7528;&#x5230;408&#xFF0C;&#x4E0D;&#x8FC7;HAProxy&#x53EF;&#x80FD;&#x4F1A;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x7801;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0D;&#x9700;&#x8981;&#x66F4;&#x6362;url&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x539F;&#x6765;&#x7684;request&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">case</span> HTTP_CLIENT_TIMEOUT:
+  <span class="hljs-comment">// 408&apos;s are rare in practice, but some servers like HAProxy use this response code. The</span>
+  <span class="hljs-comment">// spec says that we may repeat the request without modifications. Modern browsers also</span>
+  <span class="hljs-comment">// repeat the request (even non-idempotent ones.)</span>
+  <span class="hljs-keyword">if</span> (!client.retryOnConnectionFailure()) {
+    <span class="hljs-comment">// The application layer has directed us not to retry the request.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  }
+
+  <span class="hljs-keyword">if</span> (userResponse.request().body() <span class="hljs-keyword">instanceof</span> UnrepeatableRequestBody) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  }
+
+  <span class="hljs-keyword">if</span> (userResponse.priorResponse() != <span class="hljs-keyword">null</span>
+      &amp;&amp; userResponse.priorResponse().code() == HTTP_CLIENT_TIMEOUT) {
+    <span class="hljs-comment">// We attempted to retry and got another timeout. Give up.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+  }
+
+  <span class="hljs-keyword">return</span> userResponse.request();
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="okhttp-interceptor-chain.html" class="navigation navigation-prev " aria-label="Previous page: 5. 链式拦截器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="okhttp-bridge-interceptor.html" class="navigation navigation-next " aria-label="Next page: 7. 桥接拦截器分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6. 重试拦截器分析","level":"1.7","depth":1,"next":{"title":"7. 桥接拦截器分析","level":"1.8","depth":1,"path":"okhttp-bridge-interceptor.md","ref":"okhttp-bridge-interceptor.md","articles":[]},"previous":{"title":"5. 链式拦截器","level":"1.6","depth":1,"path":"okhttp-interceptor-chain.md","ref":"okhttp-interceptor-chain.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"okhttp-retry-and-followup-interceptors.md","mtime":"2018-04-16T05:13:34.808Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-16T05:13:55.378Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
