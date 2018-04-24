@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>读懂分析报告 · Android性能优化漫谈</title>
+        <title>网络请求优化 · Android性能优化漫谈</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="use-nimbledroid.html" />
+    <link rel="next" href="bandwidth.html" />
     
     
-    <link rel="prev" href="app-launch.html" />
+    <link rel="prev" href="../shrink/apksize.html" />
     
 
     </head>
@@ -123,9 +123,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="./">
+        <li class="chapter " data-level="2.1" data-path="../nimbledroid/">
             
-                <a href="./">
+                <a href="../nimbledroid/">
             
                     
                         <b>2.1.</b>
@@ -138,9 +138,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="service.html">
+        <li class="chapter " data-level="2.2" data-path="../nimbledroid/service.html">
             
-                <a href="service.html">
+                <a href="../nimbledroid/service.html">
             
                     
                         <b>2.2.</b>
@@ -153,9 +153,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="app-launch.html">
+        <li class="chapter " data-level="2.3" data-path="../nimbledroid/app-launch.html">
             
-                <a href="app-launch.html">
+                <a href="../nimbledroid/app-launch.html">
             
                     
                         <b>2.3.</b>
@@ -168,9 +168,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="reports.html">
+        <li class="chapter " data-level="2.4" data-path="../nimbledroid/reports.html">
             
-                <a href="reports.html">
+                <a href="../nimbledroid/reports.html">
             
                     
                         <b>2.4.</b>
@@ -183,9 +183,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="use-nimbledroid.html">
+        <li class="chapter " data-level="2.5" data-path="../nimbledroid/use-nimbledroid.html">
             
-                <a href="use-nimbledroid.html">
+                <a href="../nimbledroid/use-nimbledroid.html">
             
                     
                         <b>2.5.</b>
@@ -481,9 +481,9 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../others/network.html">
+        <li class="chapter active" data-level="6.1" data-path="network.html">
             
-                <a href="../others/network.html">
+                <a href="network.html">
             
                     
                         <b>6.1.</b>
@@ -496,9 +496,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../others/bandwidth.html">
+        <li class="chapter " data-level="6.2" data-path="bandwidth.html">
             
-                <a href="../others/bandwidth.html">
+                <a href="bandwidth.html">
             
                     
                         <b>6.2.</b>
@@ -511,9 +511,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.3" data-path="../others/battery.html">
+        <li class="chapter " data-level="6.3" data-path="battery.html">
             
-                <a href="../others/battery.html">
+                <a href="battery.html">
             
                     
                         <b>6.3.</b>
@@ -526,9 +526,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.4" data-path="../others/historian2x.html">
+        <li class="chapter " data-level="6.4" data-path="historian2x.html">
             
-                <a href="../others/historian2x.html">
+                <a href="historian2x.html">
             
                     
                         <b>6.4.</b>
@@ -623,7 +623,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >读懂分析报告</a>
+        <a href=".." >网络请求优化</a>
     </h1>
 </div>
 
@@ -638,9 +638,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;"><b></b>1.4 &#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;</a></li></ul></div><a href="#14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;"><a name="14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;" class="anchor-navigation-ex-anchor" href="#14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4 &#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;</h1>
-<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
-2018-03-19
+                                <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2018-04-16
 </span></footer>
                                 
                                 </section>
@@ -668,12 +667,12 @@
 
             
                 
-                <a href="app-launch.html" class="navigation navigation-prev " aria-label="Previous page: App启动分析">
+                <a href="../shrink/apksize.html" class="navigation navigation-prev " aria-label="Previous page: 安装包大小监控">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="use-nimbledroid.html" class="navigation navigation-next " aria-label="Next page: 案例：使用NimbleDroid分析App">
+                <a href="bandwidth.html" class="navigation navigation-next " aria-label="Next page: 流量消耗统计">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -684,7 +683,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"读懂分析报告","level":"2.4","depth":1,"next":{"title":"案例：使用NimbleDroid分析App","level":"2.5","depth":1,"path":"nimbledroid/use-nimbledroid.md","ref":"nimbledroid/use-nimbledroid.md","articles":[]},"previous":{"title":"App启动分析","level":"2.3","depth":1,"path":"nimbledroid/app-launch.md","ref":"nimbledroid/app-launch.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"nimbledroid/reports.md","mtime":"2018-03-19T12:15:04.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-24T12:13:39.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"网络请求优化","level":"6.1","depth":1,"next":{"title":"流量消耗统计","level":"6.2","depth":1,"path":"others/bandwidth.md","ref":"others/bandwidth.md","articles":[]},"previous":{"title":"安装包大小监控","level":"5.5","depth":1,"path":"shrink/apksize.md","ref":"shrink/apksize.md","articles":[]},"dir":"neutral"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"others/network.md","mtime":"2018-04-16T13:17:28.671Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-24T12:13:39.220Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
