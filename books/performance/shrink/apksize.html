@@ -1,0 +1,904 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>安装包大小监控 · Android性能优化漫谈</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../others/network.html" />
+    
+    
+    <link rel="prev" href="resguard.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">快速分析：NimbleDroid指南</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../nimbledroid/">
+            
+                <a href="../nimbledroid/">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    NimbleDroid初识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../nimbledroid/service.html">
+            
+                <a href="../nimbledroid/service.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    NimbleDroid产品功能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../nimbledroid/app-launch.html">
+            
+                <a href="../nimbledroid/app-launch.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    App启动分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../nimbledroid/reports.html">
+            
+                <a href="../nimbledroid/reports.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    读懂分析报告
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../nimbledroid/use-nimbledroid.html">
+            
+                <a href="../nimbledroid/use-nimbledroid.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    案例：使用NimbleDroid分析App
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">卡顿优化与监控</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../laggy/fps.html">
+            
+                <a href="../laggy/fps.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    帧率与流畅度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../laggy/layout-inspector.html">
+            
+                <a href="../laggy/layout-inspector.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Layout Inspector与页面布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../laggy/systrace.html">
+            
+                <a href="../laggy/systrace.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Systrace使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../laggy/inspect-gpu-rendering.html">
+            
+                <a href="../laggy/inspect-gpu-rendering.html">
+            
+                    
+                        <b>3.4.</b>
+                    
+                    GPU 绘制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../laggy/cpu-profile.html">
+            
+                <a href="../laggy/cpu-profile.html">
+            
+                    
+                        <b>3.5.</b>
+                    
+                    CPU Profile分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../laggy/strict-mode.html">
+            
+                <a href="../laggy/strict-mode.html">
+            
+                    
+                        <b>3.6.</b>
+                    
+                    严格模式也能干大事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../laggy/block-detect.html">
+            
+                <a href="../laggy/block-detect.html">
+            
+                    
+                        <b>3.7.</b>
+                    
+                    卡顿检测工具分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../laggy/anr.html">
+            
+                <a href="../laggy/anr.html">
+            
+                    
+                        <b>3.8.</b>
+                    
+                    ANR常规分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">内存占用与泄漏分析</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../memory/gc.html">
+            
+                <a href="../memory/gc.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    内存分配与回收
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../memory/analyze.html">
+            
+                <a href="../memory/analyze.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    内存使用分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../memory/leak.html">
+            
+                <a href="../memory/leak.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    内存泄漏分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../memory/monitor.html">
+            
+                <a href="../memory/monitor.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    内存监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安装包瘦身</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="what.html">
+            
+                <a href="what.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    瘦身思路与方向介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="lint.html">
+            
+                <a href="lint.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Lint工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="image.html">
+            
+                <a href="image.html">
+            
+                    
+                        <b>5.3.</b>
+                    
+                    图片优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="resguard.html">
+            
+                <a href="resguard.html">
+            
+                    
+                        <b>5.4.</b>
+                    
+                    Andresguard工具使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.5" data-path="apksize.html">
+            
+                <a href="apksize.html">
+            
+                    
+                        <b>5.5.</b>
+                    
+                    安装包大小监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他优化</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../others/network.html">
+            
+                <a href="../others/network.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    网络请求优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../others/bandwidth.html">
+            
+                <a href="../others/bandwidth.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    流量消耗统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../others/battery.html">
+            
+                <a href="../others/battery.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    减少耗电
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../others/historian2x.html">
+            
+                <a href="../others/historian2x.html">
+            
+                    
+                        <b>6.4.</b>
+                    
+                    Battery Historian 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">监控平台</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../platform/experience.html">
+            
+                <a href="../platform/experience.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    业内一些公司的平台化实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../platform/godeye.html">
+            
+                <a href="../platform/godeye.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    天眼监控平台的功能和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../platform/module-analyze.html">
+            
+                <a href="../platform/module-analyze.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    分析监控平台的个模块实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >安装包大小监控</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;"><b></b>&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#apk&#x5927;&#x5C0F;"><b></b>APK&#x5927;&#x5C0F;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x5B89;&#x88C5;&#x5305;&#x5BF9;&#x6BD4;"><b></b>&#x5B89;&#x88C5;&#x5305;&#x5BF9;&#x6BD4;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x5DE5;&#x5177;&#x5206;&#x6790;"><b></b>&#x5DE5;&#x5177;&#x5206;&#x6790;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x811A;&#x672C;&#x4F7F;&#x7528;"><b></b>&#x811A;&#x672C;&#x4F7F;&#x7528;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;"><a name="&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x76D1;&#x63A7;</h1>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;&#x8FC7;&#x5982;&#x4F55;&#x4F7F;&#x7528;Golang&#x6765;&#x5F00;&#x53D1;&#x811A;&#x672C;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;homebrew&#x6765;&#x53D1;&#x5E03;&#x3002;</p>
+<p>&#x5728;&#x5BF9;&#x5B89;&#x88C5;&#x5305;&#x7684;&#x5206;&#x6790;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x73B0;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x6709;&#x8DA3;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x8BB0;&#x5F55;&#x5728;&#x6B64;&#x3002;</p>
+<h2 id="apk&#x5927;&#x5C0F;"><a name="apk&#x5927;&#x5C0F;" class="anchor-navigation-ex-anchor" href="#apk&#x5927;&#x5C0F;"><i class="fa fa-link" aria-hidden="true"></i></a>APK&#x5927;&#x5C0F;</h2>
+<p>&#x5728;&#x771F;&#x6B63;&#x5206;&#x6790;&#x5B89;&#x88C5;&#x5305;&#x4E4B;&#x524D;&#xFF0C;&#x6709;&#x5FC5;&#x8981;&#x518D;&#x8BB2;&#x4E00;&#x4E0B;&#x5927;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E09;&#x4E2A;&#x8BA1;&#x7B97;&#x5F0F;&#x5F00;&#x59CB;&#xFF1A;</p>
+<ul>
+<li>&#x6587;&#x4EF6;&#x5927;&#x5C0F;</li>
+<li>&#x78C1;&#x76D8;&#x5927;&#x5C0F;</li>
+<li>APK&#x4E0B;&#x8F7D;&#x5927;&#x5C0F;</li>
+</ul>
+<p>&#x6309;&#x5957;&#x8DEF;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x91CC;&#x5E94;&#x8BE5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x5927;&#x5C0F;&#x548C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;APK&#x4E0B;&#x8F7D;&#x5927;&#x5C0F;&#x5462;&#xFF1F;</p>
+<p><img src="http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-1.png" alt="apk-size"></p>
+<p><img src="http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-2.png" alt="apk-size"></p>
+<ul>
+<li>&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x5C31;&#x662F;&#x6587;&#x4EF6;&#x7684;&#x771F;&#x5B9E;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x6BD4;&#x5982;2048bytes, &#x78C1;&#x76D8;&#x5927;&#x5C0F;&#x662F;&#x6307;&#x6587;&#x4EF6;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#xFF1B;</li>
+<li>&#x5927;&#x4E8E;&#x6587;&#x4EF6;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF0C;&#x4E00;&#x822C;&#x4EE5;1000&#x8FDB;&#x884C;&#x6362;&#x7B97;&#xFF1B;</li>
+<li>&#x4E0B;&#x8F7D;&#x5927;&#x5C0F;&#x6307;&#x7684;&#x662F;&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x4E00;&#x822C;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF0C;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x662F;&#x5426;&#x6709;&#x8FDB;&#x884C;&#x4E8C;&#x6B21;&#x538B;&#x7F29;&#x5904;&#x7406;&#xFF1B;</li>
+</ul>
+<p>&#x6839;&#x636E;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#xFF0C;&#x9488;&#x5BF9;APK&#x5B89;&#x88C5;&#x5305;&#x5B58;&#x5728;3&#x4E2D;&#x5927;&#x5C0F;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x7684;&#x662F;&#x54EA;&#x79CD;&#x5462;&#xFF1F;</p>
+<blockquote>
+<p>&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x548C;&#x4E0B;&#x8F7D;&#x5927;&#x5C0F;</p>
+</blockquote>
+<p>Android Blog&#x66FE;&#x7ECF;&#x51FA;&#x8FC7;&#x4E00;&#x7BC7;&#x535A;&#x6587;&#x5BF9;&#x8FD9;Google Play&#x6D89;&#x53CA;&#x7684;APK&#x4E0B;&#x8F7D;&#x5927;&#x5C0F;&#x505A;&#x8FC7;&#x7B80;&#x5355;&#x5206;&#x6790;, &#x8BE6;&#x89C1;<a href="https://android-developers.googleblog.com/2016/07/improvements-for-smaller-app-downloads.html" target="_blank">Improvements for smaller app downloads on Google Play</a></p>
+<p>&#x5E76;&#x4E14;&#x7531;&#x6B64;&#x6211;&#x4EEC;&#x5F97;&#x51FA;&#x4E00;&#x4E2A;&#x7ED3;&#x8BBA;&#xFF1A;</p>
+<blockquote>
+<p>APK&#x7626;&#x8EAB;&#x4E0D;&#x8981;&#x8FDD;&#x53CD;Android&#x7684;&#x8BBE;&#x8BA1;&#x610F;&#x56FE;&#xFF0C;APK&#x5185;&#x7684;&#x8D44;&#x6E90;&#x5E76;&#x4E0D;&#x662F;&#x523B;&#x610F;&#x968F;&#x610F;&#x538B;&#x7F29;&#x7684;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;*.so, resources.arsc</p>
+</blockquote>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;Play&#x5728;&#x5347;&#x7EA7;&#x5E94;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x91C7;&#x7528;&#x589E;&#x91CF;&#x66F4;&#x65B0;&#x6765;&#x51CF;&#x5C11;&#x6240;&#x9700;&#x8981;&#x7684;&#x4E0B;&#x8F7D;&#x7684;&#x5B57;&#x8282;&#x6570;&#xFF0C;<a href="http://www.daemonology.net/bsdiff/" target="_blank">bsdiff (created by Colin Percival1)</a>&#x3002;
+&#x4ED6;&#x7684;&#x4E3B;&#x8981;&#x538B;&#x7F29;&#x70B9;&#x662F;app&#x4E2D;&#x7684;native&#x4EE3;&#x7801;&#xFF0C;&#x56E0;&#x6B64;so&#x5728;apk&#x4E2D;&#x6700;&#x597D;&#x662F;&#x672A;&#x538B;&#x7F29;&#x7684;stored&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x6570;&#x636E;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th><strong>Patch Description</strong></th>
+<th><strong>Previous patch size</strong></th>
+<th><strong>Bsdiff Size</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M46 to M47 major update</td>
+<td>22.8 MB</td>
+<td>12.9 MB</td>
+</tr>
+<tr>
+<td>M47 minor update</td>
+<td>15.3 MB</td>
+<td>3.6 MB</td>
+</tr>
+</tbody>
+</table>
+<pre><code>Bsdiff is specifically targeted to produce more efficient deltas of native libraries by taking advantage of the specific ways in which compiled native code changes between versions. To be most effective, native libraries should be stored uncompressed (compression interferes with delta algorithms).
+</code></pre><p>&#x636E;&#x8BF4;bsdiff&#x7B97;&#x6CD5;&#x6BD4;&#x4EE5;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x589E;&#x91CF;&#x7B97;&#x6CD5;&#x538B;&#x7F29;&#x6548;&#x679C;&#x66F4;&#x597D;&#xFF0C;&#x7136;&#x800C;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x672C;&#x6587;&#x5173;&#x6CE8;&#x7684;&#x91CD;&#x70B9;&#xFF1A;</p>
+<pre><code>Apps that don&#x2019;t have uncompressed native libraries can see a 5% decrease in size on average, compared to the previous delta algorithm.
+</code></pre><p>&#x53E6;&#x5916;&#x4F7F;&#x7528;&#x4E86;<a href="http://xdelta.org/" target="_blank">xdelta&#x7B97;&#x6CD5;</a>&#x751F;&#x6210;apk&#x589E;&#x91CF;&#x5305;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x5728;Google Play&#x4E0A;&#x4E0A;&#x67B6;&#x7684;App&#x9700;&#x8981;&#x5173;&#x6CE8;<code>Downlaod Size</code>&#x548C;<code>Update Size</code>&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#x662F;&#x76F4;&#x63A5;&#x5C55;&#x793A;&#x5728;Play Store&#x4E2D;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E24;&#x4E2A;&#x503C;&#x90FD;&#x4E0D;&#x662F;APK&#x81EA;&#x8EAB;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<p>Chrome&#x793A;&#x4F8B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Compressed Native Library</th>
+<th>Uncompressed Native Library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APK Size</td>
+<td>39MB</td>
+<td>52MB (+25%)</td>
+</tr>
+<tr>
+<td>Download size (install)</td>
+<td>29MB</td>
+<td>29MB (no change)</td>
+</tr>
+<tr>
+<td>Download size (update)</td>
+<td>29MB</td>
+<td>21MB (-29%)</td>
+</tr>
+<tr>
+<td>Disk size</td>
+<td>71MB</td>
+<td>52MB (-26%)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x5B89;&#x88C5;&#x5305;&#x5BF9;&#x6BD4;"><a name="&#x5B89;&#x88C5;&#x5305;&#x5BF9;&#x6BD4;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#x5305;&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;&#x5305;&#x5BF9;&#x6BD4;</h2>
+<p>&#x57FA;&#x4E8E;Jenkins&#x7684;&#x81EA;&#x52A8;&#x5316;&#x6784;&#x5EFA;&#x6D41;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5BF9;&#x6BCF;&#x6B21;&#x6784;&#x5EFA;APK&#x5927;&#x5C0F;&#x5206;&#x6790;&#x3002;&#x4ECE;&#x800C;&#x5F62;&#x6210;&#x7EDF;&#x8BA1;&#x56FE;&#x8868;&#x3002;&#x5728;&#x5206;&#x6790;&#x6700;&#x8FD1;&#x51E0;&#x4E2A;&#x5168;&#x91CF;&#x7248;&#x672C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x7136;&#x4E5F;&#x9700;&#x8981;&#x7C7B;&#x4F3C;&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x9700;&#x8981;&#x5BF9;&#x6BD4;&#x51E0;&#x4E2A;&#x7248;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x5B89;&#x88C5;&#x5305;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#xFF0C;&#x4EE5;&#x53CA;&#x6BCF;&#x4E2A;&#x5B89;&#x88C5;&#x5305;&#x4E2D;&#x7684;&#x51E0;&#x4E2A;&#x6838;&#x5FC3;&#x5757;&#x7684;&#x5927;&#x5C0F;&#x53D8;&#x5316;&#x3002;</p>
+<p>&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x6700;&#x7EC8;&#x6548;&#x679C;&#x56FE;&#xFF1A;</p>
+<p><img src="http://7u2jir.com1.z0.glb.clouddn.com/img/apk-size-line.png" alt="apk-size-line"></p>
+<p><img src="http://7u2jir.com1.z0.glb.clouddn.com/img/apk-version-details.png" alt="apk-version-details"></p>
+<p>&#x4E00;&#x4E2A;apk&#x6807;&#x51C6;&#x7684;apk&#x4E2D;&#x5FC5;&#x7136;&#x4F1A;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x5757;&#x5185;&#x5BB9;&#xFF1A;</p>
+<ul>
+<li>AndroidManifest.xml</li>
+<li>resources.arsc</li>
+<li>classesN.dex</li>
+<li>res/</li>
+<li>assets/</li>
+<li>lib/</li>
+<li>META-INF/</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x4E2D;&#xFF0C;AndroidManifest.xml&#x7684;&#x5927;&#x5C0F;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x6587;&#x4EF6;&#xFF0C;&#x6BD4;&#x5982;&#x5404;&#x79CD;&#x8BC1;&#x4E66;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7B49;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E9B;&#x975E;&#x6807;&#x51C6;&#x6587;&#x4EF6;&#x548C;&#x5C0F;&#x6587;&#x4EF6;&#x7EDF;&#x4E00;&#x4E3A;others</p>
+<p>&#x5B89;&#x88C5;&#x5305;&#x7684;&#x5206;&#x6790;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x5229;&#x7528;zip&#x8BFB;&#x53D6;apk&#xFF0C;&#x7EDF;&#x8BA1;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x8FD9;&#x91CC;&#x5C06;&#x57FA;&#x4E8E;Golang&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="&#x5DE5;&#x5177;&#x5206;&#x6790;"><a name="&#x5DE5;&#x5177;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x5DE5;&#x5177;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x5177;&#x5206;&#x6790;</h2>
+<p>&#x5206;&#x6790;apk&#x9700;&#x8981;&#x786E;&#x5B9A;&#xFF1A;&#x5982;&#x4F55;&#x8BA1;&#x7B97;Download Size&#xFF1F;&#x5F00;&#x53D1;&#x8005;&#x6587;&#x6863;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x76F8;&#x5173;&#x8BF4;&#x660E;&#x6587;&#x6863;&#xFF0C;&#x9664;&#x4E86;&#x524D;&#x9762;&#x535A;&#x5BA2;&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x751F;&#x6210;&#x589E;&#x91CF;&#x5305;&#x7528;xdelta&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;Android Studio&#x548C;apkanalyzer&#x5728;&#x8BA1;&#x7B97;&#x65F6;&#x91C7;&#x7528;&#x7684;&#x90FD;&#x662F;Gzip&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x4E86;&#x538B;&#x7F29;&#x5F3A;&#x5EA6;&#x6700;&#x5927;&#x7684;-9&#x3002;</p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x5BF9;apk&#x5B89;&#x88C5;&#x5305;&#x518D;&#x505A;&#x4E00;&#x6B21;gzip&#x538B;&#x7F29;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x65B0;&#x7684;gz&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x4ED6;&#x7684;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x5C31;&#x662F;Download Size&#x3002;
+&#x4F7F;&#x7528;java nio&#x91CC;&#x9762;&#x7684;copy&#x76F4;&#x63A5;&#x5C06;&#x4E00;&#x4E2A;Path&#x4EE3;&#x8868;&#x7684;&#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230;&#x76EE;&#x6807;&#x6587;&#x4EF6;Path, &#x4EE3;&#x7801;&#x975E;&#x5E38;&#x7B80;&#x6D01;&#x3002;</p>
+<p>&#x793A;&#x610F;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">try</span> (GZIPOutputStream zos = <span class="hljs-keyword">new</span> MaxGzipOutputStream(<span class="hljs-keyword">new</span> FileOutputStream(compressedFile))) {
+  Files.copy(apk.toPath(), zos);
+  zos.flush();
+}
+<span class="hljs-keyword">catch</span> (IOException e) {
+  Logger.getInstance(ApkParser.class).warn(e);
+  <span class="hljs-keyword">return</span> apk;
+}
+</code></pre>
+<p>&#x5BF9;zip&#x518D;&#x505A;&#x4E00;&#x6B21;gzip&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x538B;&#x7F29;&#x7684;&#x6BD4;&#x7387;&#x662F;&#x975E;&#x5E38;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x7B14;&#x8005;&#x6D4B;&#x8BD5;&#x7684;&#x6837;&#x4F8B;&#x4E2D;&#x538B;&#x7F29;&#x7387;&#x5927;&#x6982;&#x662F;5.4%</p>
+<p>&#x5728;Golang&#x91CC;&#x9762;&#x7C7B;&#x4F3C;&#xFF0C;&#x6211;&#x4EEC;&#x662F;&#x8FD9;&#x6837;&#x5904;&#x7406;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> gzipFile(name <span class="hljs-keyword">string</span>, dst <span class="hljs-keyword">string</span>) (*os.File, error) {
+    os.Remove(dst)
+    apk, _ := os.Open(name)
+    temp, _ := os.Create(dst)
+    zw, _ := gzip.NewWriterLevel(temp, gzip.BestCompression)
+    <span class="hljs-keyword">defer</span> zw.Flush()
+    <span class="hljs-keyword">defer</span> zw.Close()
+    io.Copy(zw, apk)
+    <span class="hljs-keyword">return</span> temp, <span class="hljs-literal">nil</span>
+}
+</code></pre>
+<p>&#x538B;&#x7F29;&#x5B8C;&#x7684;&#x5927;&#x5C0F;&#x975E;&#x5E38;&#x63A5;&#x8FD1;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x662F;&#x6709;&#x70B9;&#x5DEE;&#x5F02;&#x3002;</p>
+<h2 id="&#x811A;&#x672C;&#x4F7F;&#x7528;"><a name="&#x811A;&#x672C;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x811A;&#x672C;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x811A;&#x672C;&#x4F7F;&#x7528;</h2>
+<p>&#x7406;&#x6E05;&#x695A;&#x4E86;&#x524D;&#x540E;&#x601D;&#x8DEF;&#x548C;&#x5173;&#x952E;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x4FBF;&#x53EF;&#x4EE5;&#x6253;&#x901A;&#x6D41;&#x7A0B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE5;&#x5177;&#x3002;</p>
+<pre><code class="lang-shell">brew install hacktons/cli/apkcompare
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x53D6;&#x51B3;&#x4E8E;&#x7F51;&#x4E0A;&#xFF0C;&#x6B63;&#x5E38;&#x4E00;&#x5206;&#x949F;&#x5E94;&#x8BE5;&#x641E;&#x5B9A;&#x4E86;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x4E5F;&#x662F;&#x5F02;&#x5E38;&#x7B80;&#x5355;,&#x76F4;&#x63A5;&#x770B;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x597D;&#x4E86;</p>
+<pre><code class="lang-shell">aven-mac-pro-2: aven$ apkcompare -h
+Usage of apkcompare:
+  --format string
+        foramt to output: json, xlsx(which is default) (default &quot;xlsx&quot;)
+  --log
+        Print all debug log
+  -o, --output string
+        Output excel name (default &quot;output.xlsx&quot;)
+  -p, --path string
+        Path or Directory of the target apk file (default &quot;./&quot;)
+  --readable
+        output the size in MB, instead of bytes count (default true)
+</code></pre>
+<p>&#x6BD4;&#x5982;&#x6211;&#x5728;&#x672C;&#x5730;&#x6709;&#x4E00;&#x4E2A;test&#x76EE;&#x5F55;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x5F85;&#x6D4B;&#x7684;&#x82E5;&#x5E72;apk&#xFF0C;&#x9700;&#x8981;&#x5FEB;&#x901F;&#x5206;&#x6790;&#x4ED6;&#x4EEC;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x505A;&#xFF1A;</p>
+<pre><code class="lang-shell">aven-mac-pro-2: aven$ apkcompare -p ~/Desktop/test -o ~/Desktop/result.xlsx
+</code></pre>
+<p>&#x5982;&#x6B64;&#xFF0C;&#x4FBF;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;excel&#x6587;&#x6863;</p>
+<p><img src="http://7u2jir.com1.z0.glb.clouddn.com/img/apkcompare-excel.png" alt="apkcompare-excel"></p>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://android-developers.googleblog.com/2016/07/improvements-for-smaller-app-downloads.html" target="_blank">https://android-developers.googleblog.com/2016/07/improvements-for-smaller-app-downloads.html</a></li>
+<li><a href="https://developer.android.com/topic/performance/reduce-apk-size.html#reduce-code" target="_blank">https://developer.android.com/topic/performance/reduce-apk-size.html#reduce-code</a></li>
+<li><a href="https://developer.android.com/studio/build/apk-analyzer.html" target="_blank">https://developer.android.com/studio/build/apk-analyzer.html</a></li>
+<li><a href="https://developer.android.com/studio/command-line/apkanalyzer.html#syntax" target="_blank">https://developer.android.com/studio/command-line/apkanalyzer.html#syntax</a></li>
+<li><a href="https://developer.android.com/studio/releases/sdk-tools.html" target="_blank">https://developer.android.com/studio/releases/sdk-tools.html</a></li>
+<li><a href="https://github.com/360EntSecGroup-Skylar/excelize" target="_blank">https://github.com/360EntSecGroup-Skylar/excelize</a></li>
+<li><a href="https://golang.org/pkg/encoding/json/" target="_blank">https://golang.org/pkg/encoding/json/</a></li>
+<li><a href="https://www.jianshu.com/p/bee02c18b221" target="_blank">https://www.jianshu.com/p/bee02c18b221</a></li>
+<li><a href="https://golangtc.com/t/50d6bf54320b527e6d00001a" target="_blank">https://golangtc.com/t/50d6bf54320b527e6d00001a</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2018-04-24
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="resguard.html" class="navigation navigation-prev " aria-label="Previous page: Andresguard工具使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../others/network.html" class="navigation navigation-next " aria-label="Next page: 网络请求优化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"安装包大小监控","level":"5.5","depth":1,"next":{"title":"网络请求优化","level":"6.1","depth":1,"path":"others/network.md","ref":"others/network.md","articles":[]},"previous":{"title":"Andresguard工具使用","level":"5.4","depth":1,"path":"shrink/resguard.md","ref":"shrink/resguard.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"shrink/apksize.md","mtime":"2018-04-24T12:12:44.822Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-24T12:13:39.220Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

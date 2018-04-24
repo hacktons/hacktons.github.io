@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>读懂分析报告 · Android性能优化漫谈</title>
+        <title>Lint工具 · Android性能优化漫谈</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="use-nimbledroid.html" />
+    <link rel="next" href="image.html" />
     
     
-    <link rel="prev" href="app-launch.html" />
+    <link rel="prev" href="what.html" />
     
 
     </head>
@@ -123,9 +123,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="./">
+        <li class="chapter " data-level="2.1" data-path="../nimbledroid/">
             
-                <a href="./">
+                <a href="../nimbledroid/">
             
                     
                         <b>2.1.</b>
@@ -138,9 +138,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="service.html">
+        <li class="chapter " data-level="2.2" data-path="../nimbledroid/service.html">
             
-                <a href="service.html">
+                <a href="../nimbledroid/service.html">
             
                     
                         <b>2.2.</b>
@@ -153,9 +153,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="app-launch.html">
+        <li class="chapter " data-level="2.3" data-path="../nimbledroid/app-launch.html">
             
-                <a href="app-launch.html">
+                <a href="../nimbledroid/app-launch.html">
             
                     
                         <b>2.3.</b>
@@ -168,9 +168,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="reports.html">
+        <li class="chapter " data-level="2.4" data-path="../nimbledroid/reports.html">
             
-                <a href="reports.html">
+                <a href="../nimbledroid/reports.html">
             
                     
                         <b>2.4.</b>
@@ -183,9 +183,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="use-nimbledroid.html">
+        <li class="chapter " data-level="2.5" data-path="../nimbledroid/use-nimbledroid.html">
             
-                <a href="use-nimbledroid.html">
+                <a href="../nimbledroid/use-nimbledroid.html">
             
                     
                         <b>2.5.</b>
@@ -399,9 +399,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../shrink/what.html">
+        <li class="chapter " data-level="5.1" data-path="what.html">
             
-                <a href="../shrink/what.html">
+                <a href="what.html">
             
                     
                         <b>5.1.</b>
@@ -414,9 +414,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="../shrink/lint.html">
+        <li class="chapter active" data-level="5.2" data-path="lint.html">
             
-                <a href="../shrink/lint.html">
+                <a href="lint.html">
             
                     
                         <b>5.2.</b>
@@ -429,9 +429,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../shrink/image.html">
+        <li class="chapter " data-level="5.3" data-path="image.html">
             
-                <a href="../shrink/image.html">
+                <a href="image.html">
             
                     
                         <b>5.3.</b>
@@ -444,9 +444,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.4" data-path="../shrink/resguard.html">
+        <li class="chapter " data-level="5.4" data-path="resguard.html">
             
-                <a href="../shrink/resguard.html">
+                <a href="resguard.html">
             
                     
                         <b>5.4.</b>
@@ -459,9 +459,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.5" data-path="../shrink/apksize.html">
+        <li class="chapter " data-level="5.5" data-path="apksize.html">
             
-                <a href="../shrink/apksize.html">
+                <a href="apksize.html">
             
                     
                         <b>5.5.</b>
@@ -623,7 +623,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >读懂分析报告</a>
+        <a href=".." >Lint工具</a>
     </h1>
 </div>
 
@@ -638,9 +638,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;"><b></b>1.4 &#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;</a></li></ul></div><a href="#14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;"><a name="14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;" class="anchor-navigation-ex-anchor" href="#14-&#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4 &#x8BFB;&#x61C2;&#x5206;&#x6790;&#x62A5;&#x544A;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#lint&#x5DE5;&#x5177;"><b></b>Lint&#x5DE5;&#x5177;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#lint-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><b></b>Lint &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#lint&#x4F7F;&#x7528;"><b></b>Lint&#x4F7F;&#x7528;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x68C0;&#x67E5;&#x7ED3;&#x679C;"><b></b>&#x68C0;&#x67E5;&#x7ED3;&#x679C;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#lint&#x5DE5;&#x5177;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="lint&#x5DE5;&#x5177;"><a name="lint&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#lint&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>Lint&#x5DE5;&#x5177;</h1>
+<p>&#x8FD9;&#x91CC;&#x7684;Lint&#x662F;&#x6307;Android&#x63D0;&#x4F9B;&#x7684;Lint&#x68C0;&#x6D4B;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;gradle&#x4EFB;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;GUI&#x7684;&#x9762;&#x677F;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>Lint&#x4E3B;&#x8981;&#x662F;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x9879;&#x76EE;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#xFF0C;&#x5305;&#x62EC;&#x4EE3;&#x7801;&#x548C;&#x8D44;&#x6E90;&#x5728;&#x5185;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x6458;&#x5F55;&#x4E0E;&#x5B98;&#x7F51;&#x7684;&#x4E00;&#x6BB5;&#x8BF4;&#x660E;&#xFF1A;</p>
+<pre><code>Lint &#x5DE5;&#x5177;&#x53EF;&#x68C0;&#x67E5;&#x60A8;&#x7684; Android &#x9879;&#x76EE;&#x6E90;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5305;&#x542B;&#x6F5C;&#x5728;&#x9519;&#x8BEF;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x6B63;&#x786E;&#x6027;&#x3001;&#x5B89;&#x5168;&#x6027;&#x3001;&#x6027;&#x80FD;&#x3001;&#x6613;&#x7528;&#x6027;&#x3001;&#x4FBF;&#x5229;&#x6027;&#x548C;&#x56FD;&#x9645;&#x5316;&#x65B9;&#x9762;&#x662F;&#x5426;&#x9700;&#x8981;&#x4F18;&#x5316;&#x6539;&#x8FDB;
+</code></pre><h2 id="lint-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><a name="lint-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#lint-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>Lint &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h2>
+<p><img src="../assets/lint.png" alt="lint"></p>
+<ul>
+<li>&#x5E94;&#x7528;&#x6E90;&#x6587;&#x4EF6;</li>
+</ul>
+<p>&#x6E90;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x7EC4;&#x6210; Android &#x9879;&#x76EE;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC; Java &#x548C; XML &#x6587;&#x4EF6;&#x3001;&#x56FE;&#x6807;&#x548C; ProGuard &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7B49;&#x3002;</p>
+<ul>
+<li>lint.xml &#x6587;&#x4EF6;</li>
+</ul>
+<p>&#x6B64;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53EF;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x60A8;&#x5E0C;&#x671B;&#x6392;&#x9664;&#x7684;&#x4EFB;&#x4F55; Lint &#x68C0;&#x67E5;&#x4EE5;&#x53CA;&#x81EA;&#x5B9A;&#x4E49;&#x95EE;&#x9898;&#x4E25;&#x91CD;&#x7EA7;&#x522B;&#x3002;</p>
+<ul>
+<li>Lint &#x5DE5;&#x5177;</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x6216;&#x5728; Android Studio &#x4E2D;&#x5BF9; Android &#x9879;&#x76EE;&#x8FD0;&#x884C;&#x6B64;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x626B;&#x63CF;&#x5DE5;&#x5177;&#xFF08;&#x8BF7;&#x53C2;&#x9605;&#x624B;&#x52A8;&#x8FD0;&#x884C;&#x68C0;&#x67E5;&#xFF09;&#x3002;Lint &#x5DE5;&#x5177;&#x68C0;&#x67E5;&#x53EF;&#x80FD;&#x5F71;&#x54CD; Android &#x5E94;&#x7528;&#x8D28;&#x91CF;&#x548C;&#x6027;&#x80FD;&#x7684;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x95EE;&#x9898;&#x3002;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x60A8;&#x5148;&#x7EA0;&#x6B63; Lint &#x68C0;&#x6D4B;&#x5230;&#x7684;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#x518D;&#x53D1;&#x5E03;&#x5E94;&#x7528;&#x3002;</p>
+<ul>
+<li>Lint &#x68C0;&#x67E5;&#x7ED3;&#x679C;</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x6216; Android Studio &#x7684; Inspection Results &#x7A97;&#x53E3;&#x4E2D;&#x67E5;&#x770B; Lint &#x68C0;&#x67E5;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 id="lint&#x4F7F;&#x7528;"><a name="lint&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#lint&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>Lint&#x4F7F;&#x7528;</h2>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;gradle&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728; Android Studio &#x4E2D;&#x914D;&#x7F6E; Lint&#x3002;</p>
+<p>&#x5728;&#x60A8;&#x4F7F;&#x7528; Android Studio &#x65F6;&#xFF0C;&#x5185;&#x7F6E;&#x7684; Lint &#x5DE5;&#x5177;&#x4F1A;&#x68C0;&#x67E5;&#x60A8;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x67E5;&#x770B;&#x8B66;&#x544A;&#x548C;&#x9519;&#x8BEF;&#xFF1A;</p>
+<p>&#x4EE3;&#x7801;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#x7684;&#x5F39;&#x51FA;&#x6587;&#x672C;&#x3002;Lint &#x53D1;&#x73B0;&#x95EE;&#x9898;&#x540E;&#xFF0C;&#x4F1A;&#x7528;&#x9EC4;&#x8272;&#x7A81;&#x51FA;&#x663E;&#x793A;&#x6709;&#x95EE;&#x9898;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x66F4;&#x4E25;&#x91CD;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5219;&#x4F1A;&#x5728;&#x4EE3;&#x7801;&#x4E0B;&#x9762;&#x6DFB;&#x52A0;&#x7EA2;&#x8272;&#x4E0B;&#x5212;&#x7EBF;&#x3002;
+&#x5728; Lint &#x7684; Inspection Results &#x7A97;&#x53E3;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB; Analyze &gt; Inspect Code&#x3002;&#x8BF7;&#x53C2;&#x9605;&#x624B;&#x52A8;&#x8FD0;&#x884C;&#x68C0;&#x67E5;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x662F;&#x54EA;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x68C0;&#x67E5;&#x9879;&#x3002;</p>
+<p>&#x5728; lint.xml &#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A; Lint &#x68C0;&#x67E5;&#x9996;&#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x60A8;&#x662F;&#x624B;&#x52A8;&#x521B;&#x5EFA;&#x6B64;&#x6587;&#x4EF6;&#xFF0C;&#x8BF7;&#x5C06;&#x5176;&#x7F6E;&#x4E8E; Android &#x9879;&#x76EE;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x3002;
+lint.xml &#x6587;&#x4EF6;&#x7531;&#x5C01;&#x95ED;&#x7684; <lint> &#x7236;&#x6807;&#x8BB0;&#x7EC4;&#x6210;&#xFF0C;&#x6B64;&#x6807;&#x8BB0;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; <issue> &#x5B50;&#x5143;&#x7D20;&#x3002;Lint &#x4E3A;&#x6BCF;&#x4E2A; <issue> &#x5B9A;&#x4E49;&#x552F;&#x4E00;&#x7684; id &#x5C5E;&#x6027;&#x503C;&#x3002;</issue></issue></lint></p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">lint</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Disable the given check in this project --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">issue</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;IconMissingDensityFolder&quot;</span> <span class="hljs-attr">severity</span>=<span class="hljs-string">&quot;ignore&quot;</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Ignore the ObsoleteLayoutParam issue in the specified files --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">issue</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ObsoleteLayoutParam&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ignore</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;res/layout/activation.xml&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ignore</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;res/layout-xlarge/activation.xml&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">issue</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Ignore the UselessLeaf issue in the specified file --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">issue</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;UselessLeaf&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ignore</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;res/layout/main.xml&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">issue</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Change the severity of hardcoded strings to &quot;error&quot; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">issue</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;HardcodedText&quot;</span> <span class="hljs-attr">severity</span>=<span class="hljs-string">&quot;error&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">lint</span>&gt;</span>
+</code></pre>
+<h2 id="&#x68C0;&#x67E5;&#x7ED3;&#x679C;"><a name="&#x68C0;&#x67E5;&#x7ED3;&#x679C;" class="anchor-navigation-ex-anchor" href="#&#x68C0;&#x67E5;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x68C0;&#x67E5;&#x7ED3;&#x679C;</h2>
+<p>&#x901A;&#x8FC7;Android Studio&#x7684;Code Inspect&#x68C0;&#x67E5;&#x540E;&#xFF0C;&#x5728;&#x5E95;&#x90E8;&#x9762;&#x677F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5177;&#x4F53;&#x7ED3;&#x679C;&#x3002;</p>
+<p><img src="../assets/lint-inspect.png" alt="lint inspect"></p>
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://developer.android.com/studio/write/lint.html" target="_blank">https://developer.android.com/studio/write/lint.html</a></li>
+<li><a href="http://tools.android.com/tips/lint-checks" target="_blank">http://tools.android.com/tips/lint-checks</a> </li>
+</ul>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
-2018-03-19
+2018-04-17
 </span></footer>
                                 
                                 </section>
@@ -668,12 +725,12 @@
 
             
                 
-                <a href="app-launch.html" class="navigation navigation-prev " aria-label="Previous page: App启动分析">
+                <a href="what.html" class="navigation navigation-prev " aria-label="Previous page: 瘦身思路与方向介绍">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="use-nimbledroid.html" class="navigation navigation-next " aria-label="Next page: 案例：使用NimbleDroid分析App">
+                <a href="image.html" class="navigation navigation-next " aria-label="Next page: 图片优化">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -684,7 +741,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"读懂分析报告","level":"2.4","depth":1,"next":{"title":"案例：使用NimbleDroid分析App","level":"2.5","depth":1,"path":"nimbledroid/use-nimbledroid.md","ref":"nimbledroid/use-nimbledroid.md","articles":[]},"previous":{"title":"App启动分析","level":"2.3","depth":1,"path":"nimbledroid/app-launch.md","ref":"nimbledroid/app-launch.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"nimbledroid/reports.md","mtime":"2018-03-19T12:15:04.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-24T12:13:39.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lint工具","level":"5.2","depth":1,"next":{"title":"图片优化","level":"5.3","depth":1,"path":"shrink/image.md","ref":"shrink/image.md","articles":[]},"previous":{"title":"瘦身思路与方向介绍","level":"5.1","depth":1,"path":"shrink/what.md","ref":"shrink/what.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android性能优化漫谈","language":"zh-hans","gitbook":"3.2.3","description":"性能优化深似海"},"file":{"path":"shrink/lint.md","mtime":"2018-04-17T12:19:22.679Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-24T12:13:39.220Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
