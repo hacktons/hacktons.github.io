@@ -1,7 +1,7 @@
 {
   "name": "sleek",
   "version": "1.0.0",
-  "description": "Sleek is a modern Jekyll theme focused on speed performance & SEO best practices.",
+  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
@@ -45,15 +45,5 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/janczizikow/sleek.git"
-  },
-  "keywords": [],
-  "author": "Jan Czizikow",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/janczizikow/sleek/issues"
-  },
-  "homepage": "https://github.com/janczizikow/sleek#readme"
+  "keywords": []
 }
