@@ -1,0 +1,1557 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>React-JSX笔记 · 大前端系列专题</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="react-forms-notes.html" />
+    
+    
+    <link rel="prev" href="webpack.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter_leetcode/">
+            
+                <a href="../chapter_leetcode/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    LeetCode题解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter_leetcode/doc/reverse-integer.html">
+            
+                <a href="../chapter_leetcode/doc/reverse-integer.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    整数反转 Reverse Integer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter_leetcode/doc/palindrome-number.html">
+            
+                <a href="../chapter_leetcode/doc/palindrome-number.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    回文数判断 Palindrome Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter_leetcode/doc/single-number.html">
+            
+                <a href="../chapter_leetcode/doc/single-number.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    只出现一次的数字 Single Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter_leetcode/doc/majority-element.html">
+            
+                <a href="../chapter_leetcode/doc/majority-element.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    求众数 Majority Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../performance/draw-view.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    View绘制&效率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../performance/oom-detect.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    内存泄漏检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../block-detect.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    卡顿检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../baterry-monitor.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    耗电监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../fps-monitor.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    帧率监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../memory-monitor.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    内存占用监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../performance/anr-analyze.html">
+            
+                <a href="../performance/anr-analyze.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    ANR分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ui/">
+            
+                <a href="../ui/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    UI&UE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ui/custom-view.md">
+            
+                <span>
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    View自定义&技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ui/touch-intercept.md">
+            
+                <span>
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    手势分发&拦截
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../open/">
+            
+                <a href="../open/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    开源分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../open/okhttp3.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    OkHttp3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../open/okio.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    OkIo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../open/retrofit2.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Retrofit2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../open/glide.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../open/picasso.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    Picasso
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../open/android-god-eye.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    AndroidGodEye
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../service/">
+            
+                <a href="../service/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    系统服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../service/aidl-ipc.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    AIDL&跨进程通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../service/ams.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    AMS分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../service/hook-service.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Hook系统服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    基础原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../basic/jvm.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    JVM运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../basic/jmm.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../basic/gc.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.3.</b>
+                    
+                    GC&算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../basic/bytecode-instruction.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.4.</b>
+                    
+                    认识字节码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../basic/asm.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.5.</b>
+                    
+                    ASM字节码修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../basic/lambda.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.6.</b>
+                    
+                    Lambda语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../basic/dvm-dex.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.7.</b>
+                    
+                    DVM&Dex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../basic/apk.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.8.</b>
+                    
+                    APK打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    工具&脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tool/vs-code-debug.html">
+            
+                <a href="../tool/vs-code-debug.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    Visual Code调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tool/adb-socket.html">
+            
+                <a href="../tool/adb-socket.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    ADB & Socket分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tool/golang-cli.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    Golang CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tool/shell.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.4.</b>
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tools/python.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.5.</b>
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    数据结构&算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../algorithm/binnary-tree-visist.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    二叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../algorithm/sort.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    常见排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../algorithm/huffman.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    霍夫曼编码&应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../algorithm/kmp.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.4.</b>
+                    
+                    KMP字符串查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../encrypt/">
+            
+                <a href="../encrypt/">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    编码&摘要算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../encrypt/hash.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    哈希算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../encrypt/rsa.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    RSA原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../encrypt/aes.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    AES原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../encrypt/md5.html">
+            
+                <a href="../encrypt/md5.html">
+            
+                    
+                        <b>1.10.4.</b>
+                    
+                    MD5摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../encrypt/base64.html">
+            
+                <a href="../encrypt/base64.html">
+            
+                    
+                        <b>1.10.5.</b>
+                    
+                    Base64编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../encrypt/sha256.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.6.</b>
+                    
+                    SHA256原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="electron-compile-error.html">
+            
+                <a href="electron-compile-error.html">
+            
+                    
+                        <b>1.11.1.</b>
+                    
+                    Electron 编译问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="electron-publish-dmg.html">
+            
+                <a href="electron-publish-dmg.html">
+            
+                    
+                        <b>1.11.2.</b>
+                    
+                    Electron DMG安装包发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="es6.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.3.</b>
+                    
+                    es6入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="babel.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.4.</b>
+                    
+                    Babel使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="webpack.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.5.</b>
+                    
+                    Webpack使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.6" data-path="react-jsx-notes.html">
+            
+                <a href="react-jsx-notes.html">
+            
+                    
+                        <b>1.11.6.</b>
+                    
+                    React-JSX笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="react-forms-notes.html">
+            
+                <a href="react-forms-notes.html">
+            
+                    
+                        <b>1.11.7.</b>
+                    
+                    React-Forms笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="react-native.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.8.</b>
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="weex.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.9.</b>
+                    
+                    Weex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="wechat-program.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.10.</b>
+                    
+                    小程序实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../server/">
+            
+                <a href="../server/">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    后端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../server/nodejs.md">
+            
+                <span>
+            
+                    
+                        <b>1.12.1.</b>
+                    
+                    Nodejs浅析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../server/docker.md">
+            
+                <span>
+            
+                    
+                        <b>1.12.2.</b>
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../server/golang.md">
+            
+                <span>
+            
+                    
+                        <b>1.12.3.</b>
+                    
+                    Golang
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >React-JSX笔记</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#react-jsx&#x7B14;&#x8BB0;"><b></b>React JSX&#x7B14;&#x8BB0;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#jsx&#x4E66;&#x5199;tips"><b></b>JSX&#x4E66;&#x5199;Tips</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;"><b></b>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;</a></li></ul></ul></div><a href="#react-jsx&#x7B14;&#x8BB0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="react-jsx&#x7B14;&#x8BB0;"><a name="react-jsx&#x7B14;&#x8BB0;" class="anchor-navigation-ex-anchor" href="#react-jsx&#x7B14;&#x8BB0;"><i class="fa fa-link" aria-hidden="true"></i></a>React JSX&#x7B14;&#x8BB0;</h1>
+<h2 id="jsx&#x4E66;&#x5199;tips"><a name="jsx&#x4E66;&#x5199;tips" class="anchor-navigation-ex-anchor" href="#jsx&#x4E66;&#x5199;tips"><i class="fa fa-link" aria-hidden="true"></i></a>JSX&#x4E66;&#x5199;Tips</h2>
+<p>JSX =&#x300B;<code>JavaScript Syntax Extension</code> =&#x300B;JS&#x8BED;&#x6CD5;&#x7CD6;&#x6269;&#x5C55;</p>
+<p>&#x4F7F;&#x7528;JSX&#x53EF;&#x4EE5;&#x5927;&#x5E45;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x4E66;&#x5199;&#x7684;&#x7B80;&#x6D01;&#x6027;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5728;&#x591A;&#x5C42;&#x7EA7;&#x7684;&#x7EC4;&#x4EF6;&#x5D4C;&#x5957;&#x4E66;&#x5199;&#x662F;&#x4EA7;&#x751F;&#x7684;&#x5C42;&#x7EA7;&#x95EE;&#x9898;&#x3002;</p>
+<ul>
+<li>JSX&#x4E2D;&#x5199;&#x6CE8;&#x91CA;</li>
+</ul>
+<pre><code class="lang-jsx">{<span class="hljs-comment">/*
+  &#x6CE8;&#x91CA;&#x5185;&#x5BB9;
+*/</span>}
+</code></pre>
+<ul>
+<li>JSX Boolean&#x5C5E;&#x6027;</li>
+</ul>
+<p>bool&#x5C5E;&#x6027;&#x9700;&#x8981;&#x7528;<code>{}</code>&#x5305;&#x62EC;&#xFF0C;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x53D8;&#x91CF;&#x503C;&#x4E5F;&#x9700;&#x8981;&#x7528;<code>{}</code>&#x5305;&#x88F9;</p>
+<pre><code class="lang-jsx">&lt;input name=<span class="hljs-string">&apos;Name&apos;</span> disabled={<span class="hljs-literal">true</span>} /&gt;
+</code></pre>
+<ul>
+<li>JSX &#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;</li>
+</ul>
+<p>&#x901A;&#x8FC7;<code>&amp;&amp;</code>&#x53EF;&#x9009;&#x7684;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;<code>&#xFF1F;&#xFF1A;</code></p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">const</span> renderAdminMenu = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MenuLink</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;/users&quot;</span>&gt;</span>User accounts<span class="hljs-tag">&lt;/<span class="hljs-name">MenuLink</span>&gt;</span></span>)
+}
+<span class="hljs-keyword">const</span> userLevel = <span class="hljs-keyword">this</span>.props.userLevel; <span class="hljs-keyword">return</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Menu<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    {userLevel === &apos;admin&apos; &amp;&amp; renderAdminMenu()}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+)
+</code></pre>
+<ul>
+<li>JSX&#x900F;&#x4F20;&#x5C5E;&#x6027;&#x8BED;&#x6CD5;</li>
+</ul>
+<p>JSX&#x53EF;&#x4EE5;&#x900F;&#x4F20;&#x5C5E;&#x6027;&#xFF0C;&#x5DF2;&#x66F4;&#x7B80;&#x5355;&#x4E66;&#x5199;&#x6765;&#x8D4B;&#x503C;&#x5C5E;&#x6027;<code>{...props}</code></p>
+<pre><code class="lang-jsx">{<span class="hljs-comment">/* &#x5E38;&#x89C4;&#x5199;&#x6CD5;&#xFF0C;&#x5C06;msg&#x548C;recipent&#x8D4B;&#x503C;&#x7ED9;Component&#x7EC4;&#x4EF6;&#x7684;&#x5C5E;&#x6027; */</span>}
+<span class="hljs-keyword">const</span> props = {msg: <span class="hljs-string">&quot;Hello&quot;</span>, recipient: <span class="hljs-string">&quot;World&quot;</span>}
+&lt;Component msg={<span class="hljs-string">&quot;Hello&quot;</span>} recipient={<span class="hljs-string">&quot;World&quot;</span>} /&gt;
+
+&lt;Component {...props} /&gt;
+&lt;!-- essentially the same as this: --&gt; 
+&lt;Component msg={&quot;Hello&quot;} recipient={&quot;World&quot;} /&gt;
+</code></pre>
+<ul>
+<li>class &amp; className&#x533A;&#x5206;</li>
+</ul>
+<p>JSX&#x4E2D;&#x4F7F;&#x7528;className&#x6765;&#x6307;&#x5B9A;class</p>
+<pre><code class="lang-jsx">&lt;!-- Same <span class="hljs-keyword">as</span> &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&apos;box&apos;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> --&gt; 
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;box&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+<span class="hljs-keyword">var</span> cssNames = [<span class="hljs-string">&apos;box&apos;</span>, <span class="hljs-string">&apos;alert&apos;</span>]
+<span class="hljs-comment">// and use the array of cssNames in JSX</span>
+(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{cssNames.join(&apos;</span> &apos;)}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)
+</code></pre>
+<ul>
+<li>classnames&#x6A21;&#x5757;</li>
+</ul>
+<p>&#x652F;&#x6301;class&#x7684;&#x52A8;&#x6001;&#x63A7;&#x5236;&#xFF0C;&#x4E3A;true&#x7684;class&#x751F;&#x6548;</p>
+<pre><code class="lang-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ 
+  render() {
+    <span class="hljs-keyword">const</span> klass = classnames({
+        box: <span class="hljs-literal">true</span>, <span class="hljs-comment">// always apply the box class</span>
+        alert: <span class="hljs-keyword">this</span>.props.isAlert, <span class="hljs-comment">// if a prop is set </span>
+         severity: <span class="hljs-keyword">this</span>.state.onHighAlert, <span class="hljs-comment">// with a state </span>
+         timed: <span class="hljs-literal">false</span> <span class="hljs-comment">// never apply this class</span>
+    });
+    <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{klass}</span> /&gt;</span>) 
+  }
+}
+</span></code></pre>
+<ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</li>
+</ul>
+<p><code>data-anything</code>&#x4E3A;html&#x6807;&#x51C6;&#x6807;&#x7B7E;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x4EE5;<code>data-</code>&#x5F00;&#x5934;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x5219;&#x4E0D;&#x53D7;&#x8FD9;&#x4E2A;&#x7EA6;&#x675F;</p>
+<pre><code class="lang-jsx">&lt;div className=<span class="hljs-string">&apos;box&apos;</span> data-dismissible={<span class="hljs-literal">true</span>} /&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-highlight</span>=<span class="hljs-string">{true}</span> /&gt;</span>
+</span></code></pre>
+<pre><code class="lang-jsx">&lt;Message dismissible={<span class="hljs-literal">true</span>} /&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Note</span> <span class="hljs-attr">highlight</span>=<span class="hljs-string">{true}</span> /&gt;</span>
+</span></code></pre>
+<h2 id="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;"><a name="&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;</h2>
+<ul>
+<li>PropTypes&#x5C5E;&#x6027;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x901A;&#x8FC7;<code>prop-types</code>&#x5305;&#x53EF;&#x4EE5;&#x5BF9;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x505A;&#x9650;&#x5236;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4F18;&#x826F;&#x7684;&#x8BF4;&#x660E;</p>
+<pre><code class="lang-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Map</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ 
+  <span class="hljs-keyword">static</span> propTypes = {
+      lat: PropTypes.number,
+    lng: PropTypes.number,
+      zoom: PropTypes.number,
+      place: PropTypes.object,
+      markers: PropTypes.array,
+};
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">Map</span> = React.createClass({ 
+  propTypes: {
+    lat: PropTypes.number, 
+    lng: PropTypes.number <span class="hljs-comment">// ...</span>
+  }, 
+})
+</code></pre>
+<ul>
+<li>props&#x9ED8;&#x8BA4;&#x503C;</li>
+</ul>
+<pre><code class="lang-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ <span class="hljs-keyword">static</span> defaultProps = {
+    initialValue: <span class="hljs-number">1</span>
+  };
+<span class="hljs-comment">// ...</span>
+};
+&lt;!-- &#x7B49;&#x4EF7; --&gt;
+&lt;Counter /&gt;
+&lt;Counter initialValue={1} /&gt;
+</code></pre>
+<ul>
+<li>&#x5168;&#x5C40;&#x4E0A;&#x4E0B;&#x6587;&#x5171;&#x4EAB;&#x5C5E;&#x6027;</li>
+</ul>
+<p>&#x901A;&#x8FC7;&#x5168;&#x5C40;&#x7684;context&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5C5E;&#x6027;&#x6570;&#x636E;&#x5171;&#x4EAB;&#xFF0C;&#x907F;&#x514D;&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x9876;&#x5C42;&#x7EC4;&#x4EF6;&#x4E00;&#x5C42;&#x5C42;&#x4F20;&#x9012;&#x8D4B;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x8981;<code>&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x6EE5;&#x7528;context</code>;</p>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5728;&#x7236;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;childContextTypes&#x548C;getChildContext&#xFF1B;</p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#xFF1B;</p>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x5728;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x901A;&#x8FC7;this.context.xxx&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5171;&#x4EAB;&#x7684;&#x6570;&#x636E;&#xFF1B;</p>
+<pre><code class="lang-jsx"><span class="hljs-comment">// &#x7236;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Messages</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">static</span> childContextTypes = { 
+      users: PropTypes.array, 
+      userMap: PropTypes.object,
+    };
+    <span class="hljs-comment">// ...</span>
+    getChildContext() { 
+      <span class="hljs-keyword">return</span> {
+        users: <span class="hljs-keyword">this</span>.getUsers(),
+        userMap: <span class="hljs-keyword">this</span>.getUserMap(), 
+      };
+    }
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-comment">// &#x5B50;&#x7EC4;&#x4EF6;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadList</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ 
+      <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">static</span> contextTypes = { 
+      users: PropTypes.array,
+    };
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ChatWindow</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ <span class="hljs-comment">// ...</span>
+    <span class="hljs-keyword">static</span> contextTypes = { 
+      userMap: PropTypes.object,
+    };
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<ul>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x5D4C;&#x5957;&#x7EC4;&#x4EF6;</li>
+</ul>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7EC4;&#x4EF6;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7C7B;&#x4F3C;div&#x8FD9;&#x79CD;&#x652F;&#x6301;&#x5185;&#x90E8;&#x5D4C;&#x5957;&#x7EC4;&#x4EF6;&#xFF1B;&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x79CD;&#x6548;&#x679C;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>this.props.chidren</code></p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">const</span> Newspaper = props =&gt; { 
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-name">Article</span> <span class="hljs-attr">headline</span>=<span class="hljs-string">&quot;An interesting Article&quot;</span>&gt;</span>
+                Content Here
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Article</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span></span>
+    ); 
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ 
+    <span class="hljs-comment">//...</span>
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;container&apos;</span>&gt;</span> 
+                {this.props.children}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        );
+    }
+
+}
+</code></pre>
+<ul>
+<li>&#x5B50;&#x7EC4;&#x4EF6;&#x4E0E;map/forEach</li>
+</ul>
+<p>&#x5C06;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6570;&#x636E;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x89C4;&#x5219;&#x751F;&#x6210;ReactElement&#x7ECF;&#x5E38;&#x7528;&#x5230;map&#x65B9;&#x6CD5;&#xFF0C;&#x7C7B;&#x4F3C;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x4E5F;&#x6709;map&#x65B9;&#x6CD5;&#xFF1A;<code>React.Children.map()</code>/<code>React.Children.forEach()</code></p>
+<pre><code class="lang-jsx"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{ 
+  <span class="hljs-keyword">static</span> propTypes = {
+    component: PropTypes.element.isRequired,
+    children: PropTypes.element.isRequired
+    <span class="hljs-comment">//...</span>
+    renderChild = (childData, index) =&gt; { 
+        <span class="hljs-keyword">return</span> React.createElement(
+            <span class="hljs-keyword">this</span>.props.component,
+            {}, <span class="hljs-comment">// &lt;~ child props</span>
+            childData <span class="hljs-comment">// &lt;~ child&apos;s children</span>
+        ) 
+    }
+    <span class="hljs-comment">// ...</span>
+    render() { 
+      <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&apos;container&apos;</span>&gt;</span>
+        {React.Children.map(
+            this.props.children,
+            this.renderChild )
+        }
+     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span> )
+    } 
+}
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2018-09-04
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="webpack.md" class="navigation navigation-prev " aria-label="Previous page: Webpack使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="react-forms-notes.html" class="navigation navigation-next " aria-label="Next page: React-Forms笔记">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"React-JSX笔记","level":"1.11.6","depth":2,"next":{"title":"React-Forms笔记","level":"1.11.7","depth":2,"path":"fe/react-forms-notes.md","ref":"fe/react-forms-notes.md","articles":[]},"previous":{"title":"Webpack使用","level":"1.11.5","depth":2,"path":"fe/webpack.md","ref":"fe/webpack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"fe/react-jsx-notes.md","mtime":"2018-09-04T02:08:01.342Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T04:24:42.366Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
