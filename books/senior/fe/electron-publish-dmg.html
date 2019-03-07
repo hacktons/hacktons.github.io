@@ -1,0 +1,1442 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Electron DMG安装包发布 · 大前端系列专题</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="es6.md" />
+    
+    
+    <link rel="prev" href="electron-compile-error.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter_leetcode/">
+            
+                <a href="../chapter_leetcode/">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    LeetCode题解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter_leetcode/doc/reverse-integer.html">
+            
+                <a href="../chapter_leetcode/doc/reverse-integer.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    整数反转 Reverse Integer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter_leetcode/doc/palindrome-number.html">
+            
+                <a href="../chapter_leetcode/doc/palindrome-number.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    回文数判断 Palindrome Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter_leetcode/doc/single-number.html">
+            
+                <a href="../chapter_leetcode/doc/single-number.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    只出现一次的数字 Single Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter_leetcode/doc/majority-element.html">
+            
+                <a href="../chapter_leetcode/doc/majority-element.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    求众数 Majority Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../performance/draw-view.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    View绘制&效率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../performance/oom-detect.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    内存泄漏检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../block-detect.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    卡顿检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../baterry-monitor.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    耗电监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../fps-monitor.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    帧率监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../memory-monitor.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    内存占用监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../performance/anr-analyze.html">
+            
+                <a href="../performance/anr-analyze.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    ANR分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ui/">
+            
+                <a href="../ui/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    UI&UE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ui/custom-view.md">
+            
+                <span>
+            
+                    
+                        <b>1.4.1.</b>
+                    
+                    View自定义&技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ui/touch-intercept.md">
+            
+                <span>
+            
+                    
+                        <b>1.4.2.</b>
+                    
+                    手势分发&拦截
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../open/">
+            
+                <a href="../open/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    开源分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../open/okhttp3.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    OkHttp3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../open/okio.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    OkIo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../open/retrofit2.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Retrofit2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../open/glide.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.4.</b>
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../open/picasso.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.5.</b>
+                    
+                    Picasso
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../open/android-god-eye.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.6.</b>
+                    
+                    AndroidGodEye
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../service/">
+            
+                <a href="../service/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    系统服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../service/aidl-ipc.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    AIDL&跨进程通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../service/ams.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    AMS分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../service/hook-service.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Hook系统服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                        <b>1.7.</b>
+                    
+                    基础原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../basic/jvm.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    JVM运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../basic/jmm.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../basic/gc.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.3.</b>
+                    
+                    GC&算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../basic/bytecode-instruction.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.4.</b>
+                    
+                    认识字节码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../basic/asm.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.5.</b>
+                    
+                    ASM字节码修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../basic/lambda.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.6.</b>
+                    
+                    Lambda语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../basic/dvm-dex.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.7.</b>
+                    
+                    DVM&Dex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../basic/apk.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.8.</b>
+                    
+                    APK打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                        <b>1.8.</b>
+                    
+                    工具&脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tool/vs-code-debug.html">
+            
+                <a href="../tool/vs-code-debug.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    Visual Code调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tool/adb-socket.html">
+            
+                <a href="../tool/adb-socket.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    ADB & Socket分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tool/golang-cli.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    Golang CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tool/shell.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.4.</b>
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tools/python.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.5.</b>
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                        <b>1.9.</b>
+                    
+                    数据结构&算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../algorithm/binnary-tree-visist.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    二叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../algorithm/sort.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    常见排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../algorithm/huffman.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    霍夫曼编码&应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../algorithm/kmp.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.4.</b>
+                    
+                    KMP字符串查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../encrypt/">
+            
+                <a href="../encrypt/">
+            
+                    
+                        <b>1.10.</b>
+                    
+                    编码&摘要算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../encrypt/hash.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.1.</b>
+                    
+                    哈希算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../encrypt/rsa.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.2.</b>
+                    
+                    RSA原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../encrypt/aes.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.3.</b>
+                    
+                    AES原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../encrypt/md5.html">
+            
+                <a href="../encrypt/md5.html">
+            
+                    
+                        <b>1.10.4.</b>
+                    
+                    MD5摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../encrypt/base64.html">
+            
+                <a href="../encrypt/base64.html">
+            
+                    
+                        <b>1.10.5.</b>
+                    
+                    Base64编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../encrypt/sha256.md">
+            
+                <span>
+            
+                    
+                        <b>1.10.6.</b>
+                    
+                    SHA256原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.11.</b>
+                    
+                    前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="electron-compile-error.html">
+            
+                <a href="electron-compile-error.html">
+            
+                    
+                        <b>1.11.1.</b>
+                    
+                    Electron 编译问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11.2" data-path="electron-publish-dmg.html">
+            
+                <a href="electron-publish-dmg.html">
+            
+                    
+                        <b>1.11.2.</b>
+                    
+                    Electron DMG安装包发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="es6.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.3.</b>
+                    
+                    es6入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="babel.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.4.</b>
+                    
+                    Babel使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="webpack.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.5.</b>
+                    
+                    Webpack使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="react-jsx-notes.html">
+            
+                <a href="react-jsx-notes.html">
+            
+                    
+                        <b>1.11.6.</b>
+                    
+                    React-JSX笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="react-forms-notes.html">
+            
+                <a href="react-forms-notes.html">
+            
+                    
+                        <b>1.11.7.</b>
+                    
+                    React-Forms笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="react-native.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.8.</b>
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="weex.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.9.</b>
+                    
+                    Weex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="wechat-program.md">
+            
+                <span>
+            
+                    
+                        <b>1.11.10.</b>
+                    
+                    小程序实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../server/">
+            
+                <a href="../server/">
+            
+                    
+                        <b>1.12.</b>
+                    
+                    后端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../server/nodejs.md">
+            
+                <span>
+            
+                    
+                        <b>1.12.1.</b>
+                    
+                    Nodejs浅析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../server/docker.md">
+            
+                <span>
+            
+                    
+                        <b>1.12.2.</b>
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../server/golang.md">
+            
+                <span>
+            
+                    
+                        <b>1.12.3.</b>
+                    
+                    Golang
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Electron DMG安装包发布</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#electron-dmg&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;"><b></b>Electron DMG&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x5DE5;&#x5177;&#x914D;&#x7F6E;"><b></b>&#x5DE5;&#x5177;&#x914D;&#x7F6E;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"><b></b>&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&amp;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</a></li><ul><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x914D;&#x7F6E;dmg&#x8F93;&#x51FA;&#x6587;&#x4EF6;"><b></b>&#x914D;&#x7F6E;dmg&#x8F93;&#x51FA;&#x6587;&#x4EF6;</a></li><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x914D;&#x7F6E;&#x80CC;&#x666F;&#x56FE;"><b></b>&#x914D;&#x7F6E;&#x80CC;&#x666F;&#x56FE;</a></li><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x5982;&#x4F55;&#x8BBE;&#x7F6E;app&#x56FE;&#x6807;"><b></b>&#x5982;&#x4F55;&#x8BBE;&#x7F6E;app&#x56FE;&#x6807;</a></li><li><span class="title-icon fa fa-angle-right"></span><a href="#&#x6267;&#x884C;asar&#x6863;&#x6848;&#x5185;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;"><b></b>&#x6267;&#x884C;asar&#x6863;&#x6848;&#x5185;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</a></li></ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x53C2;&#x8003;"><b></b>&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#electron-dmg&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="electron-dmg&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;"><a name="electron-dmg&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;" class="anchor-navigation-ex-anchor" href="#electron-dmg&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>Electron DMG&#x5B89;&#x88C5;&#x5305;&#x53D1;&#x5E03;</h1>
+<p>&#x901A;&#x8FC7;electron&#x6846;&#x67B6;&#x5F00;&#x53D1;&#x5B8C;&#x4E86;&#x9879;&#x76EE;&#xFF0C;&#x6700;&#x7EC8;&#x662F;&#x8981;&#x53D1;&#x5E03;&#x51FA;&#x53BB;&#x7684;&#xFF0C;&#x5728;macOS&#x4E0A;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x662F;&#x901A;&#x8FC7;dmg&#x683C;&#x5F0F;&#x7684;&#x5B89;&#x88C5;&#x5305;&#x6587;&#x4EF6;&#xFF0C;&#x672C;&#x6587;&#x8BB0;&#x5F55;dmg&#x53D1;&#x5E03;&#x548C;&#x4F18;&#x5316;&#x7684;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#xFF1B;</p>
+<h2 id="&#x5DE5;&#x5177;&#x914D;&#x7F6E;"><a name="&#x5DE5;&#x5177;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x5DE5;&#x5177;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x5177;&#x914D;&#x7F6E;</h2>
+<p>&#x5982;&#x679C;google&#x4E00;&#x4E0B;&#x5236;&#x4F5C;dmg&#x7684;&#x65B9;&#x6CD5;&#x4F1A;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x7528;mac&#x4E0B;&#x7684;&#x81EA;&#x76D8;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;appdmg&#x7B49;node&#x7A0B;&#x5E8F;&#xFF1B;&#x6211;&#x4EEC;&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#x7684;&#x50BB;&#x74DC;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>electron-forge</code>,&#x6700;&#x7EC8;&#x4F7F;&#x7528;&#x7684;&#x662F;appdmg&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x7ECF;&#x8FC7;&#x4E86;&#x51E0;&#x6B21;&#x5C01;&#x88C5;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;json&#x914D;&#x7F6E;&#x6765;&#x751F;&#x6210;&#x5B89;&#x88C5;&#x5305;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x901A;&#x8FC7;&#x6A21;&#x677F;&#x5DE5;&#x5177;&#x521B;&#x5EFA;electron&#x5DE5;&#x7A0B;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x51E0;&#x4E2A;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-shell">npm install -g electron-forge
+electron-forge init my-new-project
+cd my-new-project
+electron-forge start
+</code></pre>
+<p>&#x5982;&#x6B64;&#x4F60;&#x8FB9;&#x8DD1;&#x8D77;&#x4E86;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x3002;&#x5728;&#x521B;&#x5EFA;&#x597D;&#x7684;electron&#x9879;&#x76EE;&#x9ED8;&#x8BA4;&#x4F1A;&#x6709;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;<code>package.json</code>&#xFF1A;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;make_targets&quot;</span>: {
+    <span class="hljs-string">&quot;win32&quot;</span>: [
+      <span class="hljs-string">&quot;squirrel&quot;</span>
+    ],
+    <span class="hljs-string">&quot;darwin&quot;</span>: [
+      <span class="hljs-string">&quot;zip&quot;</span>
+    ],
+    <span class="hljs-string">&quot;linux&quot;</span>: [
+      <span class="hljs-string">&quot;deb&quot;</span>,
+      <span class="hljs-string">&quot;rpm&quot;</span>
+    ]
+  },
+  <span class="hljs-string">&quot;electronPackagerConfig&quot;</span>: {},
+  <span class="hljs-string">&quot;electronWinstallerConfig&quot;</span>: {
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  },
+  <span class="hljs-string">&quot;electronInstallerDebian&quot;</span>: {},
+  <span class="hljs-string">&quot;electronInstallerRedhat&quot;</span>: {},
+  <span class="hljs-string">&quot;github_repository&quot;</span>: {
+    <span class="hljs-string">&quot;owner&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  },
+  <span class="hljs-string">&quot;windowsStoreConfig&quot;</span>: {
+    <span class="hljs-string">&quot;packageName&quot;</span>: <span class="hljs-string">&quot;&quot;</span>
+  }
+}
+</code></pre>
+<h2 id="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"><a name="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&amp;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</h2>
+<h3 id="&#x914D;&#x7F6E;dmg&#x8F93;&#x51FA;&#x6587;&#x4EF6;"><a name="&#x914D;&#x7F6E;dmg&#x8F93;&#x51FA;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;dmg&#x8F93;&#x51FA;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;dmg&#x8F93;&#x51FA;&#x6587;&#x4EF6;</h3>
+<blockquote>
+<p>&#x901A;&#x8FC7;<code>electron-forge make</code>&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x51FA;&#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;<code>out</code>&#x76EE;&#x5F55;&#x4E0B;&#x5E76;&#x6CA1;&#x6709;dmg&#x6587;&#x4EF6;&#xFF1B;</p>
+</blockquote>
+<p>&#x4E3A;&#x4E86;&#x5F97;&#x5230;dmg&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;electronInstallerDMG&quot;</span>: {
+      <span class="hljs-string">&quot;background&quot;</span>: <span class="hljs-string">&quot;path/to/image.png&quot;</span>,
+      <span class="hljs-string">&quot;icon&quot;</span>: <span class="hljs-string">&quot;path/to/icon.icns&quot;</span>,
+      <span class="hljs-string">&quot;format&quot;</span>: <span class="hljs-string">&quot;ULFO&quot;</span>
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x53EA;&#x662F;&#x5305;&#x88F9;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x56E0;&#x6B64;&#x60F3;&#x660E;&#x786E;&#x77E5;&#x9053;&#x542B;&#x4E49;&#xFF0C;&#x9700;&#x8981;&#x770B;&#x6587;&#x6863;&#x4E86;&#xFF1B;</p>
+<p><a href="https://github.com/electron-userland/electron-installer-dmg#api" target="_blank">electron-installer-dmg</a></p>
+<p>&#x622A;&#x53D6;&#x51E0;&#x4E2A;&#x5B57;&#x6BB5;&#x8BF4;&#x660E;&#xFF1A;</p>
+<pre><code>background - String
+Path to the background for the DMG window. Background image should be of size 658&#x2006;&#xD7;&#x2006;498.
+
+icon - String
+Path to the icon to use for the app in the DMG window.
+</code></pre><p>&#x8FD9;&#x4E2A;&#x5E93;&#x6700;&#x7EC8;&#x4F9D;&#x8D56;&#x7684;&#x5C31;&#x662F;<a href="https://github.com/LinusU/node-appdmg" target="_blank">appdmg</a>, &#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x793A;&#x610F;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p><img src="https://raw.githubusercontent.com/LinusU/node-appdmg/master/help/help.png" alt="dmg"></p>
+<h3 id="&#x914D;&#x7F6E;&#x80CC;&#x666F;&#x56FE;"><a name="&#x914D;&#x7F6E;&#x80CC;&#x666F;&#x56FE;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x80CC;&#x666F;&#x56FE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x80CC;&#x666F;&#x56FE;</h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4EFB;&#x4F55;&#x4E0A;&#x56FE;&#x91CC;&#x9762;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x6253;&#x51FA;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;dmg&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5982;&#x679C;&#x751F;&#x6210;&#x8FD9;&#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<blockquote>
+<p>background&#x9700;&#x8981;&#x56FA;&#x5B9A;&#x5C3A;&#x5BF8;&#xFF0C;&#x5982;&#x679C;&#x9002;&#x914D;&#x7684;&#x8BDD;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4EFD;@2x&#x56FE;&#xFF0C;&#x5E76;&#x6253;&#x5305;&#x6210;tiff&#x683C;&#x5F0F;</p>
+</blockquote>
+<pre><code class="lang-shell">tiffutil -cathidpicheck assets/background.png assets/background@2x.png -out assets/background.tiff
+</code></pre>
+<h3 id="&#x5982;&#x4F55;&#x8BBE;&#x7F6E;app&#x56FE;&#x6807;"><a name="&#x5982;&#x4F55;&#x8BBE;&#x7F6E;app&#x56FE;&#x6807;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x8BBE;&#x7F6E;app&#x56FE;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5982;&#x4F55;&#x8BBE;&#x7F6E;app&#x56FE;&#x6807;</h3>
+<p>&#x540C;&#x524D;&#x9762;&#x914D;&#x7F6E;&#x7684;icon&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5B89;&#x88C5;&#x597D;&#x7684;app&#x56FE;&#x6807;&#x5E76;&#x6CA1;&#x6709;&#x548C;&#x9884;&#x671F;&#x4E00;&#x6837;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E2A;icon&#x4ED6;&#x6307;&#x4EE3;&#x5B9E;&#x9645;&#x4E0A;&#x5E76;&#x4E0D;&#x662F;app&#x7684;&#x56FE;&#x6807;&#xFF0C;&#x800C;&#x662F;&#x955C;&#x50CF;&#x6587;&#x4EF6;&#x7684;&#x56FE;&#x6807;&#x3002;
+&#x5E94;&#x7528;&#x56FE;&#x6807;&#x9700;&#x8981;&#x5728;<code>electronPackagerConfig</code>&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;<code>icon</code>,&#x4E5F;&#x9700;&#x8981;&#x662F;icns&#x683C;&#x5F0F;&#xFF1B;icns&#x683C;&#x5F0F;&#x8FD9;&#x4E2A;&#x7F51;&#x4E0A;&#x5F88;&#x591A;&#x8F6C;&#x6362;&#x5DE5;&#x5177;&#xFF1B;</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;electronPackagerConfig&quot;</span>:{
+     <span class="hljs-string">&quot;asar&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;quiet&quot;</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-string">&quot;protocol&quot;</span>: <span class="hljs-string">&quot;myapp://&quot;</span>,
+      <span class="hljs-string">&quot;icon&quot;</span>: <span class="hljs-string">&quot;./images/myicon&quot;</span>
+}
+</code></pre>
+<h3 id="&#x6267;&#x884C;asar&#x6863;&#x6848;&#x5185;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;"><a name="&#x6267;&#x884C;asar&#x6863;&#x6848;&#x5185;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x6267;&#x884C;asar&#x6863;&#x6848;&#x5185;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6267;&#x884C;asar&#x6863;&#x6848;&#x5185;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</h3>
+<pre><code>Node &#x4E2D;&#x6709;&#x4E00;&#x4E9B;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x7684; API&#xFF0C;&#x5982; child_process.exec&#xFF0C;child_process.spawn &#x548C; child_process.execFile &#x7B49;&#xFF0C; &#x4F46;&#x53EA;&#x6709; execFile &#x53EF;&#x4EE5;&#x6267;&#x884C; asar &#x5305;&#x4E2D;&#x7684;&#x7A0B;&#x5E8F;&#x3002;
+
+&#x56E0;&#x4E3A; exec &#x548C; spawn &#x5141;&#x8BB8; command &#x66FF;&#x4EE3; file &#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x800C; command &#x662F;&#x9700;&#x8981;&#x5728; shell &#x4E0B;&#x6267;&#x884C;&#x7684;. &#x76EE;&#x524D;&#x6CA1;&#x6709; &#x53EF;&#x9760;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5224;&#x65AD; command &#x4E2D;&#x662F;&#x5426;&#x5728;&#x64CD;&#x4F5C;&#x4E00;&#x4E2A; asar &#x5305;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x4E14;&#x5373;&#x4FBF;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#xFF0C;&#x6211;&#x4EEC;&#x4F9D;&#x65E7;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x53EF;&#x4EE5;&#x5728;&#x65E0;&#x4EFB;&#x4F55; &#x526F;&#x4F5C;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x66FF;&#x6362; command &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;
+</code></pre><h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://electronjs.org/" target="_blank">https://electronjs.org/</a></li>
+<li><a href="https://electronforge.io/" target="_blank">https://electronforge.io/</a> </li>
+</ul>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2018-09-21
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="electron-compile-error.html" class="navigation navigation-prev " aria-label="Previous page: Electron 编译问题记录">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="es6.md" class="navigation navigation-next " aria-label="Next page: es6入门">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Electron DMG安装包发布","level":"1.11.2","depth":2,"next":{"title":"es6入门","level":"1.11.3","depth":2,"path":"fe/es6.md","ref":"fe/es6.md","articles":[]},"previous":{"title":"Electron 编译问题记录","level":"1.11.1","depth":2,"path":"fe/electron-compile-error.md","ref":"fe/electron-compile-error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"fe/electron-publish-dmg.md","mtime":"2018-09-21T08:29:56.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T04:24:42.366Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

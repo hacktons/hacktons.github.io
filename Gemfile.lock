@@ -7,7 +7,7 @@ PATH
       jekyll-sitemap (~> 1.1)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://gems.ruby-china.com/
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
