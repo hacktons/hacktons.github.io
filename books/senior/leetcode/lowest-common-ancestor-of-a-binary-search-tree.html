@@ -1,0 +1,1419 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>二叉搜索树的最近公共祖先 · 大前端系列专题</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="best-time-to-buy-and-sell-stock-II.html" />
+    
+    
+    <link rel="prev" href="reverse-linked-list.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    LeetCode题解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="reverse-integer.html">
+            
+                <a href="reverse-integer.html">
+            
+                    
+                    整数反转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="palindrome-number.html">
+            
+                <a href="palindrome-number.html">
+            
+                    
+                    回文数判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="single-number.html">
+            
+                <a href="single-number.html">
+            
+                    
+                    只出现一次的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="majority-element.html">
+            
+                <a href="majority-element.html">
+            
+                    
+                    求众数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="longest-common-prefix.html">
+            
+                <a href="longest-common-prefix.html">
+            
+                    
+                    最长公共前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="valid-parentheses.html">
+            
+                <a href="valid-parentheses.html">
+            
+                    
+                    有效括号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="merge-two-sorted-lists.html">
+            
+                <a href="merge-two-sorted-lists.html">
+            
+                    
+                    合并两个有序链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="delete-dode-in-a-linked-list.html">
+            
+                <a href="delete-dode-in-a-linked-list.html">
+            
+                    
+                    删除链表中的节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="maximum-depth-of-binary-tree.html">
+            
+                <a href="maximum-depth-of-binary-tree.html">
+            
+                    
+                    二叉树的最大深度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_leecode/nim-game.md">
+            
+                <span>
+            
+                    
+                    Nim游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="reverse-string.html">
+            
+                <a href="reverse-string.html">
+            
+                    
+                    反转字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../chapter_leecode/reverse-words-in-a-string-III.md">
+            
+                <span>
+            
+                    
+                    反转字符串中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="reverse-linked-list.html">
+            
+                <a href="reverse-linked-list.html">
+            
+                    
+                    反转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.14" data-path="lowest-common-ancestor-of-a-binary-search-tree.html">
+            
+                <a href="lowest-common-ancestor-of-a-binary-search-tree.html">
+            
+                    
+                    二叉搜索树的最近公共祖先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="best-time-to-buy-and-sell-stock-II.html">
+            
+                <a href="best-time-to-buy-and-sell-stock-II.html">
+            
+                    
+                    买卖股票的最佳时机 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="best-time-to-buy-and-sell-stock.html">
+            
+                <a href="best-time-to-buy-and-sell-stock.html">
+            
+                    
+                    买卖股票的最佳时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../performance/draw-view.md">
+            
+                <span>
+            
+                    
+                    View绘制&效率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../performance/oom-detect.md">
+            
+                <span>
+            
+                    
+                    内存泄漏检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../block-detect.md">
+            
+                <span>
+            
+                    
+                    卡顿检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../baterry-monitor.md">
+            
+                <span>
+            
+                    
+                    耗电监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../fps-monitor.md">
+            
+                <span>
+            
+                    
+                    帧率监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../memory-monitor.md">
+            
+                <span>
+            
+                    
+                    内存占用监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../performance/anr-analyze.html">
+            
+                <a href="../performance/anr-analyze.html">
+            
+                    
+                    ANR分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ui/">
+            
+                <a href="../ui/">
+            
+                    
+                    UI&UE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ui/custom-view.md">
+            
+                <span>
+            
+                    
+                    View自定义&技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ui/touch-intercept.md">
+            
+                <span>
+            
+                    
+                    手势分发&拦截
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../open/">
+            
+                <a href="../open/">
+            
+                    
+                    开源分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../open/okhttp3.md">
+            
+                <span>
+            
+                    
+                    OkHttp3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../open/okio.md">
+            
+                <span>
+            
+                    
+                    OkIo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../open/retrofit2.md">
+            
+                <span>
+            
+                    
+                    Retrofit2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../open/glide.md">
+            
+                <span>
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../open/picasso.md">
+            
+                <span>
+            
+                    
+                    Picasso
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../open/android-god-eye.md">
+            
+                <span>
+            
+                    
+                    AndroidGodEye
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../service/">
+            
+                <a href="../service/">
+            
+                    
+                    系统服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../service/aidl-ipc.md">
+            
+                <span>
+            
+                    
+                    AIDL&跨进程通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../service/ams.md">
+            
+                <span>
+            
+                    
+                    AMS分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../service/hook-service.md">
+            
+                <span>
+            
+                    
+                    Hook系统服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../basic/jvm.md">
+            
+                <span>
+            
+                    
+                    JVM运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../basic/jmm.md">
+            
+                <span>
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../basic/gc.md">
+            
+                <span>
+            
+                    
+                    GC&算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../basic/bytecode-instruction.md">
+            
+                <span>
+            
+                    
+                    认识字节码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../basic/asm.md">
+            
+                <span>
+            
+                    
+                    ASM字节码修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../basic/lambda.md">
+            
+                <span>
+            
+                    
+                    Lambda语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../basic/dvm-dex.md">
+            
+                <span>
+            
+                    
+                    DVM&Dex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../basic/apk.md">
+            
+                <span>
+            
+                    
+                    APK打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    工具&脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tool/vs-code-debug.html">
+            
+                <a href="../tool/vs-code-debug.html">
+            
+                    
+                    Visual Code调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tool/adb-socket.html">
+            
+                <a href="../tool/adb-socket.html">
+            
+                    
+                    ADB & Socket分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tool/golang-cli.md">
+            
+                <span>
+            
+                    
+                    Golang CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tool/shell.md">
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tools/python.md">
+            
+                <span>
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                    数据结构&算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../algorithm/binnary-tree-visist.md">
+            
+                <span>
+            
+                    
+                    二叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../algorithm/sort.md">
+            
+                <span>
+            
+                    
+                    常见排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../algorithm/huffman.md">
+            
+                <span>
+            
+                    
+                    霍夫曼编码&应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../algorithm/kmp.md">
+            
+                <span>
+            
+                    
+                    KMP字符串查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../encrypt/">
+            
+                <a href="../encrypt/">
+            
+                    
+                    编码&摘要算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../encrypt/hash.md">
+            
+                <span>
+            
+                    
+                    哈希算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../encrypt/rsa.md">
+            
+                <span>
+            
+                    
+                    RSA原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../encrypt/aes.md">
+            
+                <span>
+            
+                    
+                    AES原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../encrypt/md5.html">
+            
+                <a href="../encrypt/md5.html">
+            
+                    
+                    MD5摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../encrypt/base64.html">
+            
+                <a href="../encrypt/base64.html">
+            
+                    
+                    Base64编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../encrypt/sha256.md">
+            
+                <span>
+            
+                    
+                    SHA256原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../fe/">
+            
+                <a href="../fe/">
+            
+                    
+                    前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../fe/electron-compile-error.html">
+            
+                <a href="../fe/electron-compile-error.html">
+            
+                    
+                    Electron 编译问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../fe/electron-publish-dmg.html">
+            
+                <a href="../fe/electron-publish-dmg.html">
+            
+                    
+                    Electron DMG安装包发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../fe/es6.md">
+            
+                <span>
+            
+                    
+                    es6入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../fe/babel.md">
+            
+                <span>
+            
+                    
+                    Babel使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../fe/webpack.md">
+            
+                <span>
+            
+                    
+                    Webpack使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../fe/react-jsx-notes.html">
+            
+                <a href="../fe/react-jsx-notes.html">
+            
+                    
+                    React-JSX笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../fe/react-forms-notes.html">
+            
+                <a href="../fe/react-forms-notes.html">
+            
+                    
+                    React-Forms笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../fe/react-native.md">
+            
+                <span>
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../fe/weex.md">
+            
+                <span>
+            
+                    
+                    Weex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../fe/wechat-program.md">
+            
+                <span>
+            
+                    
+                    小程序实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../server/">
+            
+                <a href="../server/">
+            
+                    
+                    后端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../server/nodejs.md">
+            
+                <span>
+            
+                    
+                    Nodejs浅析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../server/docker.md">
+            
+                <span>
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../server/golang.md">
+            
+                <span>
+            
+                    
+                    Golang
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >二叉搜索树的最近公共祖先</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;-lowest-common-ancestor-of-a-binary-search-tree"><b></b>&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148; Lowest Common Ancestor of a Binary Search Tree</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x9898;&#x76EE;"><b></b>&#x9898;&#x76EE;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><b></b>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><b></b>&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;</a></li></ul></ul></div><a href="#&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;-lowest-common-ancestor-of-a-binary-search-tree" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;-lowest-common-ancestor-of-a-binary-search-tree"><a name="&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;-lowest-common-ancestor-of-a-binary-search-tree" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;-lowest-common-ancestor-of-a-binary-search-tree"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148; Lowest Common Ancestor of a Binary Search Tree</h1>
+<p>lowest-common-ancestor-of-a-binary-search-tree</p>
+<h2 id="&#x9898;&#x76EE;"><a name="&#x9898;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x9898;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9898;&#x76EE;</h2>
+<blockquote>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x641C;&#x7D22;&#x6811;, &#x627E;&#x5230;&#x8BE5;&#x6811;&#x4E2D;&#x4E24;&#x4E2A;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x3002;</p>
+</blockquote>
+<p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
+<p>According to the definition of LCA on Wikipedia: &#x201C;The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).&#x201D;</p>
+<p>Given binary search tree:  root = [6,2,8,0,4,7,9,null,null,3,5]
+<img src="assets/binarysearchtree_improved.png" alt="binarysearchtree_improved.png"></p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 6
+Explanation: The LCA of nodes 2 and 8 is 6.
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+Output: 2
+Explanation: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+</code></pre><p><strong>Note:</strong></p>
+<pre><code>All of the nodes&apos; values will be unique.
+p and q are different and both values will exist in the BST.
+</code></pre><p><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank">https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/</a></p>
+<h2 id="&#x601D;&#x8DEF;&#x9898;&#x89E3;"><a name="&#x601D;&#x8DEF;&#x9898;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</h2>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>{
+    TreeNode tmp = root;
+    <span class="hljs-keyword">while</span>(tmp!=<span class="hljs-keyword">null</span>){
+        <span class="hljs-keyword">if</span>(tmp.val &gt; p.val &amp;&amp; tmp.val &gt; q.val){
+            tmp = tmp.left;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(tmp.val &lt; p.val &amp;&amp; tmp.val &lt; q.val) {
+            tmp = tmp.right;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(tmp.val == p.val || tmp.val == q.val) {
+            <span class="hljs-keyword">return</span> tmp;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> tmp;
+        }
+    }
+    <span class="hljs-keyword">return</span> tmp;
+}
+</code></pre>
+<h2 id="&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><a name="&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;</h2>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2019-03-21
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="reverse-linked-list.html" class="navigation navigation-prev " aria-label="Previous page: 反转链表">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="best-time-to-buy-and-sell-stock-II.html" class="navigation navigation-next " aria-label="Next page: 买卖股票的最佳时机 II">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"二叉搜索树的最近公共祖先","level":"1.2.14","depth":2,"next":{"title":"买卖股票的最佳时机 II","level":"1.2.15","depth":2,"path":"leetcode/best-time-to-buy-and-sell-stock-II.md","ref":"leetcode/best-time-to-buy-and-sell-stock-II.md","articles":[]},"previous":{"title":"反转链表","level":"1.2.13","depth":2,"path":"leetcode/reverse-linked-list.md","ref":"leetcode/reverse-linked-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"leetcode/lowest-common-ancestor-of-a-binary-search-tree.md","mtime":"2019-03-21T05:38:55.676Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T06:54:11.353Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

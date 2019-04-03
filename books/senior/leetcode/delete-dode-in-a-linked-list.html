@@ -1,0 +1,1407 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>删除链表中的节点 · 大前端系列专题</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="maximum-depth-of-binary-tree.html" />
+    
+    
+    <link rel="prev" href="merge-two-sorted-lists.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    LeetCode题解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="reverse-integer.html">
+            
+                <a href="reverse-integer.html">
+            
+                    
+                    整数反转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="palindrome-number.html">
+            
+                <a href="palindrome-number.html">
+            
+                    
+                    回文数判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="single-number.html">
+            
+                <a href="single-number.html">
+            
+                    
+                    只出现一次的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="majority-element.html">
+            
+                <a href="majority-element.html">
+            
+                    
+                    求众数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="longest-common-prefix.html">
+            
+                <a href="longest-common-prefix.html">
+            
+                    
+                    最长公共前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="valid-parentheses.html">
+            
+                <a href="valid-parentheses.html">
+            
+                    
+                    有效括号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="merge-two-sorted-lists.html">
+            
+                <a href="merge-two-sorted-lists.html">
+            
+                    
+                    合并两个有序链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="delete-dode-in-a-linked-list.html">
+            
+                <a href="delete-dode-in-a-linked-list.html">
+            
+                    
+                    删除链表中的节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="maximum-depth-of-binary-tree.html">
+            
+                <a href="maximum-depth-of-binary-tree.html">
+            
+                    
+                    二叉树的最大深度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_leecode/nim-game.md">
+            
+                <span>
+            
+                    
+                    Nim游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="reverse-string.html">
+            
+                <a href="reverse-string.html">
+            
+                    
+                    反转字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../chapter_leecode/reverse-words-in-a-string-III.md">
+            
+                <span>
+            
+                    
+                    反转字符串中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="reverse-linked-list.html">
+            
+                <a href="reverse-linked-list.html">
+            
+                    
+                    反转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="lowest-common-ancestor-of-a-binary-search-tree.html">
+            
+                <a href="lowest-common-ancestor-of-a-binary-search-tree.html">
+            
+                    
+                    二叉搜索树的最近公共祖先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="best-time-to-buy-and-sell-stock-II.html">
+            
+                <a href="best-time-to-buy-and-sell-stock-II.html">
+            
+                    
+                    买卖股票的最佳时机 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="best-time-to-buy-and-sell-stock.html">
+            
+                <a href="best-time-to-buy-and-sell-stock.html">
+            
+                    
+                    买卖股票的最佳时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../performance/draw-view.md">
+            
+                <span>
+            
+                    
+                    View绘制&效率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../performance/oom-detect.md">
+            
+                <span>
+            
+                    
+                    内存泄漏检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../block-detect.md">
+            
+                <span>
+            
+                    
+                    卡顿检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../baterry-monitor.md">
+            
+                <span>
+            
+                    
+                    耗电监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../fps-monitor.md">
+            
+                <span>
+            
+                    
+                    帧率监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../memory-monitor.md">
+            
+                <span>
+            
+                    
+                    内存占用监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../performance/anr-analyze.html">
+            
+                <a href="../performance/anr-analyze.html">
+            
+                    
+                    ANR分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ui/">
+            
+                <a href="../ui/">
+            
+                    
+                    UI&UE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ui/custom-view.md">
+            
+                <span>
+            
+                    
+                    View自定义&技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ui/touch-intercept.md">
+            
+                <span>
+            
+                    
+                    手势分发&拦截
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../open/">
+            
+                <a href="../open/">
+            
+                    
+                    开源分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../open/okhttp3.md">
+            
+                <span>
+            
+                    
+                    OkHttp3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../open/okio.md">
+            
+                <span>
+            
+                    
+                    OkIo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../open/retrofit2.md">
+            
+                <span>
+            
+                    
+                    Retrofit2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../open/glide.md">
+            
+                <span>
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../open/picasso.md">
+            
+                <span>
+            
+                    
+                    Picasso
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../open/android-god-eye.md">
+            
+                <span>
+            
+                    
+                    AndroidGodEye
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../service/">
+            
+                <a href="../service/">
+            
+                    
+                    系统服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../service/aidl-ipc.md">
+            
+                <span>
+            
+                    
+                    AIDL&跨进程通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../service/ams.md">
+            
+                <span>
+            
+                    
+                    AMS分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../service/hook-service.md">
+            
+                <span>
+            
+                    
+                    Hook系统服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../basic/jvm.md">
+            
+                <span>
+            
+                    
+                    JVM运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../basic/jmm.md">
+            
+                <span>
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../basic/gc.md">
+            
+                <span>
+            
+                    
+                    GC&算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../basic/bytecode-instruction.md">
+            
+                <span>
+            
+                    
+                    认识字节码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../basic/asm.md">
+            
+                <span>
+            
+                    
+                    ASM字节码修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../basic/lambda.md">
+            
+                <span>
+            
+                    
+                    Lambda语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../basic/dvm-dex.md">
+            
+                <span>
+            
+                    
+                    DVM&Dex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../basic/apk.md">
+            
+                <span>
+            
+                    
+                    APK打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    工具&脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tool/vs-code-debug.html">
+            
+                <a href="../tool/vs-code-debug.html">
+            
+                    
+                    Visual Code调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tool/adb-socket.html">
+            
+                <a href="../tool/adb-socket.html">
+            
+                    
+                    ADB & Socket分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tool/golang-cli.md">
+            
+                <span>
+            
+                    
+                    Golang CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tool/shell.md">
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tools/python.md">
+            
+                <span>
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                    数据结构&算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../algorithm/binnary-tree-visist.md">
+            
+                <span>
+            
+                    
+                    二叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../algorithm/sort.md">
+            
+                <span>
+            
+                    
+                    常见排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../algorithm/huffman.md">
+            
+                <span>
+            
+                    
+                    霍夫曼编码&应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../algorithm/kmp.md">
+            
+                <span>
+            
+                    
+                    KMP字符串查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../encrypt/">
+            
+                <a href="../encrypt/">
+            
+                    
+                    编码&摘要算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../encrypt/hash.md">
+            
+                <span>
+            
+                    
+                    哈希算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../encrypt/rsa.md">
+            
+                <span>
+            
+                    
+                    RSA原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../encrypt/aes.md">
+            
+                <span>
+            
+                    
+                    AES原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../encrypt/md5.html">
+            
+                <a href="../encrypt/md5.html">
+            
+                    
+                    MD5摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../encrypt/base64.html">
+            
+                <a href="../encrypt/base64.html">
+            
+                    
+                    Base64编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../encrypt/sha256.md">
+            
+                <span>
+            
+                    
+                    SHA256原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../fe/">
+            
+                <a href="../fe/">
+            
+                    
+                    前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../fe/electron-compile-error.html">
+            
+                <a href="../fe/electron-compile-error.html">
+            
+                    
+                    Electron 编译问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../fe/electron-publish-dmg.html">
+            
+                <a href="../fe/electron-publish-dmg.html">
+            
+                    
+                    Electron DMG安装包发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../fe/es6.md">
+            
+                <span>
+            
+                    
+                    es6入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../fe/babel.md">
+            
+                <span>
+            
+                    
+                    Babel使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../fe/webpack.md">
+            
+                <span>
+            
+                    
+                    Webpack使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../fe/react-jsx-notes.html">
+            
+                <a href="../fe/react-jsx-notes.html">
+            
+                    
+                    React-JSX笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../fe/react-forms-notes.html">
+            
+                <a href="../fe/react-forms-notes.html">
+            
+                    
+                    React-Forms笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../fe/react-native.md">
+            
+                <span>
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../fe/weex.md">
+            
+                <span>
+            
+                    
+                    Weex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../fe/wechat-program.md">
+            
+                <span>
+            
+                    
+                    小程序实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../server/">
+            
+                <a href="../server/">
+            
+                    
+                    后端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../server/nodejs.md">
+            
+                <span>
+            
+                    
+                    Nodejs浅析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../server/docker.md">
+            
+                <span>
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../server/golang.md">
+            
+                <span>
+            
+                    
+                    Golang
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >删除链表中的节点</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;-delete-node-in-a-linked-list"><b></b>&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9; Delete Node in a Linked List</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x9898;&#x76EE;"><b></b>&#x9898;&#x76EE;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><b></b>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</a></li></ul></ul></div><a href="#&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;-delete-node-in-a-linked-list" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;-delete-node-in-a-linked-list"><a name="&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;-delete-node-in-a-linked-list" class="anchor-navigation-ex-anchor" href="#&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;-delete-node-in-a-linked-list"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5220;&#x9664;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9; Delete Node in a Linked List</h1>
+<h2 id="&#x9898;&#x76EE;"><a name="&#x9898;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x9898;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9898;&#x76EE;</h2>
+<blockquote>
+<p>&#x8BF7;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x5176;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x7ED9;&#x5B9A;&#x7684;&#xFF08;&#x975E;&#x672B;&#x5C3E;&#xFF09;&#x8282;&#x70B9;&#xFF0C;&#x4F60;&#x5C06;&#x53EA;&#x63D0;&#x4F9B;&#x8981;&#x6C42;&#x88AB;&#x5220;&#x9664;&#x7684;&#x8282;&#x70B9;</p>
+</blockquote>
+<p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
+<p>Given linked list -- head = [4,5,1,9], which looks like following:</p>
+<p><img src="assets/237_example.png" alt="237_example.png"></p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: head = [4,5,1,9], node = 5
+Output: [4,1,9]
+</code></pre><p>Explanation: You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.</p>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: head = [4,5,1,9], node = 1
+Output: [4,5,9]
+</code></pre><p>Explanation: You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.</p>
+<p><strong>Note:</strong></p>
+<p><em>The linked list will have at least two elements.
+</em>All of the nodes&apos; values will be unique.
+<em>The given node will not be the tail and it will always be a valid node of the linked list.
+</em>Do not return anything from your function.</p>
+<h2 id="&#x601D;&#x8DEF;&#x9898;&#x89E3;"><a name="&#x601D;&#x8DEF;&#x9898;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</h2>
+<p>&#x94FE;&#x8868;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF0C;&#x66FF;&#x6362;&#x5E76;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(ListNode node)</span> </span>{
+    ListNode next = node.next;
+    node.val = next.val;
+    node.next = next.next;
+}
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2019-03-21
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="merge-two-sorted-lists.html" class="navigation navigation-prev " aria-label="Previous page: 合并两个有序链表">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="maximum-depth-of-binary-tree.html" class="navigation navigation-next " aria-label="Next page: 二叉树的最大深度">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"删除链表中的节点","level":"1.2.8","depth":2,"next":{"title":"二叉树的最大深度","level":"1.2.9","depth":2,"path":"leetcode/maximum-depth-of-binary-tree.md","ref":"leetcode/maximum-depth-of-binary-tree.md","articles":[]},"previous":{"title":"合并两个有序链表","level":"1.2.7","depth":2,"path":"leetcode/merge-two-sorted-lists.md","ref":"leetcode/merge-two-sorted-lists.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"leetcode/delete-dode-in-a-linked-list.md","mtime":"2019-03-21T05:38:50.301Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T06:54:11.353Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
