@@ -1,0 +1,1468 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>整数反转 · 大前端系列专题</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="palindrome-number.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    LeetCode题解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="reverse-integer.html">
+            
+                <a href="reverse-integer.html">
+            
+                    
+                    整数反转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="palindrome-number.html">
+            
+                <a href="palindrome-number.html">
+            
+                    
+                    回文数判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="single-number.html">
+            
+                <a href="single-number.html">
+            
+                    
+                    只出现一次的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="majority-element.html">
+            
+                <a href="majority-element.html">
+            
+                    
+                    求众数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="longest-common-prefix.html">
+            
+                <a href="longest-common-prefix.html">
+            
+                    
+                    最长公共前缀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="valid-parentheses.html">
+            
+                <a href="valid-parentheses.html">
+            
+                    
+                    有效括号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="merge-two-sorted-lists.html">
+            
+                <a href="merge-two-sorted-lists.html">
+            
+                    
+                    合并两个有序链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="delete-dode-in-a-linked-list.html">
+            
+                <a href="delete-dode-in-a-linked-list.html">
+            
+                    
+                    删除链表中的节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="maximum-depth-of-binary-tree.html">
+            
+                <a href="maximum-depth-of-binary-tree.html">
+            
+                    
+                    二叉树的最大深度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../chapter_leecode/nim-game.md">
+            
+                <span>
+            
+                    
+                    Nim游戏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="reverse-string.html">
+            
+                <a href="reverse-string.html">
+            
+                    
+                    反转字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../chapter_leecode/reverse-words-in-a-string-III.md">
+            
+                <span>
+            
+                    
+                    反转字符串中的单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="reverse-linked-list.html">
+            
+                <a href="reverse-linked-list.html">
+            
+                    
+                    反转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="lowest-common-ancestor-of-a-binary-search-tree.html">
+            
+                <a href="lowest-common-ancestor-of-a-binary-search-tree.html">
+            
+                    
+                    二叉搜索树的最近公共祖先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="best-time-to-buy-and-sell-stock-II.html">
+            
+                <a href="best-time-to-buy-and-sell-stock-II.html">
+            
+                    
+                    买卖股票的最佳时机 II
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="best-time-to-buy-and-sell-stock.html">
+            
+                <a href="best-time-to-buy-and-sell-stock.html">
+            
+                    
+                    买卖股票的最佳时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../performance/">
+            
+                <a href="../performance/">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../performance/draw-view.md">
+            
+                <span>
+            
+                    
+                    View绘制&效率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../performance/oom-detect.md">
+            
+                <span>
+            
+                    
+                    内存泄漏检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../block-detect.md">
+            
+                <span>
+            
+                    
+                    卡顿检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../baterry-monitor.md">
+            
+                <span>
+            
+                    
+                    耗电监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../fps-monitor.md">
+            
+                <span>
+            
+                    
+                    帧率监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../memory-monitor.md">
+            
+                <span>
+            
+                    
+                    内存占用监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../performance/anr-analyze.html">
+            
+                <a href="../performance/anr-analyze.html">
+            
+                    
+                    ANR分析思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../ui/">
+            
+                <a href="../ui/">
+            
+                    
+                    UI&UE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../ui/custom-view.md">
+            
+                <span>
+            
+                    
+                    View自定义&技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../ui/touch-intercept.md">
+            
+                <span>
+            
+                    
+                    手势分发&拦截
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../open/">
+            
+                <a href="../open/">
+            
+                    
+                    开源分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../open/okhttp3.md">
+            
+                <span>
+            
+                    
+                    OkHttp3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../open/okio.md">
+            
+                <span>
+            
+                    
+                    OkIo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../open/retrofit2.md">
+            
+                <span>
+            
+                    
+                    Retrofit2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../open/glide.md">
+            
+                <span>
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../open/picasso.md">
+            
+                <span>
+            
+                    
+                    Picasso
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../open/android-god-eye.md">
+            
+                <span>
+            
+                    
+                    AndroidGodEye
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../service/">
+            
+                <a href="../service/">
+            
+                    
+                    系统服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../service/aidl-ipc.md">
+            
+                <span>
+            
+                    
+                    AIDL&跨进程通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../service/ams.md">
+            
+                <span>
+            
+                    
+                    AMS分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../service/hook-service.md">
+            
+                <span>
+            
+                    
+                    Hook系统服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../basic/jvm.md">
+            
+                <span>
+            
+                    
+                    JVM运行时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../basic/jmm.md">
+            
+                <span>
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../basic/gc.md">
+            
+                <span>
+            
+                    
+                    GC&算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../basic/bytecode-instruction.md">
+            
+                <span>
+            
+                    
+                    认识字节码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../basic/asm.md">
+            
+                <span>
+            
+                    
+                    ASM字节码修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../basic/lambda.md">
+            
+                <span>
+            
+                    
+                    Lambda语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../basic/dvm-dex.md">
+            
+                <span>
+            
+                    
+                    DVM&Dex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../basic/apk.md">
+            
+                <span>
+            
+                    
+                    APK打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tool/">
+            
+                <a href="../tool/">
+            
+                    
+                    工具&脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tool/vs-code-debug.html">
+            
+                <a href="../tool/vs-code-debug.html">
+            
+                    
+                    Visual Code调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../tool/adb-socket.html">
+            
+                <a href="../tool/adb-socket.html">
+            
+                    
+                    ADB & Socket分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../tool/golang-cli.md">
+            
+                <span>
+            
+                    
+                    Golang CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../tool/shell.md">
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../tools/python.md">
+            
+                <span>
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                    数据结构&算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../algorithm/binnary-tree-visist.md">
+            
+                <span>
+            
+                    
+                    二叉树遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../algorithm/sort.md">
+            
+                <span>
+            
+                    
+                    常见排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../algorithm/huffman.md">
+            
+                <span>
+            
+                    
+                    霍夫曼编码&应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../algorithm/kmp.md">
+            
+                <span>
+            
+                    
+                    KMP字符串查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../encrypt/">
+            
+                <a href="../encrypt/">
+            
+                    
+                    编码&摘要算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../encrypt/hash.md">
+            
+                <span>
+            
+                    
+                    哈希算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../encrypt/rsa.md">
+            
+                <span>
+            
+                    
+                    RSA原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../encrypt/aes.md">
+            
+                <span>
+            
+                    
+                    AES原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../encrypt/md5.html">
+            
+                <a href="../encrypt/md5.html">
+            
+                    
+                    MD5摘要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../encrypt/base64.html">
+            
+                <a href="../encrypt/base64.html">
+            
+                    
+                    Base64编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../encrypt/sha256.md">
+            
+                <span>
+            
+                    
+                    SHA256原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../fe/">
+            
+                <a href="../fe/">
+            
+                    
+                    前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../fe/electron-compile-error.html">
+            
+                <a href="../fe/electron-compile-error.html">
+            
+                    
+                    Electron 编译问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../fe/electron-publish-dmg.html">
+            
+                <a href="../fe/electron-publish-dmg.html">
+            
+                    
+                    Electron DMG安装包发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../fe/es6.md">
+            
+                <span>
+            
+                    
+                    es6入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../fe/babel.md">
+            
+                <span>
+            
+                    
+                    Babel使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../fe/webpack.md">
+            
+                <span>
+            
+                    
+                    Webpack使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../fe/react-jsx-notes.html">
+            
+                <a href="../fe/react-jsx-notes.html">
+            
+                    
+                    React-JSX笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../fe/react-forms-notes.html">
+            
+                <a href="../fe/react-forms-notes.html">
+            
+                    
+                    React-Forms笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../fe/react-native.md">
+            
+                <span>
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../fe/weex.md">
+            
+                <span>
+            
+                    
+                    Weex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../fe/wechat-program.md">
+            
+                <span>
+            
+                    
+                    小程序实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../server/">
+            
+                <a href="../server/">
+            
+                    
+                    后端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../server/nodejs.md">
+            
+                <span>
+            
+                    
+                    Nodejs浅析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../server/docker.md">
+            
+                <span>
+            
+                    
+                    Docker使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../server/golang.md">
+            
+                <span>
+            
+                    
+                    Golang
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >整数反转</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x6574;&#x6570;&#x53CD;&#x8F6C;-reverse-integer"><b></b>&#x6574;&#x6570;&#x53CD;&#x8F6C; Reverse Integer</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x9898;&#x76EE;"><b></b>&#x9898;&#x76EE;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><b></b>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</a></li><li><span class="title-icon fa fa-angle-double-right"></span><a href="#&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><b></b>&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;</a></li></ul></ul></div><a href="#&#x6574;&#x6570;&#x53CD;&#x8F6C;-reverse-integer" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6574;&#x6570;&#x53CD;&#x8F6C;-reverse-integer"><a name="&#x6574;&#x6570;&#x53CD;&#x8F6C;-reverse-integer" class="anchor-navigation-ex-anchor" href="#&#x6574;&#x6570;&#x53CD;&#x8F6C;-reverse-integer"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6574;&#x6570;&#x53CD;&#x8F6C; Reverse Integer</h1>
+<h2 id="&#x9898;&#x76EE;"><a name="&#x9898;&#x76EE;" class="anchor-navigation-ex-anchor" href="#&#x9898;&#x76EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9898;&#x76EE;</h2>
+<blockquote>
+<p>&#x7ED9;&#x51FA;&#x4E00;&#x4E2A; 32 &#x4F4D;&#x7684;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5C06;&#x8FD9;&#x4E2A;&#x6574;&#x6570;&#x4E2D;&#x6BCF;&#x4F4D;&#x4E0A;&#x7684;&#x6570;&#x5B57;&#x8FDB;&#x884C;&#x53CD;&#x8F6C;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0B;&#x4E3A;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: 123
+Output: 321
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: -123
+Output: -321
+</code></pre><p><strong>Example 3:</strong></p>
+<pre><code>Input: 120
+Output: 21
+</code></pre><p><strong>Note:</strong></p>
+<blockquote>
+<p>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [&#x2212;2^31,  2^31 &#x2212; 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
+</blockquote>
+<h2 id="&#x601D;&#x8DEF;&#x9898;&#x89E3;"><a name="&#x601D;&#x8DEF;&#x9898;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</h2>
+<p><img src="assets/leetcode-reverse-integer.jpg" alt="intro"></p>
+<p>&#x7B97;&#x6CD5;&#x9898;&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x90FD;&#x662F;&#x505A;&#x4E00;&#x4E9B;&#x53CD;&#x8F6C;&#x5904;&#x7406;&#xFF0C;&#x672C;&#x9898;&#x8981;&#x6C42;&#x5BF9;32&#x4F4D;&#x6709;&#x7B26;&#x53F7;&#x6574;&#x578B;&#x6570;&#x5B57;&#x53CD;&#x8F6C;&#xFF0C;&#x7B26;&#x53F7;&#x4E0D;&#x5FC5;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x601D;&#x8DEF;&#x4E3A;&#x4ECE;&#x4F4E;&#x4F4D;&#x5F00;&#x59CB;&#xFF0C;&#x6309;&#x4F4D;&#x63D0;&#x53D6;&#x6570;&#x5B57;&#xFF0C;&#x5E76;&#x8D4B;&#x503C;&#x7ED9;&#x4E2D;&#x95F4;&#x91CF;&#xFF0C;&#x8D4B;&#x503C;&#x8FC7;&#x7A0B;&#x4ECE;&#x9AD8;&#x4F4D;&#x5F00;&#x59CB;&#x3002;
+&#x6574;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x5173;&#x952E;&#x70B9;&#x662F;&#xFF0C;&#x5BF9;&#x6574;&#x578B;&#x6EA2;&#x51FA;&#x7684;&#x9884;&#x5224;&#x903B;&#x8F91;&#xFF0C;&#x867D;&#x7136;&#x7B97;&#x6CD5;&#x6838;&#x5FC3;&#x903B;&#x8F91;&#x6E05;&#x6670;&#xFF0C;&#x5982;&#x679C;&#x5FFD;&#x7565;&#x4E86;&#x6EA2;&#x51FA;&#x7684;&#x9650;&#x5236;&#xFF0C;&#x6B64;&#x9898;&#x662F;&#x89E3;&#x7B54;&#x4E0D;&#x6210;&#x529F;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">reverse</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+        <span class="hljs-keyword">int</span> min = -<span class="hljs-number">1</span>&lt;&lt;<span class="hljs-number">31</span>;
+        <span class="hljs-keyword">int</span> max = -min - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">while</span>(x != <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">// &#x53D6;&#x4F59;&#x6570;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x83B7;&#x53D6;&#x4F4E;&#x4F4D;&#x6570;&#x503C;</span>
+            <span class="hljs-keyword">int</span> rightPart = x%<span class="hljs-number">10</span>;
+            <span class="hljs-comment">// &#x6613;&#x9519;&#x70B9;&#xFF1A;&#x9664;&#x4EE5;10&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x79FB;&#x52A8;&#x6700;&#x4F4E;&#x4F4D;,</span>
+            x /= <span class="hljs-number">10</span>;
+            <span class="hljs-comment">// &#x6613;&#x9519;&#x70B9;&#xFF1A;&#x6B64;&#x5904;&#x53EF;&#x80FD;&#x4F1A;&#x6EA2;&#x51FA;</span>
+            <span class="hljs-comment">//result = result * 10 + rightPart;</span>
+            <span class="hljs-keyword">if</span> (result &gt; max/<span class="hljs-number">10</span> || (result == max/<span class="hljs-number">10</span> &amp;&amp; rightPart &gt; <span class="hljs-number">7</span>)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+            }
+            <span class="hljs-keyword">if</span> (result &lt; min/<span class="hljs-number">10</span> || (result == min/<span class="hljs-number">10</span> &amp;&amp; rightPart &lt; -<span class="hljs-number">8</span>)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+            }
+            result = result * <span class="hljs-number">10</span> + rightPart;
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+}
+</code></pre>
+<h2 id="&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><a name="&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;</h2>
+<p>&#x68B3;&#x7406;&#x4E00;&#x4E0B;&#x8FD9;&#x9898;&#x7684;&#x51E0;&#x4E2A;&#x77E5;&#x8BC6;&#x70B9;&#x3002;</p>
+<ul>
+<li>&#x9010;&#x4F4D;&#x5904;&#x7406;</li>
+</ul>
+<p>&#x5BF9;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#xFF0C;&#x6309;&#x4F4D;&#x5904;&#x7406;&#xFF0C;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4ECE;&#x800C;&#x6839;&#x636E;&#x7D22;&#x5F15;&#x5904;&#x7406;&#x6BCF;&#x4E00;&#x4F4D;&#x7684;&#x6570;&#x5B57;&#x3002;</p>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x6570;&#x503C;&#x8FD0;&#x7B97;&#xFF0C;&#x6574;&#x578B;&#x7684;&#x57FA;&#x6570;&#x662F;10&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x4ECE;&#x8FDB;&#x4F4D;&#x89C4;&#x5219;&#x4E0B;&#x624B;&#x3002;
+&#x9664;&#x4EE5;10&#x5F97;&#x5230;&#x7684;&#x4F59;&#x6570;&#x5C31;&#x662F;&#x4E2A;&#x4F4D;&#x6570;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x8BA1;&#x7B97;&#x5B8C;&#x4E2A;&#x4F4D;&#x6570;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x539F;&#x6570;&#x503C;&#x53BB;&#x9664;&#x5404;&#x4F4D;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x65B0;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x518D;&#x6B21;&#x5FAA;&#x73AF;&#x8BA1;&#x7B97;&#x5404;&#x4F4D;&#x6570;&#x503C;&#xFF1B;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x5373;&#x662F;&#x6309;&#x4F4D;&#x5904;&#x7406;&#x3002;</p>
+<p><code>tmp = x%10</code></p>
+<ul>
+<li>&#x4F4D;&#x589E;&#x51CF;&#x5904;&#x7406;</li>
+</ul>
+<p>&#x6309;&#x4F4D;&#x5904;&#x7406;&#x6709;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#xFF0C;&#x5C31;&#x662F;&#x8BB2;&#x539F;&#x6570;&#x5B57;&#x53BB;&#x9664;&#x4E2A;&#x4F4D;&#xFF0C;&#x5F97;&#x5230;&#x65B0;&#x7684;&#x6570;&#x503C;&#x3002;&#x8FD9;&#x91CC;&#xFF0C;&#x6CE8;&#x610F;&#x4E25;&#x8C28;&#xFF0C;&#x4E0D;&#x8981;&#x72AF;&#x5E38;&#x8BC6;&#x9519;&#x8BEF;&#xFF0C;&#x6BD4;&#x5982;&#x901A;&#x8FC7;&#x51CF;&#x6CD5;&#xFF0C;&#x539F;&#x6570;&#x5B57;&#x51CF;&#x53BB;&#x4E2A;&#x4F4D;&#x6570;&#x5F97;&#x5230;&#x65B0;&#x6570;&#x503C;&#xFF0C;&#x5F53;&#x4E2A;&#x4F4D;&#x6570;&#x662F;0&#x65F6;&#x5F97;&#x4E0D;&#x5230;&#x6B63;&#x786E;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x6BD4;&#x5982;10-0=10&#xFF1B;&#x6B63;&#x786E;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x9664;&#x4EE5;&#x662F;10&#xFF0C;&#x53BB;&#x7ED3;&#x679C;&#x5373;&#x53EF;&#x3002;</p>
+<p><code>x /= 10</code></p>
+<ul>
+<li>&#x6574;&#x578B;&#x6EA2;&#x51FA;&#x539F;&#x7406;</li>
+</ul>
+<p>&#x672C;&#x9898;&#x4E2D;&#xFF0C;&#x6574;&#x578B;&#x662F;32&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#x4E2D;&#x5DF2;&#x7ECF;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x6700;&#x65B0;&#x503C;&#x662F;<code>-2^31</code>&#xFF0C;&#x6700;&#x5927;&#x503C;&#x662F;<code>2^31-1</code>&#x3002;</p>
+<p>&#x6240;&#x8C13;&#x6EA2;&#x51FA;&#xFF0C;&#x7B14;&#x8005;&#x7684;&#x7406;&#x89E3;&#x662F;&#xFF1A;&#x8BA1;&#x7B97;&#x673A;&#x672C;&#x6765;&#x7528;32&#x4F4D;&#x7684;&#x53D8;&#x91CF;&#x6765;&#x8868;&#x793A;&#x7684;&#x8FD9;&#x4E2A;&#x6574;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x63A5;&#x53D7;&#x5230;&#x7684;&#x6570;&#x503C;&#x8D85;&#x51FA;&#x4E86;32&#x4F4D;&#xFF0C;&#x4F4D;&#x7F6E;&#x4E0D;&#x591F;&#xFF0C;&#x653E;&#x4E0D;&#x4E0B;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x6EA2;&#x51FA;&#xFF0C;&#x6EA2;&#x51FA;&#x7684;&#x5177;&#x4F53;&#x5904;&#x7406;&#x53EF;&#x80FD;&#x5404;&#x5F02;&#x3002;&#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x7684;&#x6709;&#x820D;&#x5F03;&#x9AD8;&#x4F4D;&#xFF0C;&#x5047;&#x8BBE;&#x63A5;&#x53D7;&#x4F4D;&#x6570;&#x662F;3&#xFF0C;&#x90A3;&#x4E48;&#x9488;&#x5BF9;&#x4E8C;&#x8FDB;&#x5236;&#x7684;1000&#x5DF2;&#x7ECF;&#x8D85;&#x51FA;&#x4EE5;&#x4E3A;&#xFF0C;&#x820D;&#x5F03;&#x9AD8;&#x4F4D;&#x540E;&#x53D8;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x7684;000&#x3002;&#x4E5F;&#x6709;&#x4E9B;&#x662F;&#x76F4;&#x63A5;&#x62A5;&#x9519;&#x5F02;&#x5E38;&#x7684;&#x3002;</p>
+<p><strong>&#x90A3;&#x4E48;&#x5728;&#x672C;&#x9898;&#x4E2D;&#xFF0C;&#x5224;&#x65AD;&#x6EA2;&#x51FA;&#x7684;&#x64CD;&#x4F5C;&#x6709;&#x4E24;&#x4E2A;if&#x903B;&#x8F91;&#x5757;&#xFF0C;&#x4E3A;&#x751A;&#x4E48;&#x4F1A;&#x51FA;&#x73B0;<code>7</code>&#x548C;<code>-8</code>&#x5462;&#xFF1F;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E5F;&#x56F0;&#x6270;&#x4E86;&#x6211;&#x597D;&#x4E00;&#x4F1A;&#x513F;&#x3002;&#x6211;&#x4EEC;&#x56DE;&#x5F52;&#x5230;&#x6EA2;&#x51FA;&#x7684;&#x8BED;&#x53E5;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x6613;&#x9519;&#x70B9;&#xFF1A;&#x6B64;&#x5904;&#x53EF;&#x80FD;&#x4F1A;&#x6EA2;&#x51FA;</span>
+result = result * <span class="hljs-number">10</span> + rightPart;
+</code></pre>
+<ol>
+<li>&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x8BED;&#x53E5;&#x6EA2;&#x51FA;&#xFF0C;&#x7531;&#x4E8E;rightPart&#x662F;&#x53D6;&#x503C;&#x4E3A;[0,9],&#x4E0D;&#x53EF;&#x80FD;&#x6EA2;&#x51FA;&#xFF0C;&#x56E0;&#x6B64;&#x6EA2;&#x51FA;&#x7684;&#x4E00;&#x5B9A;&#x662F;<code>result * 10</code></li>
+<li>&#x5982;&#x679C;<code>result * 10</code>&#x6EA2;&#x51FA;&#xFF0C;&#x5219;<code>result * 10 &gt;= max</code> &#x6216;&#x8005; <code>result * 10 =&lt; min</code>&#xFF0C;&#x7B49;&#x4E8E;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x6EA2;&#x51FA;&#xFF0C;&#x9700;&#x8981;&#x7ED3;&#x5408;rightPart&#x7684;&#x53D6;&#x503C;&#xFF1B;</li>
+</ol>
+<p><strong>&#x60C5;&#x51B5;&#x4E00;&#xFF1A;</strong></p>
+<ol>
+<li>&#x5982;&#x679C;<code>result * 10 &gt;= max</code>&#xFF0C;&#x5219;<code>result &gt;= max/10</code></li>
+<li>&#x82E5;<code>result &gt; max/10</code>&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x662F;&#x6EA2;&#x51FA;&#x7684;</li>
+<li><code>result == max/10</code>&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x7ED3;&#x5408;rightPart&#xFF0C;&#x5373;&#x4E24;&#x8005;&#x53EA;&#x548C;&#x5982;&#x679C;&#x5927;&#x4E8E;max&#x5C31;&#x6EA2;&#x51FA;</li>
+<li>&#x56E0;&#x4E3A;max&#x7684;&#x4E2A;&#x4F4D;&#x6570;&#x662F;7&#xFF0C;&#x6240;&#x4EE5;<code>rightPart &gt; 7</code>&#x65F6;&#x6EA2;&#x51FA;</li>
+<li>&#x6574;&#x5408;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;if&#x7684;&#x903B;&#x8F91;&#x5757;</li>
+</ol>
+<p><strong>&#x60C5;&#x51B5;&#x4E8C;&#xFF1A;</strong></p>
+<ol>
+<li>&#x5982;&#x679C;<code>result * 10 &lt;= min</code>&#xFF0C;&#x5219;<code>result &lt;= min/10</code></li>
+<li>&#x82E5;<code>result &lt; min/10</code>&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x662F;&#x6EA2;&#x51FA;&#x7684;</li>
+<li><code>result == min/10</code>&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x7ED3;&#x5408;rightPart&#xFF0C;&#x5373;&#x4E24;&#x8005;&#x53EA;&#x548C;&#x5982;&#x679C;&#x5C0F;&#x4E8E;min&#x5C31;&#x6EA2;&#x51FA;</li>
+<li>&#x56E0;&#x4E3A;min&#x7684;&#x4E2A;&#x4F4D;&#x6570;&#x662F;8&#xFF0C;&#x6240;&#x4EE5;<code>rightPart &lt; -8</code>&#x65F6;&#x6EA2;&#x51FA;</li>
+<li>&#x6574;&#x5408;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;if&#x7684;&#x903B;&#x8F91;&#x5757;</li>
+</ol>
+<p>&#x5982;&#x4F55;&#x77E5;&#x9053;max&#x548C;min&#x7684;&#x4E2A;&#x4F4D;&#x6570;&#x662F;&#x591A;&#x5C11;&#xFF1F;</p>
+<p>&#x8FD9;&#x4E2A;&#x786E;&#x5B9E;&#x53EF;&#x80FD;&#x8BB0;&#x4E0D;&#x4F4F;&#xFF0C;&#x8BB0;&#x4E0D;&#x4F4F;&#x5B8C;&#x5168;&#x6CA1;&#x5173;&#x7CFB;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x8F93;&#x51FA;&#xFF0C;&#x76F4;&#x63A5;&#x7528;&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x66FF;&#x4EE3;&#x5373;&#x53EF;:</p>
+<pre><code class="lang-java">System.out.println(<span class="hljs-string">&quot;max = &quot;</span> + max + <span class="hljs-string">&quot;&#xFF0C;&quot;</span> + Integer.toBinaryString(max) + <span class="hljs-string">&quot;, &quot;</span>+ max%<span class="hljs-number">10</span>);
+System.out.println(<span class="hljs-string">&quot;min = &quot;</span> + min + <span class="hljs-string">&quot;&#xFF0C;&quot;</span> + Integer.toBinaryString(min) +<span class="hljs-string">&quot;&#xFF0C;&quot;</span>+min%<span class="hljs-number">10</span>);
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x66F4;&#x65B0;&#xFF1A;
+2019-03-21
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: LeetCode题解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="palindrome-number.html" class="navigation navigation-next " aria-label="Next page: 回文数判断">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"整数反转","level":"1.2.1","depth":2,"next":{"title":"回文数判断","level":"1.2.2","depth":2,"path":"leetcode/palindrome-number.md","ref":"leetcode/palindrome-number.md","articles":[]},"previous":{"title":"LeetCode题解","level":"1.2","depth":1,"path":"leetcode/README.md","ref":"leetcode/README.md","articles":[{"title":"整数反转","level":"1.2.1","depth":2,"path":"leetcode/reverse-integer.md","ref":"leetcode/reverse-integer.md","articles":[]},{"title":"回文数判断","level":"1.2.2","depth":2,"path":"leetcode/palindrome-number.md","ref":"leetcode/palindrome-number.md","articles":[]},{"title":"只出现一次的数字","level":"1.2.3","depth":2,"path":"leetcode/single-number.md","ref":"leetcode/single-number.md","articles":[]},{"title":"求众数","level":"1.2.4","depth":2,"path":"leetcode/majority-element.md","ref":"leetcode/majority-element.md","articles":[]},{"title":"最长公共前缀","level":"1.2.5","depth":2,"path":"leetcode/longest-common-prefix.md","ref":"leetcode/longest-common-prefix.md","articles":[]},{"title":"有效括号","level":"1.2.6","depth":2,"path":"leetcode/valid-parentheses.md","ref":"leetcode/valid-parentheses.md","articles":[]},{"title":"合并两个有序链表","level":"1.2.7","depth":2,"path":"leetcode/merge-two-sorted-lists.md","ref":"leetcode/merge-two-sorted-lists.md","articles":[]},{"title":"删除链表中的节点","level":"1.2.8","depth":2,"path":"leetcode/delete-dode-in-a-linked-list.md","ref":"leetcode/delete-dode-in-a-linked-list.md","articles":[]},{"title":"二叉树的最大深度","level":"1.2.9","depth":2,"path":"leetcode/maximum-depth-of-binary-tree.md","ref":"leetcode/maximum-depth-of-binary-tree.md","articles":[]},{"title":"Nim游戏","level":"1.2.10","depth":2,"path":"chapter_leecode/nim-game.md","ref":"chapter_leecode/nim-game.md","articles":[]},{"title":"反转字符串","level":"1.2.11","depth":2,"path":"leetcode/reverse-string.md","ref":"leetcode/reverse-string.md","articles":[]},{"title":"反转字符串中的单词","level":"1.2.12","depth":2,"path":"chapter_leecode/reverse-words-in-a-string-III.md","ref":"chapter_leecode/reverse-words-in-a-string-III.md","articles":[]},{"title":"反转链表","level":"1.2.13","depth":2,"path":"leetcode/reverse-linked-list.md","ref":"leetcode/reverse-linked-list.md","articles":[]},{"title":"二叉搜索树的最近公共祖先","level":"1.2.14","depth":2,"path":"leetcode/lowest-common-ancestor-of-a-binary-search-tree.md","ref":"leetcode/lowest-common-ancestor-of-a-binary-search-tree.md","articles":[]},{"title":"买卖股票的最佳时机 II","level":"1.2.15","depth":2,"path":"leetcode/best-time-to-buy-and-sell-stock-II.md","ref":"leetcode/best-time-to-buy-and-sell-stock-II.md","articles":[]},{"title":"买卖股票的最佳时机","level":"1.2.16","depth":2,"path":"leetcode/best-time-to-buy-and-sell-stock.md","ref":"leetcode/best-time-to-buy-and-sell-stock.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"leetcode/reverse-integer.md","mtime":"2019-03-21T05:38:57.106Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T06:54:11.353Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
