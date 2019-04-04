@@ -1,0 +1,859 @@
+Activity Resolver Table:
+  Full MIME Types:
+      oppo/launch:
+        33592d6 com.oppo.market/a.a.a.aoz filter 11c4335
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+        810e957 com.oppo.market/a.a.a.arx filter ea3ed
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+
+  Base MIME Types:
+      oppo:
+        33592d6 com.oppo.market/a.a.a.aoz filter 11c4335
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+        810e957 com.oppo.market/a.a.a.arx filter ea3ed
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+
+  Schemes:
+      market:
+        33592d6 com.oppo.market/a.a.a.aoz filter 23b9858
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "details": -1
+        33592d6 com.oppo.market/a.a.a.aoz filter 7daddb1
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "search": -1
+      oppomarket:
+        33592d6 com.oppo.market/a.a.a.aoz filter 580f3ca
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "oppomarket"
+          Authority: "ProductDetail": -1
+        33592d6 com.oppo.market/a.a.a.aoz filter a6b893b
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "oppomarket"
+          Authority: "details": -1
+        33592d6 com.oppo.market/a.a.a.aoz filter fa28296
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "oppomarket"
+          Authority: "detail_search": -1
+      oaps:
+        810e957 com.oppo.market/a.a.a.arx filter efde204
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "oaps"
+          Authority: "mk": -1
+        810e957 com.oppo.market/a.a.a.arx filter ea3ed
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+      softmarket:
+        33592d6 com.oppo.market/a.a.a.aoz filter 59cd16c
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "softmarket"
+        33592d6 com.oppo.market/a.a.a.aoz filter 11c4335
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+
+  Non-Data Actions:
+      oppo.intent.action.APP_SETTINGS:
+        613c4a2 com.oppo.market/.mine.ui.e filter 1ff7e17
+          Action: "oppo.intent.action.APP_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.coloros.feedback.START:
+        57de837 com.oppo.market/com.coloros.feedback.sdk.activity.FeedbackActivity filter e73e4b3
+          Action: "com.coloros.feedback.START"
+      com.oppo.market.action.push:
+        ee64d46 com.oppo.market/com.oppo.cdo.domain.push.OPushBridgeActivity filter 6a06a1f
+          Action: "com.oppo.market.action.push"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.MAIN:
+        939cdb5 com.oppo.market/.activity.MainActivity filter d4ae140
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+        947ec4a com.oppo.market/com.oppo.cdo.ui.external.desktop.DeskHotAppActivity filter 1039879
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+        8da57bb com.oppo.market/com.oppo.cdo.ui.external.desktop.DeskHotGameActivity filter d92f9be
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+      com.oppo.usercenter.opensdk_register_dialog:
+        d4172b1 com.oppo.market/com.oppo.usercenter.opensdk.dialog.register.UserCenterOperateActivity filter 27c3222
+          Action: "com.oppo.usercenter.opensdk_register_dialog"
+          Category: "android.intent.category.DEFAULT"
+
+  MIME Typed Actions:
+      com.oppo.main.ACTION_LAUNCH:
+        33592d6 com.oppo.market/a.a.a.aoz filter 11c4335
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+        810e957 com.oppo.market/a.a.a.arx filter ea3ed
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+
+Receiver Resolver Table:
+  Schemes:
+      package:
+        386a261 com.oppo.market/a.a.a.yh filter 9e753e6
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Action: "android.intent.action.PACKAGE_REPLACED"
+          Action: "android.intent.action.PACKAGE_REMOVED"
+          Action: "oppo.intent.action.PACKAGE_ADDED"
+          Action: "oppo.intent.action.PACKAGE_REMOVED"
+          Action: "oneplus.intent.action.OEM_PACKAGE_ADDED"
+          Action: "oneplus.intent.action.OEM_PACKAGE_REMOVED"
+          Action: "oneplus.intent.action.OEM_PACKAGE_REPLACED"
+          Scheme: "package"
+
+  Non-Data Actions:
+      com.oppo.market.action.notification.delete:
+        5c456f9 com.oppo.market/a.a.a.abn filter 2249528
+          Action: "com.oppo.market.action.notification.click"
+          Action: "com.oppo.market.action.notification.delete"
+      com.oppo.market.broadcast.check.upgrade:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        51cbc41 com.oppo.market/com.nearme.mcs.reciever.AlarmEventReceiver filter 3f5e241
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.nearme.mcs.activationmaster.broadcast"
+          Action: "com.nearme.mcs.process.check.action"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.oppo.market.ALARM.30day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.2day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.3day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.4day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.5day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.6day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.7day:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.nearme.mcs.process.check.action:
+        51cbc41 com.oppo.market/com.nearme.mcs.reciever.AlarmEventReceiver filter 3f5e241
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.nearme.mcs.activationmaster.broadcast"
+          Action: "com.nearme.mcs.process.check.action"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.oppo.market.action.MCS_MSG_RECEIVER:
+        2dba0cb com.oppo.market/com.oppo.cdo.domain.push.c filter 750a13c
+          Action: "com.oppo.market.action.MCS_MSG_RECEIVER"
+      com.oppo.usercenter.account_logout:
+        7f6ce49 com.oppo.market/a.a.a.rn filter edd1ec5
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+        c66434e com.oppo.market/com.oppo.usercenter.sdk.helper.UserCenterOperateReceiver filter cc4c872
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+        c609c6f com.oppo.market/com.oppo.usercenter.sdk.helper.UCOperateReceiverWithoutPermission filter f0844c3
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+      com.oppo.usercenter.account_login:
+        7f6ce49 com.oppo.market/a.a.a.rn filter edd1ec5
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+        c66434e com.oppo.market/com.oppo.usercenter.sdk.helper.UserCenterOperateReceiver filter cc4c872
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+        c609c6f com.oppo.market/com.oppo.usercenter.sdk.helper.UCOperateReceiverWithoutPermission filter f0844c3
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+      com.oppo.market.action.upgrade.notification.click:
+        8004704 com.oppo.market/a.a.a.alf filter fc1dbd4
+          Action: "com.oppo.market.action.upgrade.notification.click"
+          Action: "com.oppo.market.action.upgrade.notification.delete"
+      com.oppo.market.action.notification.click:
+        5c456f9 com.oppo.market/a.a.a.abn filter 2249528
+          Action: "com.oppo.market.action.notification.click"
+          Action: "com.oppo.market.action.notification.delete"
+      com.oppo.market.ALARM.open_guide_timing:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.broadcast.check.automatic_upgrade:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.ALARM.open_guide_fetch_data:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.market.action.upgrade.notification.delete:
+        8004704 com.oppo.market/a.a.a.alf filter fc1dbd4
+          Action: "com.oppo.market.action.upgrade.notification.click"
+          Action: "com.oppo.market.action.upgrade.notification.delete"
+      android.intent.action.BOOT_COMPLETED:
+        6b43de2 com.oppo.market/a.a.a.abs filter 3ba374b
+          Action: "android.intent.action.BOOT_COMPLETED"
+        51cbc41 com.oppo.market/com.nearme.mcs.reciever.AlarmEventReceiver filter 3f5e241
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.nearme.mcs.activationmaster.broadcast"
+          Action: "com.nearme.mcs.process.check.action"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.oppo.market.ALARM.red_dot_biz_end:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.cdo.action.notification.click:
+        479f825 com.oppo.market/com.oppo.cdo.download.ui.notification.c filter 7d617d
+          Action: "com.oppo.cdo.action.notification.click"
+          Action: "com.oppo.cdo.action.notification.delete"
+      com.oppo.market.ALARM.half_hour:
+        a1c2681 com.oppo.market/a.a.a.abr filter 4e4501a
+          Action: "com.oppo.market.broadcast.check.automatic_upgrade"
+          Action: "com.oppo.market.broadcast.check.upgrade"
+          Action: "com.oppo.market.ALARM.7day"
+          Action: "com.oppo.market.ALARM.30day"
+          Action: "com.oppo.market.ALARM.half_hour"
+          Action: "com.oppo.market.ALARM.2day"
+          Action: "com.oppo.market.ALARM.3day"
+          Action: "com.oppo.market.ALARM.4day"
+          Action: "com.oppo.market.ALARM.5day"
+          Action: "com.oppo.market.ALARM.6day"
+          Action: "com.oppo.market.ALARM.open_guide_fetch_data"
+          Action: "com.oppo.market.ALARM.open_guide_timing"
+          Action: "com.oppo.market.ALARM.red_dot_biz_end"
+      com.oppo.cdo.action.notification.delete:
+        479f825 com.oppo.market/com.oppo.cdo.download.ui.notification.c filter 7d617d
+          Action: "com.oppo.cdo.action.notification.click"
+          Action: "com.oppo.cdo.action.notification.delete"
+      com.oppo.usercenter.modify_name:
+        7f6ce49 com.oppo.market/a.a.a.rn filter edd1ec5
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+        c66434e com.oppo.market/com.oppo.usercenter.sdk.helper.UserCenterOperateReceiver filter cc4c872
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+        c609c6f com.oppo.market/com.oppo.usercenter.sdk.helper.UCOperateReceiverWithoutPermission filter f0844c3
+          Action: "com.oppo.usercenter.account_login"
+          Action: "com.oppo.usercenter.account_logout"
+          Action: "com.oppo.usercenter.modify_name"
+      android.intent.action.MY_PACKAGE_REPLACED:
+        386a261 com.oppo.market/a.a.a.yh filter cf2fd27
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+      com.nearme.mcs.activationmaster.broadcast:
+        51cbc41 com.oppo.market/com.nearme.mcs.reciever.AlarmEventReceiver filter 3f5e241
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "com.nearme.mcs.activationmaster.broadcast"
+          Action: "com.nearme.mcs.process.check.action"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+
+Service Resolver Table:
+  Full MIME Types:
+      oppo/launch:
+        46cfc10 com.oppo.market/a.a.a.akp filter e8d80d3
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+        b946309 com.oppo.market/a.a.a.alz filter fa5572f
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+
+  Base MIME Types:
+      oppo:
+        46cfc10 com.oppo.market/a.a.a.akp filter e8d80d3
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+        b946309 com.oppo.market/a.a.a.alz filter fa5572f
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+
+  Schemes:
+      oaps:
+        b946309 com.oppo.market/a.a.a.alz filter 2b2310e
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "oaps"
+          Authority: "mk": -1
+        b946309 com.oppo.market/a.a.a.alz filter fa5572f
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+      softmarket:
+        46cfc10 com.oppo.market/a.a.a.akp filter 2082ac2
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "softmarket"
+        46cfc10 com.oppo.market/a.a.a.akp filter e8d80d3
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+
+  Non-Data Actions:
+      com.oppo.market.service.pre_download.start:
+        16a2d52 com.oppo.market/a.a.a.alc filter 5b25410
+          Action: "com.oppo.market.service.pre_download.start"
+          Action: "com.oppo.market.service.pre_download.cancel"
+      com.oppo.statistics.upload.action.ssoid:
+        6b5bb68 com.oppo.market/com.oppo.cdo.domain.statis.service.StaticSetSSoIdService filter b229b0d
+          Action: "com.oppo.statistics.upload.action.ssoid"
+      com.oppo.statistics.upload.action:
+        6efc288 com.oppo.market/com.oppo.statistics.upload.UploadService filter 7d8c1a4
+          Action: "com.oppo.statistics.upload.action"
+      com.nearme.action.mcc_click:
+        c4e88ea com.oppo.market/a.a.a.xz filter 6eadb09
+          Action: "com.nearme.action.mcc_click"
+          Action: "com.nearme.action.mcc_delete"
+      com.nearme.mcs.action.ACTIVATE_SERVICE:
+        d17547 com.oppo.market/com.nearme.mcs.service.RemoteService filter 6419837
+          Action: "com.nearme.mcs.action.MCS_MSG_SERVICE"
+          Action: "com.nearme.mcs.action.ACTIVATE_SERVICE"
+      com.nearme.action.mcc_delete:
+        c4e88ea com.oppo.market/a.a.a.xz filter 6eadb09
+          Action: "com.nearme.action.mcc_click"
+          Action: "com.nearme.action.mcc_delete"
+      com.coloros.mcs.action.RECEIVE_MCS_MESSAGE:
+        d214107 com.oppo.market/com.oppo.cdo.domain.push.OPushService filter cd23136
+          Action: "com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"
+      com.nearme.mcs.action.MCS_MSG_SERVICE:
+        d17547 com.oppo.market/com.nearme.mcs.service.RemoteService filter 6419837
+          Action: "com.nearme.mcs.action.MCS_MSG_SERVICE"
+          Action: "com.nearme.mcs.action.ACTIVATE_SERVICE"
+      com.oppo.market.service.pre_download.cancel:
+        16a2d52 com.oppo.market/a.a.a.alc filter 5b25410
+          Action: "com.oppo.market.service.pre_download.start"
+          Action: "com.oppo.market.service.pre_download.cancel"
+
+  MIME Typed Actions:
+      com.oppo.main.ACTION_LAUNCH:
+        46cfc10 com.oppo.market/a.a.a.akp filter e8d80d3
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "softmarket"
+          Type: "oppo/launch"
+        b946309 com.oppo.market/a.a.a.alz filter fa5572f
+          Action: "com.oppo.main.ACTION_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "oaps"
+          Authority: "mk": -1
+          Type: "oppo/launch"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        f709b70 com.oppo.market/a.a.a.ald filter 297a2d1
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Permissions:
+  Permission [com.oppo.market.permission.ACS_SERVICE] (aa26de5):
+    sourcePackage=com.oppo.market
+    uid=10065 gids=null type=0 prot=signature|privileged
+    perm=Permission{8c2c0ba com.oppo.market.permission.ACS_SERVICE}
+    packageSetting=PackageSetting{1ef15f1 com.oppo.market/10065}
+  Permission [com.oppo.market.permission.RECIEVE_MCS_MESSAGE] (21405e1):
+    sourcePackage=com.oppo.market
+    uid=10065 gids=null type=0 prot=signature|privileged
+    perm=Permission{9573f06 com.oppo.market.permission.RECIEVE_MCS_MESSAGE}
+    packageSetting=PackageSetting{1ef15f1 com.oppo.market/10065}
+
+Registered ContentProviders:
+  com.oppo.market/a.a.a.wg:
+    Provider{1d07692 com.oppo.market/a.a.a.wg}
+  com.oppo.market/a.a.a.wh:
+    Provider{cf2863 com.oppo.market/a.a.a.wh}
+  com.oppo.market/com.oppo.oaps.host.b:
+    Provider{85f6e51 com.oppo.market/com.oppo.oaps.host.b}
+  com.oppo.market/android.support.v4.content.FileProvider:
+    Provider{dc4068e com.oppo.market/android.support.v4.content.FileProvider}
+  com.oppo.market/a.a.a.ald:
+    Provider{f709b70 com.oppo.market/a.a.a.ald}
+
+ContentProvider Authorities:
+  [com.oppo.market.fileprovider]:
+    Provider{dc4068e com.oppo.market/android.support.v4.content.FileProvider}
+      applicationInfo=ApplicationInfo{28b0a4c com.oppo.market}
+  [oaps_mk]:
+    Provider{85f6e51 com.oppo.market/com.oppo.oaps.host.b}
+      applicationInfo=ApplicationInfo{f25016f com.oppo.market}
+  [com.oppo.market.settingsearch]:
+    Provider{f709b70 com.oppo.market/a.a.a.ald}
+      applicationInfo=ApplicationInfo{28b0a4c com.oppo.market}
+  [com.oppo.market.CheckUpgradeProvider]:
+    Provider{cf2863 com.oppo.market/a.a.a.wh}
+      applicationInfo=ApplicationInfo{28b0a4c com.oppo.market}
+  [com.oppo.market]:
+    Provider{1d07692 com.oppo.market/a.a.a.wg}
+      applicationInfo=ApplicationInfo{28b0a4c com.oppo.market}
+
+Key Set Manager:
+  [com.oppo.market]
+      Signing KeySets: 10
+
+Packages:
+  Package [com.oppo.market] (1ef15f1):
+    userId=10065
+    sharedUser=SharedUserSetting{5e3a90c oppo.uid.nearme/10065}
+    pkg=Package{ab8d255 com.oppo.market}
+    codePath=/data/app/com.oppo.market-aoG2wjw3P3bWFEMDROaF_Q==
+    resourcePath=/data/app/com.oppo.market-aoG2wjw3P3bWFEMDROaF_Q==
+    legacyNativeLibraryDir=/data/app/com.oppo.market-aoG2wjw3P3bWFEMDROaF_Q==/lib
+    primaryCpuAbi=armeabi-v7a
+    secondaryCpuAbi=null
+    versionCode=7004 minSdk=19 targetSdk=27
+    versionName=7.0.2
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{28b0a4c com.oppo.market}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE ]
+    dataDir=/data/user/0/com.oppo.market
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2019-03-28 12:36:44
+    firstInstallTime=2018-04-01 22:59:04
+    lastUpdateTime=2019-03-28 12:36:47
+    installerPackageName=com.oppo.market
+    signatures=PackageSignatures{385a46a [54168fb4]}
+    installPermissionsFixed=true installStatus=1
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ]
+    declared permissions:
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE: prot=signature|privileged, INSTALLED
+      com.oppo.market.permission.ACS_SERVICE: prot=signature|privileged, INSTALLED
+    requested permissions:
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE
+      com.oppo.market.permission.ACS_SERVICE
+      com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE
+      android.permission.INTERNET
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.READ_PHONE_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.GET_ACCOUNTS
+      android.permission.GET_TASKS
+      android.permission.READ_CALENDAR
+      android.permission.WRITE_CALENDAR
+      android.permission.INSTALL_PACKAGES
+      android.permission.DELETE_PACKAGES
+      android.permission.GET_PACKAGE_SIZE
+      android.permission.MOVE_PACKAGE
+      android.permission.READ_LOGS
+      android.permission.EXPAND_STATUS_BAR
+      oppo.permission.OPPO_COMPONENT_SAFE
+      oppo.permission.GAME_SPACE
+      com.nearme.mcs.permission.RECIEVE_MCS_MESSAGE
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.WAKE_LOCK
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.REQUEST_INSTALL_PACKAGES
+      android.permission.CAMERA
+      android.permission.FLASHLIGHT
+      com.oppo.usercenter.permission.UC_COMPONENT_SAFE
+      android.permission.SEND_SMS
+      android.permission.READ_SMS
+      android.permission.RECEIVE_SMS
+      android.permission.WRITE_SMS
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.USE_CREDENTIALS
+      android.permission.GRANT_RUNTIME_PERMISSIONS
+    install permissions:
+      com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.RESTART_PACKAGES: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.oppo.reader.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.oppo.market.permission.ACS_SERVICE: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.oppo.usercenter.permission.UC_COMPONENT_SAFE: granted=true
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOVE_PACKAGE: granted=true
+      android.permission.WRITE_SMS: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.READ_LOGS: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      oppo.permission.OPPO_COMPONENT_SAFE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=7069705 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      disabledComponents:
+        com.oppo.cdo.ui.external.desktop.DeskHotGameActivity
+        com.oppo.cdo.ui.external.desktop.DeskHotAppActivity
+        a.a.a.ank
+        a.a.a.bge
+        a.a.a.bgm
+        a.a.a.bgo
+
+Hidden system packages:
+  Package [com.oppo.market] (9239186):
+    userId=10065
+    sharedUser=SharedUserSetting{5e3a90c oppo.uid.nearme/10065}
+    pkg=Package{e1ffa47 com.oppo.market}
+    codePath=/system/app/KeKeMarket
+    resourcePath=/system/app/KeKeMarket
+    legacyNativeLibraryDir=/system/app/KeKeMarket/lib
+    primaryCpuAbi=armeabi
+    secondaryCpuAbi=null
+    versionCode=5401 minSdk=14 targetSdk=25
+    versionName=5.4.0
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{bc96274 com.oppo.market}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE ]
+    dataDir=null
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2018-04-01 22:59:04
+    firstInstallTime=2018-04-01 22:59:04
+    lastUpdateTime=2018-04-01 22:59:04
+    signatures=PackageSignatures{a76739d []}
+    installPermissionsFixed=false installStatus=1
+    pkgFlags=[ SYSTEM ]
+    declared permissions:
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE: prot=signature|privileged
+      com.oppo.market.permission.ACS_SERVICE: prot=signature|privileged
+    requested permissions:
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE
+      com.oppo.market.permission.ACS_SERVICE
+      android.permission.INTERNET
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.READ_PHONE_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.GET_ACCOUNTS
+      android.permission.GET_TASKS
+      android.permission.READ_CALENDAR
+      android.permission.WRITE_CALENDAR
+      android.permission.INSTALL_PACKAGES
+      android.permission.DELETE_PACKAGES
+      android.permission.GET_PACKAGE_SIZE
+      android.permission.MOVE_PACKAGE
+      android.permission.READ_LOGS
+      android.permission.EXPAND_STATUS_BAR
+      oppo.permission.OPPO_COMPONENT_SAFE
+      oppo.permission.GAME_SPACE
+      com.nearme.mcs.permission.RECIEVE_MCS_MESSAGE
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.WAKE_LOCK
+      android.permission.PACKAGE_USAGE_STATS
+    install permissions:
+      com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.RESTART_PACKAGES: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.oppo.reader.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.oppo.market.permission.ACS_SERVICE: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.oppo.usercenter.permission.UC_COMPONENT_SAFE: granted=true
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOVE_PACKAGE: granted=true
+      android.permission.WRITE_SMS: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.READ_LOGS: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      oppo.permission.OPPO_COMPONENT_SAFE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=0 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+
+Shared users:
+  SharedUser [oppo.uid.nearme] (5e3a90c):
+    userId=10065
+    install permissions:
+      com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.RESTART_PACKAGES: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.oppo.reader.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.oppo.market.permission.ACS_SERVICE: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.oppo.usercenter.permission.UC_COMPONENT_SAFE: granted=true
+      com.oppo.market.permission.RECIEVE_MCS_MESSAGE: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOVE_PACKAGE: granted=true
+      android.permission.WRITE_SMS: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.READ_LOGS: granted=true
+      android.permission.GRANT_RUNTIME_PERMISSIONS: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      oppo.permission.OPPO_COMPONENT_SAFE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: 
+      gids=[3003, 1007, 3188]
+      runtime permissions:
+        android.permission.READ_SMS: granted=true
+        android.permission.READ_CALENDAR: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.SEND_SMS: granted=true
+        android.permission.CAMERA: granted=true
+        android.permission.WRITE_CALENDAR: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+
+Package Changes:
+  Sequence number=23
+  User 0:
+    seq=5, package=com.nearme.atlas
+    seq=6, package=com.tencent.news
+    seq=7, package=com.eg.android.AlipayGphone
+    seq=8, package=ctrip.android.view
+    seq=9, package=com.sankuai.meituan
+    seq=10, package=com.sina.weibo
+    seq=11, package=com.tencent.qqlive
+    seq=12, package=com.smile.gifmaker
+    seq=22, package=com.wuba
+
+
+Dexopt state:
+  [com.oppo.market]
+    path: /data/app/com.oppo.market-aoG2wjw3P3bWFEMDROaF_Q==/base.apk
+      arm: /data/app/com.oppo.market-aoG2wjw3P3bWFEMDROaF_Q==/oat/arm/base.odex[status=kOatUpToDate, compilation_filter=
+      speed-profile]
+
+
+Compiler stats:
+  [com.oppo.market]
+     base.apk - 13668
