@@ -1,0 +1,841 @@
+Activity Resolver Table:
+  Schemes:
+      mimarket:
+        d45c535 com.xiaomi.market/.ui.MarketTabActivity filter cc35dd6
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mimarket"
+          Authority: "home": -1
+          Path: "PatternMatcher{LITERAL: }"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 3222f3
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Scheme: "mimarket"
+          Authority: "details": -1
+          Authority: "details": -1
+          Authority: "details": -1
+          Authority: "details": -1
+          Authority: "details": -1
+          Path: "PatternMatcher{LITERAL: /detailmini}"
+          Path: "PatternMatcher{LITERAL: /detailcard}"
+          Path: "PatternMatcher{LITERAL: /detailfloat}"
+          Path: "PatternMatcher{LITERAL: /detailcard}"
+          Path: "PatternMatcher{LITERAL: /detailfloat}"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 5389a29
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mimarket"
+          Authority: "launchordetail": -1
+          Authority: "collections": -1
+          Authority: "browse": -1
+          Authority: "liteweb": -1
+          Authority: "comments": -1
+          Authority: "search": -1
+          Authority: "detail": -1
+          Authority: "details": -1
+          Authority: "update": -1
+          Authority: "download": -1
+          Authority: "manage": -1
+          Authority: "records": -1
+          Authority: "favorites": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+        3a5db3b com.xiaomi.market/.ui.ThirdPartAppDetailActivity filter f4442dc
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "mimarket"
+          Authority: "thirdpartydetail": -1
+          Path: "PatternMatcher{LITERAL: }"
+        10c8258 com.xiaomi.market/.ui.EditCommentActivity filter 8ccfd6b
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "mimarket"
+          Authority: "editcomment": -1
+          Path: "PatternMatcher{LITERAL: }"
+        a1a7fb1 com.xiaomi.market/.ui.XSpaceRecommendActivity filter 40b0c8
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "mimarket"
+          Authority: "xspacerecommend": -1
+        4167c96 com.xiaomi.market/.ui.PermissionActivity filter 4186561
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "mimarket"
+          Authority: "permission": -1
+          Path: "PatternMatcher{LITERAL: }"
+        98cf017 com.xiaomi.market/.ui.DesktopRecommendAppDetailActivity filter 74ce886
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "mimarket"
+          Authority: "desktoprecommend": -1
+        af36c04 com.xiaomi.market/.ui.InternalWebActivity filter 494f69d
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "mimarket"
+          Authority: "browseinternal": -1
+          Path: "PatternMatcher{LITERAL: }"
+        3a665ed com.xiaomi.market/.ui.FloatWebActivity filter ff0712
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "mimarket"
+          Authority: "float": -1
+          Path: "PatternMatcher{LITERAL: }"
+      market:
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 1ef8162
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Authority: "comments": -1
+          Authority: "launchordetail": -1
+          Authority: "collections": -1
+          Authority: "details": -1
+          Authority: "detail": -1
+          Authority: "search": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{LITERAL: }"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 3222f3
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Scheme: "mimarket"
+          Authority: "details": -1
+          Authority: "details": -1
+          Authority: "details": -1
+          Authority: "details": -1
+          Authority: "details": -1
+          Path: "PatternMatcher{LITERAL: /detailmini}"
+          Path: "PatternMatcher{LITERAL: /detailcard}"
+          Path: "PatternMatcher{LITERAL: /detailfloat}"
+          Path: "PatternMatcher{LITERAL: /detailcard}"
+          Path: "PatternMatcher{LITERAL: /detailfloat}"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 6f11bb0
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{LITERAL: }"
+      http:
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 6f11bb0
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{LITERAL: }"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter cc851ae
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "market.android.com": -1
+          Authority: "market.android.com": -1
+          Authority: "market.android.com": -1
+          Authority: "market.android.com": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{PREFIX: /}"
+      https:
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 6f11bb0
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "market"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Authority: "app.xiaomi.com": -1
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{LITERAL: }"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter cc851ae
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "http"
+          Scheme: "https"
+          Authority: "market.android.com": -1
+          Authority: "market.android.com": -1
+          Authority: "market.android.com": -1
+          Authority: "market.android.com": -1
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{PREFIX: /}"
+          Path: "PatternMatcher{LITERAL: }"
+          Path: "PatternMatcher{PREFIX: /}"
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 4c1fb4f
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "https"
+          Authority: "play.google.com": -1
+          Path: "PatternMatcher{LITERAL: /store/apps/details}"
+      tencentAPPID:
+        335cc22 com.xiaomi.market/com.tencent.tauth.AuthActivity filter 7141174
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "tencentAPPID"
+
+  Non-Data Actions:
+      miui.intent.action.APP_SETTINGS:
+        66676b3 com.xiaomi.market/.ui.MarketPreferenceActivity filter e97afe5
+          Action: "miui.intent.action.APP_SETTINGS"
+      android.intent.action.MAIN:
+        d45c535 com.xiaomi.market/.ui.MarketTabActivity filter 551df1
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.market.UPDATE_APP_LIST:
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 78ca82d
+          Action: "com.xiaomi.market.UPDATE_APP_LIST"
+          Category: "android.intent.category.DEFAULT"
+      com.xiaomi.market.FirstRecommend:
+        4c94dca com.xiaomi.market/.ui.JoinActivity filter 3dc4f44
+          Action: "com.xiaomi.market.FirstRecommend"
+          Category: "android.intent.category.DEFAULT"
+      com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY:
+        33d4470 com.xiaomi.market/com.miui.share.weibo.WeiboShareActivity filter 83c0547
+          Action: "com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+      mi.quicksearch.intent.action.RETRIEVE:
+        d45c535 com.xiaomi.market/.ui.MarketTabActivity filter f4a5857
+          Action: "mi.quicksearch.intent.action.RETRIEVE"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.SEARCH:
+        66676b3 com.xiaomi.market/.ui.MarketPreferenceActivity filter e4bdaba
+          Action: "android.intent.action.SEARCH"
+          Category: "android.intent.category.DEFAULT"
+
+Receiver Resolver Table:
+  Schemes:
+      package:
+        a9073e9 com.xiaomi.market/.data.MyPackageMonitor filter 459c7b2
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Action: "android.intent.action.PACKAGE_REMOVED"
+          Action: "android.intent.action.PACKAGE_FIRST_LAUNCH"
+          Scheme: "package"
+
+  Non-Data Actions:
+      android.intent.action.APPLICATION_PROGRESS_QUERY:
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter 498acfe
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.xiaomi.mipush.ERROR:
+        a47cb0f com.xiaomi.market/.push.MarketPushMessageReceiver filter f96c767
+          Action: "com.xiaomi.mipush.ERROR"
+      com.miui.home.action.on_click:
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter b0f10b9
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter 498acfe
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      miui.intent.action.MIUI_REGION_CHANGED:
+        d0a379c com.xiaomi.market/.receiver.SystemInfoMonitor filter 44e9b0a
+          Action: "miui.intent.action.MIUI_REGION_CHANGED"
+      com.xiaomi.market.GET_EXPANSION:
+        8f365a5 com.xiaomi.market/.service.ExpansionSupportReceiver filter d15de68
+          Action: "com.xiaomi.market.GET_EXPANSION"
+      com.xiaomi.market.action.INSTALL_FINISHED:
+        b38bd7a com.xiaomi.market/.downloadinstall.SessionInstallReceiver filter 42b3c5f
+          Action: "com.xiaomi.market.action.INSTALL_FINISHED"
+          Action: "com.xiaomi.market.action.APK_INSTALL_DIRECTLY"
+      com.tencent.mm.sdk.channel.Intent.ACTION_MESSAGE:
+        740092b com.xiaomi.market/com.tencent.mm.sdk.channel.MMessage$Receiver filter 1741280
+          Action: "com.tencent.mm.sdk.channel.Intent.ACTION_MESSAGE"
+      com.miui.home.action.on_delete:
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter b0f10b9
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter 498acfe
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.xiaomi.market.action.APK_INSTALL_DIRECTLY:
+        b38bd7a com.xiaomi.market/.downloadinstall.SessionInstallReceiver filter 42b3c5f
+          Action: "com.xiaomi.market.action.INSTALL_FINISHED"
+          Action: "com.xiaomi.market.action.APK_INSTALL_DIRECTLY"
+      android.provision.action.PROVISION_COMPLETE:
+        b513188 com.xiaomi.market/.receiver.ProvisionCompleteReceiver filter 1b1b198
+          Action: "android.provision.action.PROVISION_COMPLETE"
+          mPriority=1000, mHasPartialTypes=false
+      com.xiaomi.market.action_app_chooser_shown:
+        5d9b721 com.xiaomi.market/.receiver.AppChooserAnalyticsReceiver filter c713f7b
+          Action: "com.xiaomi.market.action_app_chooser_item_select"
+          Action: "com.xiaomi.market.action_app_chooser_shown"
+      miui.intent.action.APPLICATION_PROGRESS_QUERY:
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter b0f10b9
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+        208886e com.xiaomi.market/.data.DownloadControlReceiver filter 498acfe
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.miui.core.intent.ACTION_DUMP_CACHED_LOG:
+        8053746 com.xiaomi.market/.receiver.BugReportDumpReceiver filter e06ff75
+          Action: "com.miui.core.intent.ACTION_DUMP_CACHED_LOG"
+      com.xiaomi.market.action_app_chooser_item_select:
+        5d9b721 com.xiaomi.market/.receiver.AppChooserAnalyticsReceiver filter c713f7b
+          Action: "com.xiaomi.market.action_app_chooser_item_select"
+          Action: "com.xiaomi.market.action_app_chooser_shown"
+      android.intent.action.BOOT_COMPLETED:
+        7340d07 com.xiaomi.market/.data.StartupReceiver filter 9d5d5bd
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Category: "android.intent.category.HOME"
+      android.intent.action.DOWNLOAD_COMPLETE:
+        78bde34 com.xiaomi.market/.data.DownloadCompleteReceiver filter 49e7914
+          Action: "android.intent.action.DOWNLOAD_COMPLETE"
+      com.xiaomi.push.PING_TIMER:
+        479a45d com.xiaomi.market/com.xiaomi.push.service.receivers.PingReceiver filter 8839281
+          Action: "com.xiaomi.push.PING_TIMER"
+      com.xiaomi.mipush.RECEIVE_MESSAGE:
+        a47cb0f com.xiaomi.market/.push.MarketPushMessageReceiver filter 76edf26
+          Action: "com.xiaomi.mipush.RECEIVE_MESSAGE"
+      miui.intent.action.PACKAGE_FIRST_LAUNCH:
+        4cd81d2 com.xiaomi.market/.receiver.AppActiveReceiver filter 347d6ac
+          Action: "miui.intent.action.PACKAGE_FIRST_LAUNCH"
+      com.tencent.mm.sdk.plugin.Intent.ACTION_RESPONSE:
+        37a72a3 com.xiaomi.market/com.tencent.mm.sdk.plugin.MMPluginOAuth$Receiver filter abe7303
+          Action: "com.tencent.mm.sdk.plugin.Intent.ACTION_RESPONSE"
+
+Service Resolver Table:
+  Schemes:
+      mimarket:
+        722a9a0 com.xiaomi.market/.data.AppArrangeService filter 9d97f4d
+          Action: "com.xiaomi.market.service.AppDownloadInstallService"
+          Scheme: "mimarket"
+          Authority: "download": -1
+          Path: "PatternMatcher{LITERAL: }"
+        b312959 com.xiaomi.market/.testsupport.DebugService filter 20da75a
+          Action: "android.intent.action.VIEW"
+          Scheme: "mimarket"
+          Authority: "debug": -1
+
+  Non-Data Actions:
+      android.intent.action.APPLICATION_PROGRESS_QUERY:
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e23d67c
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.xiaomi.market.intent.action.QUERY_STATUS:
+        722a9a0 com.xiaomi.market/.data.AppArrangeService filter bc78ee4
+          Action: "com.xiaomi.market.service.AppDownloadInstallService"
+          Action: "com.xiaomi.market.intent.action.QUERY_STATUS"
+          Action: "com.xiaomi.market.DOWNLOAD_CANCEL"
+          Action: "com.xiaomi.market.DOWNLOAD_PAUSE"
+          Action: "com.xiaomi.market.DOWNLOAD_RESUME"
+      android.intent.action.PACKAGE_FIRST_LAUNCH:
+        a3795ff com.xiaomi.market/.service.AppActiveStatService filter fe0b550
+          Action: "android.intent.action.PACKAGE_FIRST_LAUNCH"
+          Category: "android.intent.category.DEFAULT"
+      com.miui.home.action.on_click:
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e1b196f
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e23d67c
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.xiaomi.market.DOWNLOAD_PAUSE:
+        722a9a0 com.xiaomi.market/.data.AppArrangeService filter bc78ee4
+          Action: "com.xiaomi.market.service.AppDownloadInstallService"
+          Action: "com.xiaomi.market.intent.action.QUERY_STATUS"
+          Action: "com.xiaomi.market.DOWNLOAD_CANCEL"
+          Action: "com.xiaomi.market.DOWNLOAD_PAUSE"
+          Action: "com.xiaomi.market.DOWNLOAD_RESUME"
+      com.miui.home.action.on_delete:
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e1b196f
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e23d67c
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.xiaomi.market.debug:
+        b312959 com.xiaomi.market/.testsupport.DebugService filter 844b05
+          Action: "com.xiaomi.market.debug"
+      miui.action.CLOUD_BACKUP_SETTINGS:
+        b98bfcc com.xiaomi.market/.backup.MarketCloudBackupService filter 5cbc349
+          Action: "miui.action.CLOUD_BACKUP_SETTINGS"
+          Action: "miui.action.CLOUD_RESTORE_SETTINGS"
+      com.xiaomi.market.PreloadedDataAppInstallService:
+        e420215 com.xiaomi.market/.service.PreloadedAppInstallService filter b8944e
+          Action: "com.xiaomi.market.PreloadedDataAppInstallService"
+      com.xiaomi.market.DesktopRecommendIconRequest:
+        ffb792a com.xiaomi.market/.data.DesktopRecommendService filter d5f9f13
+          Action: "com.xiaomi.market.DesktopRecommend"
+          Action: "com.xiaomi.market.DesktopRecommendIconRequest"
+      com.xiaomi.market.service.AppDownloadInstallService:
+        722a9a0 com.xiaomi.market/.data.AppArrangeService filter bc78ee4
+          Action: "com.xiaomi.market.service.AppDownloadInstallService"
+          Action: "com.xiaomi.market.intent.action.QUERY_STATUS"
+          Action: "com.xiaomi.market.DOWNLOAD_CANCEL"
+          Action: "com.xiaomi.market.DOWNLOAD_PAUSE"
+          Action: "com.xiaomi.market.DOWNLOAD_RESUME"
+      miui.intent.action.APPLICATION_PROGRESS_QUERY:
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e1b196f
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+        25de91e com.xiaomi.market/.service.DownloadControlService filter e23d67c
+          Action: "com.miui.home.action.on_click"
+          Action: "com.miui.home.action.on_delete"
+          Action: "miui.intent.action.APPLICATION_PROGRESS_QUERY"
+          Action: "android.intent.action.APPLICATION_PROGRESS_QUERY"
+      com.xiaomi.market.service.AppDownloadService:
+        d79931b com.xiaomi.market/.data.AppDownloadService filter 8f2da02
+          Action: "com.xiaomi.market.service.AppDownloadService"
+      com.xiaomi.market.DOWNLOAD_CANCEL:
+        722a9a0 com.xiaomi.market/.data.AppArrangeService filter bc78ee4
+          Action: "com.xiaomi.market.service.AppDownloadInstallService"
+          Action: "com.xiaomi.market.intent.action.QUERY_STATUS"
+          Action: "com.xiaomi.market.DOWNLOAD_CANCEL"
+          Action: "com.xiaomi.market.DOWNLOAD_PAUSE"
+          Action: "com.xiaomi.market.DOWNLOAD_RESUME"
+      com.xiaomi.market.action.INSTALL:
+        9780cb8 com.xiaomi.market/.installsupport.MarketInstallerService filter 269dd8b
+          Action: "com.xiaomi.market.action.INSTALL"
+      com.xiaomi.market.service.CheckUpdate:
+        a4daa91 com.xiaomi.market/.data.CheckUpdateService filter d225277
+          Action: "com.xiaomi.market.service.CheckUpdate"
+      com.xiaomi.market.DOWNLOAD_RESUME:
+        722a9a0 com.xiaomi.market/.data.AppArrangeService filter bc78ee4
+          Action: "com.xiaomi.market.service.AppDownloadInstallService"
+          Action: "com.xiaomi.market.intent.action.QUERY_STATUS"
+          Action: "com.xiaomi.market.DOWNLOAD_CANCEL"
+          Action: "com.xiaomi.market.DOWNLOAD_PAUSE"
+          Action: "com.xiaomi.market.DOWNLOAD_RESUME"
+      miui.action.CLOUD_RESTORE_SETTINGS:
+        b98bfcc com.xiaomi.market/.backup.MarketCloudBackupService filter 5cbc349
+          Action: "miui.action.CLOUD_BACKUP_SETTINGS"
+          Action: "miui.action.CLOUD_RESTORE_SETTINGS"
+      com.xiaomi.market.DesktopRecommend:
+        ffb792a com.xiaomi.market/.data.DesktopRecommendService filter d5f9f13
+          Action: "com.xiaomi.market.DesktopRecommend"
+          Action: "com.xiaomi.market.DesktopRecommendIconRequest"
+
+Permissions:
+  Permission [com.xiaomi.market.permission.MIPUSH_RECEIVE] (a2ffdf6):
+    sourcePackage=com.xiaomi.market
+    uid=10064 gids=null type=0 prot=signature
+    perm=Permission{81445f7 com.xiaomi.market.permission.MIPUSH_RECEIVE}
+    packageSetting=PackageSetting{1fd3c64 com.xiaomi.market/10064}
+  Permission [com.xiaomi.market.permission.MMOAUTH_CALLBACK] (a915ecd):
+    sourcePackage=com.xiaomi.market
+    uid=10064 gids=null type=0 prot=normal
+    perm=Permission{a560382 com.xiaomi.market.permission.MMOAUTH_CALLBACK}
+    packageSetting=PackageSetting{1fd3c64 com.xiaomi.market/10064}
+  Permission [com.xiaomi.market.permission.MM_MESSAGE] (43d4a93):
+    sourcePackage=com.xiaomi.market
+    uid=10064 gids=null type=0 prot=normal
+    perm=Permission{b83bad0 com.xiaomi.market.permission.MM_MESSAGE}
+    packageSetting=PackageSetting{1fd3c64 com.xiaomi.market/10064}
+
+Registered ContentProviders:
+  com.xiaomi.market/.provider.LazyFileProvider:
+    Provider{6e21ac9 com.xiaomi.market/.provider.LazyFileProvider}
+  com.xiaomi.market/.provider.MarketFileProvider:
+    Provider{2e4d5ce com.xiaomi.market/.provider.MarketFileProvider}
+  com.xiaomi.market/.provider.MarketProvider:
+    Provider{fe7fcef com.xiaomi.market/.provider.MarketProvider}
+
+ContentProvider Authorities:
+  [com.xiaomi.market.files]:
+    Provider{2e4d5ce com.xiaomi.market/.provider.MarketFileProvider}
+      applicationInfo=ApplicationInfo{4b1b3fc com.xiaomi.market}
+  [com.xiaomi.market.dbcache]:
+    Provider{fe7fcef com.xiaomi.market/.provider.MarketProvider}
+      applicationInfo=ApplicationInfo{4b1b3fc com.xiaomi.market}
+  [com.xiaomi.market.fileprovider]:
+    Provider{6e21ac9 com.xiaomi.market/.provider.LazyFileProvider}
+      applicationInfo=ApplicationInfo{4b1b3fc com.xiaomi.market}
+
+Key Set Manager:
+  [com.xiaomi.market]
+      Signing KeySets: 1
+
+Packages:
+  Package [com.xiaomi.market] (1fd3c64):
+    userId=10064
+    pkg=Package{5689a85 com.xiaomi.market}
+    codePath=/data/app/com.xiaomi.market-7SihAtPcnrz3juXOPOvNzA==
+    resourcePath=/data/app/com.xiaomi.market-7SihAtPcnrz3juXOPOvNzA==
+    legacyNativeLibraryDir=/data/app/com.xiaomi.market-7SihAtPcnrz3juXOPOvNzA==/lib
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    versionCode=1914684 minSdk=19 targetSdk=27
+    versionName=9.3.12.684
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{4b1b3fc com.xiaomi.market}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ALLOW_BACKUP ]
+    privateFlags=[ HAS_DOMAIN_URLS PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ]
+    dataDir=/data/user/0/com.xiaomi.market
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      miui-push.jar
+    usesLibraryFiles:
+      /system/framework/miuipushsdkshared.jar
+    timeStamp=2019-03-24 23:57:26
+    firstInstallTime=2009-01-01 00:00:00
+    lastUpdateTime=2019-03-24 23:57:28
+    installerPackageName=com.xiaomi.market
+    signatures=PackageSignatures{47c80da [6c02dd51]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ALLOW_BACKUP ]
+    declared permissions:
+      com.xiaomi.market.permission.MIPUSH_RECEIVE: prot=signature, INSTALLED
+      com.xiaomi.market.permission.MMOAUTH_CALLBACK: prot=normal, INSTALLED
+      com.xiaomi.market.permission.MM_MESSAGE: prot=normal, INSTALLED
+    requested permissions:
+      com.xiaomi.market.permission.MMOAUTH_CALLBACK
+      com.xiaomi.market.permission.MM_MESSAGE
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.INTERNET
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.WAKE_LOCK
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED
+      android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS
+      android.permission.INSTALL_PACKAGES
+      android.permission.DELETE_PACKAGES
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.GET_ACCOUNTS
+      android.permission.GET_ACCOUNTS_PRIVILEGED
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.USE_CREDENTIALS
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.SEND_SMS
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.GET_PACKAGE_SIZE
+      android.permission.DELETE_CACHE_FILES
+      android.permission.BROADCAST_STICKY
+      android.permission.GET_TASKS
+      android.permission.REAL_GET_TASKS
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+      android.miui.permission.SHELL
+      com.xiaomi.market.permission.MIPUSH_RECEIVE
+      com.xiaomi.permission.CLOUD_MANAGER
+      miui.permission.USE_INTERNAL_GENERAL_API
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.VIBRATE
+      android.permission.REBOOT
+      android.permission.WRITE_SETTINGS
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.LOCAL_MAC_ADDRESS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE
+      com.xiaomi.vip.permission.SERVICE
+      android.permission.READ_FRAME_BUFFER
+      com.miui.cleanmaster.permission.InstallCleanMaster
+      android.permission.WRITE_SECURE_SETTINGS
+      com.android.launcher.permission.INSTALL_SHORTCUT
+      android.permission.INTERNAL_SYSTEM_WINDOW
+      com.xiaomi.permission.ACCESS_SECURITY_DEVICE_CREDENTIAL
+      com.miui.powercenter.permission.POWER_DATA
+      android.permission.STOP_APP_SWITCHES
+      com.android.settings.permission.CLOUD_SETTINGS_PROVIDER
+      android.permission.READ_EXTERNAL_STORAGE
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      com.android.settings.permission.CLOUD_SETTINGS_PROVIDER: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      android.miui.permission.SHELL: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      miui.permission.USE_INTERNAL_GENERAL_API: granted=true
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      com.miui.powercenter.permission.POWER_DATA: granted=true
+      android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.STOP_APP_SWITCHES: granted=true
+      com.xiaomi.permission.ACCESS_SECURITY_DEVICE_CREDENTIAL: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.BROADCAST_STICKY: granted=true
+      com.xiaomi.permission.CLOUD_MANAGER: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.LOCAL_MAC_ADDRESS: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      com.xiaomi.market.permission.MIPUSH_RECEIVE: granted=true
+      com.xiaomi.market.permission.MMOAUTH_CALLBACK: granted=true
+      android.permission.REBOOT: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      com.xiaomi.market.permission.MM_MESSAGE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=1958013 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.SEND_SMS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+    User 11: ceDataInode=5595337 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.SEND_SMS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+    User 99: ceDataInode=0 installed=false hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.SEND_SMS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+    User 999: ceDataInode=0 installed=false hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.SEND_SMS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ USER_FIXED GRANTED_BY_DEFAULT ]
+
+Hidden system packages:
+  Package [com.xiaomi.market] (ae1790b):
+    userId=10064
+    pkg=Package{e6413e8 com.xiaomi.market}
+    codePath=/system/app/MiuiSuperMarket
+    resourcePath=/system/app/MiuiSuperMarket
+    legacyNativeLibraryDir=/system/app/MiuiSuperMarket/lib
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    versionCode=1914580 minSdk=19 targetSdk=25
+    versionName=8.11.16.580
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{c1d5a01 com.xiaomi.market}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    privateFlags=[ HAS_DOMAIN_URLS PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ]
+    dataDir=null
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      miui-push.jar
+    timeStamp=2009-01-01 00:00:00
+    firstInstallTime=2009-01-01 00:00:00
+    lastUpdateTime=2009-01-01 00:00:00
+    signatures=PackageSignatures{7b1d0a6 []}
+    installPermissionsFixed=false
+    pkgFlags=[ SYSTEM ]
+    declared permissions:
+      com.xiaomi.market.permission.MIPUSH_RECEIVE: prot=signature
+      com.xiaomi.market.permission.MMOAUTH_CALLBACK: prot=normal
+      com.xiaomi.market.permission.MM_MESSAGE: prot=normal
+    requested permissions:
+      com.xiaomi.market.permission.MMOAUTH_CALLBACK
+      com.xiaomi.market.permission.MM_MESSAGE
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.INTERNET
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.WAKE_LOCK
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED
+      android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS
+      android.permission.INSTALL_PACKAGES
+      android.permission.DELETE_PACKAGES
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.GET_ACCOUNTS
+      android.permission.GET_ACCOUNTS_PRIVILEGED
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.USE_CREDENTIALS
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.SEND_SMS
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.GET_PACKAGE_SIZE
+      android.permission.DELETE_CACHE_FILES
+      android.permission.BROADCAST_STICKY
+      android.permission.GET_TASKS
+      android.permission.REAL_GET_TASKS
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+      android.miui.permission.SHELL
+      com.xiaomi.market.permission.MIPUSH_RECEIVE
+      com.xiaomi.permission.CLOUD_MANAGER
+      miui.permission.USE_INTERNAL_GENERAL_API
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.VIBRATE
+      android.permission.REBOOT
+      android.permission.WRITE_SETTINGS
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.LOCAL_MAC_ADDRESS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE
+      com.xiaomi.vip.permission.SERVICE
+      android.permission.READ_FRAME_BUFFER
+      com.miui.cleanmaster.permission.InstallCleanMaster
+      android.permission.WRITE_SECURE_SETTINGS
+      com.android.launcher.permission.INSTALL_SHORTCUT
+      com.xiaomi.permission.ACCESS_SECURITY_DEVICE_CREDENTIAL
+      android.permission.READ_EXTERNAL_STORAGE
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      android.miui.permission.SHELL: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      miui.permission.USE_INTERNAL_GENERAL_API: granted=true
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE: granted=true
+      android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.GET_ACCOUNTS_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.BROADCAST_STICKY: granted=true
+      com.xiaomi.permission.CLOUD_MANAGER: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.LOCAL_MAC_ADDRESS: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      com.xiaomi.market.permission.MIPUSH_RECEIVE: granted=true
+      com.xiaomi.market.permission.MMOAUTH_CALLBACK: granted=true
+      android.permission.REBOOT: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      com.xiaomi.market.permission.MM_MESSAGE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=0 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+    User 11: ceDataInode=0 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+    User 99: ceDataInode=0 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+    User 999: ceDataInode=0 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false
+      gids=[3003]
+      runtime permissions:
+
+Package Changes:
+  Sequence number=38
+  User 0:
+    seq=1, package=com.google.android.gms
+    seq=22, package=com.wuba
+    seq=37, package=com.eg.android.AlipayGphone
+
+
+Dexopt state:
+  [com.xiaomi.market]
+    Instruction Set: arm64
+      path: /data/app/com.xiaomi.market-7SihAtPcnrz3juXOPOvNzA==/base.apk
+      status: /data/app/com.xiaomi.market-7SihAtPcnrz3juXOPOvNzA==/oat/arm64/base.odex[status=kOatUpToDate, compilation_
+      filter=speed-profile]
+
+
+Compiler stats:
+  [com.xiaomi.market]
+     base.apk - 7845
