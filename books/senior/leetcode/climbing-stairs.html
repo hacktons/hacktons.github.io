@@ -451,6 +451,21 @@
             
         </li>
     
+        <li class="chapter " data-level="2.1.21" data-path="maximum-subarray.html">
+            
+                <a href="maximum-subarray.html">
+            
+                    
+                        <b>2.1.21.</b>
+                    
+                    最大子序和
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1543,7 +1558,7 @@ Explanation: There are three ways to climb to the top.
 2. 1 step + 2 steps
 3. 2 steps + 1 step
 </code></pre><h2 id="&#x601D;&#x8DEF;&#x9898;&#x89E3;"><a name="&#x601D;&#x8DEF;&#x9898;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x601D;&#x8DEF;&#x9898;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x601D;&#x8DEF;&amp;&#x9898;&#x89E3;</h2>
-<p>&#x722C;&#x697C;&#x68AF;&#x7684;&#x6D41;&#x7A0B;&#x7C7B;&#x4F3C;&#x4E8E;&#x6392;&#x5217;&#x7EC4;&#x5408;&#xFF0C;&#x5982;&#x4ECE;5&#x4E2A;&#x7403;&#x91CC;&#x9762;&#x9009;2&#x4E2A;&#x6709;&#x51E0;&#x79CD;&#x9009;&#x6CD5;&#x3002;N&#x9636;&#x697C;&#x68AF;&#xFF0C;&#x722C;&#x4E0A;&#x548C;&#x8DB4;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;&#x6570;&#x662F;&#x4E00;&#x6837;&#x3002;
+<p>&#x722C;&#x697C;&#x68AF;&#x7684;&#x6D41;&#x7A0B;&#x7C7B;&#x4F3C;&#x4E8E;&#x6392;&#x5217;&#x7EC4;&#x5408;&#xFF0C;&#x5982;&#x4ECE;5&#x4E2A;&#x7403;&#x91CC;&#x9762;&#x9009;2&#x4E2A;&#x6709;&#x51E0;&#x79CD;&#x9009;&#x6CD5;&#x3002;N&#x9636;&#x697C;&#x68AF;&#xFF0C;&#x722C;&#x4E0A;&#x548C;&#x722C;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;&#x6570;&#x662F;&#x4E00;&#x6837;&#x3002;
 &#x5BF9;N&#x9636;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8D70;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x5982;&#x679C;&#x8D70;&#x4E00;&#x7EA7;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x8003;&#x8651;&#x5269;&#x4E0B;n-1&#x7EA7;&#x7684;&#x8D70;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x8D70;&#x4E24;&#x7EA7;&#xFF0C;&#x53EA;&#x9700;&#x8003;&#x8651;&#x5269;&#x4E0B;n-2&#x7EA7;&#x7684;&#x8D70;&#x6CD5;&#xFF0C;</p>
 <ul>
 <li>S(n) = S(n-1)+S(n-2)</li>
@@ -1599,7 +1614,7 @@ Explanation: There are three ways to climb to the top.
 </tr>
 </tbody>
 </table>
-<p>&#x5C1D;&#x8BD5;&#x7F13;&#x5B58;S(n)&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x65B9;&#x4FBF;&#x9012;&#x5F52;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF1A;</p>
+<p>&#x5C1D;&#x8BD5;&#x7F13;&#x5B58;S(n)&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x65B9;&#x4FBF;&#x9012;&#x5F52;&#x65F6;&#x76F4;&#x63A5;&#x590D;&#x7528;&#x5DF2;&#x7ECF;&#x8BA1;&#x7B97;&#x8FC7;&#x7684;&#x9636;&#x68AF;&#x6570;&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-keyword">int</span>[] cache;
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">climbStairs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
    <span class="hljs-keyword">if</span> (cache==<span class="hljs-keyword">null</span>){
@@ -1625,7 +1640,7 @@ Explanation: There are three ways to climb to the top.
 </code></pre>
 <h2 id="&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><a name="&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x77E5;&#x8BC6;&#x70B9;&#x5206;&#x6790;</h2>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#xA9; &#x5C0F;&#x6587;&#x5B57; &#x66F4;&#x65B0;&#xFF1A;
-2019-04-18
+2019-05-05
 </span></footer>
                                 
                                 </section>
@@ -1669,7 +1684,7 @@ Explanation: There are three ways to climb to the top.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"爬楼梯","level":"2.1.19","depth":2,"next":{"title":"判断2的幂次数","level":"2.1.20","depth":2,"path":"leetcode/power-of-two.md","ref":"leetcode/power-of-two.md","articles":[]},"previous":{"title":"存在相同元素","level":"2.1.18","depth":2,"path":"leetcode/contains-duplicate.md","ref":"leetcode/contains-duplicate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"&copy 小文字 更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"leetcode/climbing-stairs.md","mtime":"2019-04-18T06:44:51.223Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-26T10:37:44.011Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"爬楼梯","level":"2.1.19","depth":2,"next":{"title":"判断2的幂次数","level":"2.1.20","depth":2,"path":"leetcode/power-of-two.md","ref":"leetcode/power-of-two.md","articles":[]},"previous":{"title":"存在相同元素","level":"2.1.18","depth":2,"path":"leetcode/contains-duplicate.md","ref":"leetcode/contains-duplicate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"&copy 小文字 更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"leetcode/climbing-stairs.md","mtime":"2019-05-05T06:21:35.348Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-05T08:57:04.087Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
