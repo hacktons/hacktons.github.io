@@ -81,7 +81,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="scheduler.html" />
+    <link rel="next" href="scheduler-io.html" />
     
     
     <link rel="prev" href="./" />
@@ -166,14 +166,14 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.2" data-path="scheduler.html">
+        <li class="chapter " data-level="2.1.2" data-path="scheduler-io.html">
             
-                <a href="scheduler.html">
+                <a href="scheduler-io.html">
             
                     
                         <b>2.1.2.</b>
                     
-                    Scheduler调度器
+                    调度器分析-IO
             
                 </a>
             
@@ -181,12 +181,27 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.3" data-path="scheduler-subscribe-on.html">
+        <li class="chapter " data-level="2.1.3" data-path="scheduler-computation.html">
+            
+                <a href="scheduler-computation.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    调度器分析-Computation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="scheduler-subscribe-on.html">
             
                 <a href="scheduler-subscribe-on.html">
             
                     
-                        <b>2.1.3.</b>
+                        <b>2.1.4.</b>
                     
                     subscribeOn挂载机制
             
@@ -196,12 +211,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.4" data-path="scheduler-observe-on.html">
+        <li class="chapter " data-level="2.1.5" data-path="scheduler-observe-on.html">
             
                 <a href="scheduler-observe-on.html">
             
                     
-                        <b>2.1.4.</b>
+                        <b>2.1.5.</b>
                     
                     observeOn挂载机制
             
@@ -1728,9 +1743,9 @@ I/RX: rx.Observable@e8d87b2
 </blockquote>
 <p>&#x6574;&#x4E2A;&#x5B9E;&#x73B0;&#x60C5;&#x51B5;&#x4E5F;&#x5370;&#x8BC1;&#x4E86;&#x4E00;&#x53E5;&#x8BDD;&#xFF0C;&#x4EFB;&#x4F55;&#x8F6F;&#x4EF6;&#x95EE;&#x9898;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x589E;&#x52A0;&#x4E2D;&#x95F4;&#x5C42;&#x6765;&#x89E3;&#x51B3;&#x3002;</p>
 <h2 id="&#x5C0F;&#x7ED3;"><a name="&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C0F;&#x7ED3;</h2>
-<p>map&#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x5B9E;&#x73B0;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5F15;&#x5165;OnSubScibeMap&#x4E2D;&#x95F4;&#x5C42;&#x548C;MapSubsriber&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;&#x63D0;&#x524D;map&#x64CD;&#x4F5C;&#x3002;</p>
+<p>map&#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x5B9E;&#x73B0;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5F15;&#x5165;OnSubScibeMap&#x4E2D;&#x95F4;&#x5C42;&#x548C;MapSubscriber&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;&#x63D0;&#x524D;map&#x64CD;&#x4F5C;&#x3002;</p>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#xA9; &#x5C0F;&#x6587;&#x5B57; &#x66F4;&#x65B0;&#xFF1A;
-2019-09-23
+2019-09-30
 </span></footer>
                                 
                                 </section>
@@ -1763,7 +1778,7 @@ I/RX: rx.Observable@e8d87b2
                 </a>
                 
                 
-                <a href="scheduler.html" class="navigation navigation-next " aria-label="Next page: Scheduler调度器">
+                <a href="scheduler-io.html" class="navigation navigation-next " aria-label="Next page: 调度器分析-IO">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1774,7 +1789,7 @@ I/RX: rx.Observable@e8d87b2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Rx链式调用实现","level":"2.1.1","depth":2,"next":{"title":"Scheduler调度器","level":"2.1.2","depth":2,"path":"rxjava/scheduler.md","ref":"rxjava/scheduler.md","articles":[]},"previous":{"title":"RxJava","level":"2.1","depth":1,"path":"rxjava/README.md","ref":"rxjava/README.md","articles":[{"title":"Rx链式调用实现","level":"2.1.1","depth":2,"path":"rxjava/channing.md","ref":"rxjava/channing.md","articles":[]},{"title":"Scheduler调度器","level":"2.1.2","depth":2,"path":"rxjava/scheduler.md","ref":"rxjava/scheduler.md","articles":[]},{"title":"subscribeOn挂载机制","level":"2.1.3","depth":2,"path":"rxjava/scheduler-subscribe-on.md","ref":"rxjava/scheduler-subscribe-on.md","articles":[]},{"title":"observeOn挂载机制","level":"2.1.4","depth":2,"path":"rxjava/scheduler-observe-on.md","ref":"rxjava/scheduler-observe-on.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"&copy 小文字 更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"rxjava/channing.md","mtime":"2019-09-23T10:14:01.674Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-27T12:57:35.184Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Rx链式调用实现","level":"2.1.1","depth":2,"next":{"title":"调度器分析-IO","level":"2.1.2","depth":2,"path":"rxjava/scheduler-io.md","ref":"rxjava/scheduler-io.md","articles":[]},"previous":{"title":"RxJava","level":"2.1","depth":1,"path":"rxjava/README.md","ref":"rxjava/README.md","articles":[{"title":"Rx链式调用实现","level":"2.1.1","depth":2,"path":"rxjava/channing.md","ref":"rxjava/channing.md","articles":[]},{"title":"调度器分析-IO","level":"2.1.2","depth":2,"path":"rxjava/scheduler-io.md","ref":"rxjava/scheduler-io.md","articles":[]},{"title":"调度器分析-Computation","level":"2.1.3","depth":2,"path":"rxjava/scheduler-computation.md","ref":"rxjava/scheduler-computation.md","articles":[]},{"title":"subscribeOn挂载机制","level":"2.1.4","depth":2,"path":"rxjava/scheduler-subscribe-on.md","ref":"rxjava/scheduler-subscribe-on.md","articles":[]},{"title":"observeOn挂载机制","level":"2.1.5","depth":2,"path":"rxjava/scheduler-observe-on.md","ref":"rxjava/scheduler-observe-on.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"&copy 小文字 更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"rxjava/channing.md","mtime":"2019-09-30T02:28:06.440Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-08T09:25:52.133Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
