@@ -528,12 +528,42 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.4" data-path="service/adb-tips.html">
+        <li class="chapter " data-level="3.1.4" data-path="service/broadcastreceiver-launch.html">
+            
+                <a href="service/broadcastreceiver-launch.html">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    BroadcastReceiver启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="service/contentprovider-launch.md">
+            
+                <span>
+            
+                    
+                        <b>3.1.5.</b>
+                    
+                    ContengProvider服务流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="service/adb-tips.html">
             
                 <a href="service/adb-tips.html">
             
                     
-                        <b>3.1.4.</b>
+                        <b>3.1.6.</b>
                     
                     ADB问题分析利器
             
@@ -543,12 +573,12 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.5" data-path="service/aidl-ipc.md">
+        <li class="chapter " data-level="3.1.7" data-path="service/aidl-ipc.md">
             
                 <span>
             
                     
-                        <b>3.1.5.</b>
+                        <b>3.1.7.</b>
                     
                     AIDL&跨进程通信
             
@@ -558,12 +588,12 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.6" data-path="service/ams.md">
+        <li class="chapter " data-level="3.1.8" data-path="service/ams.md">
             
                 <span>
             
                     
-                        <b>3.1.6.</b>
+                        <b>3.1.8.</b>
                     
                     AMS分析
             
@@ -573,12 +603,12 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.7" data-path="service/hook-service.md">
+        <li class="chapter " data-level="3.1.9" data-path="service/hook-service.md">
             
                 <span>
             
                     
-                        <b>3.1.7.</b>
+                        <b>3.1.9.</b>
                     
                     Hook系统服务
             
@@ -1709,7 +1739,7 @@
 <p>&#x6280;&#x672F;&#x5728;&#x4E0D;&#x65AD;&#x6F14;&#x53D8;&#xFF0C;&#x6BCF;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x90FD;&#x5E94;&#x5F62;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x77E5;&#x8BC6;&#x56FE;&#x8C31;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x8D8B;&#x52BF;&#x4E0D;&#x65AD;&#x81EA;&#x6211;&#x8C03;&#x6574;&#x3002;</p>
 <p>&#x672C;&#x7CFB;&#x5217;&#x4E3A;&#x77E5;&#x8BC6;&#x4F53;&#x7CFB;&#x4E13;&#x9898;&#x7B14;&#x8BB0;&#xFF0C;&#x504F;&#x5411;&#x5927;&#x524D;&#x7AEF;&#x65B9;&#x5411;&#xFF0C;&#x5404;&#x4E13;&#x9898;&#x4E3B;&#x8981;&#x96C6;&#x4E2D;&#x4E8E;&#x79FB;&#x52A8;&#x7AEF;&#x548C;&#x524D;&#x7AEF;&#x3002;</p>
 <p>// TODO &#x672A;&#x5B8C;&#x5F85;&#x7EED;</p>
-<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#xA9; &#x5C0F;&#x6587;&#x5B57; &#x66F4;&#x65B0;&#xFF1A;
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x6700;&#x8FD1;&#x66F4;&#x65B0;
 2019-02-28
 </span></footer>
                                 
@@ -1750,7 +1780,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"前言","level":"1.1","depth":1,"next":{"title":"RxJava","level":"2.1","depth":1,"path":"rxjava/README.md","ref":"rxjava/README.md","articles":[{"title":"Rx链式调用实现","level":"2.1.1","depth":2,"path":"rxjava/channing.md","ref":"rxjava/channing.md","articles":[]},{"title":"调度器分析-IO","level":"2.1.2","depth":2,"path":"rxjava/scheduler-io.md","ref":"rxjava/scheduler-io.md","articles":[]},{"title":"调度器分析-Computation","level":"2.1.3","depth":2,"path":"rxjava/scheduler-computation.md","ref":"rxjava/scheduler-computation.md","articles":[]},{"title":"subscribeOn挂载机制","level":"2.1.4","depth":2,"path":"rxjava/scheduler-subscribe-on.md","ref":"rxjava/scheduler-subscribe-on.md","articles":[]},{"title":"observeOn挂载机制","level":"2.1.5","depth":2,"path":"rxjava/scheduler-observe-on.md","ref":"rxjava/scheduler-observe-on.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"&copy 小文字 更新：","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"README.md","mtime":"2019-02-28T01:19:47.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-24T11:38:38.750Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"前言","level":"1.1","depth":1,"next":{"title":"RxJava","level":"2.1","depth":1,"path":"rxjava/README.md","ref":"rxjava/README.md","articles":[{"title":"Rx链式调用实现","level":"2.1.1","depth":2,"path":"rxjava/channing.md","ref":"rxjava/channing.md","articles":[]},{"title":"调度器分析-IO","level":"2.1.2","depth":2,"path":"rxjava/scheduler-io.md","ref":"rxjava/scheduler-io.md","articles":[]},{"title":"调度器分析-Computation","level":"2.1.3","depth":2,"path":"rxjava/scheduler-computation.md","ref":"rxjava/scheduler-computation.md","articles":[]},{"title":"subscribeOn挂载机制","level":"2.1.4","depth":2,"path":"rxjava/scheduler-subscribe-on.md","ref":"rxjava/scheduler-subscribe-on.md","articles":[]},{"title":"observeOn挂载机制","level":"2.1.5","depth":2,"path":"rxjava/scheduler-observe-on.md","ref":"rxjava/scheduler-observe-on.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","github@^2.0.0","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"最近更新","modify_format":"YYYY-MM-DD"},"github":{"url":"https://github.com/hacktons"},"livereload":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大前端系列专题","language":"zh-hans","gitbook":"3.2.3","description":"技术在不断演变，每个开发者都应形成自己的知识图谱，并根据趋势不断自我调整。本系列为知识体系汇总，偏重于大前端方向"},"file":{"path":"README.md","mtime":"2019-02-28T01:19:47.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-27T09:03:48.469Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
