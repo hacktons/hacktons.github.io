@@ -1,0 +1,569 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Boost全双工通道 · Flutter Boost核心原理Dart篇</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="小文字">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="boost-router.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="boost-how-to.html">
+            
+                <a href="boost-how-to.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Boost接入吹水
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dart篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="boost-architecture.html">
+            
+                <a href="boost-architecture.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Boost整体架构分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="boost-container-manager.html">
+            
+                <a href="boost-container-manager.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    顶层容器栈的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="boost-container.html">
+            
+                <a href="boost-container.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    页面容器的视图管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="boost-router.html">
+            
+                <a href="boost-router.html">
+            
+                    
+                        <b>2.4.</b>
+                    
+                    页面路由的实现与差异
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="method-channel.html">
+            
+                <a href="method-channel.html">
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Boost全双工通道
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    FlutterActivity载体分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Fragment载体分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                        <b>3.3.</b>
+                    
+                    Native路由栈管理机制
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" >
+            
+                <span>
+            
+                    
+                        <b>3.4.</b>
+                    
+                    引擎复用实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">iOS篇</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                        <b>4.1.</b>
+                    
+                    ViewContorller载体分析
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.</b>
+                    
+                    Native路由栈管理机制
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                        <b>4.3.</b>
+                    
+                    引擎复用实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">扩展</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                        <b>5.1.</b>
+                    
+                    Boost代码质量评估
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                        <b>5.2.</b>
+                    
+                    Boost框架总结
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Boost全双工通道</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;"><b></b>Boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;</a></li><ul><li><span class="title-icon fa fa-angle-double-right"></span><a href="#boost&#x901A;&#x4FE1;&#x901A;&#x9053;"><b></b>Boost&#x901A;&#x4FE1;&#x901A;&#x9053;</a></li></ul></ul></div><a href="#boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;"><a name="boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;" class="anchor-navigation-ex-anchor" href="#boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;"><i class="fa fa-link" aria-hidden="true"></i></a>Boost&#x5168;&#x53CC;&#x5DE5;&#x901A;&#x9053;</h1>
+<p>&#x5728;Flutter&#x4E0E;Native&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6846;&#x67B6;&#x672C;&#x8EAB;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;Channel&#x673A;&#x5236;&#xFF0C;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x53CC;&#x5411;&#x8BFB;&#x5199;&#x3002;</p>
+<p>&#x8FD9;&#x4E00;&#x8282;&#x7684;&#x6807;&#x9898;&quot;&#x5077;&#x7528;&quot;&#x4E86;&#x6570;&#x636E;&#x901A;&#x4FE1;&#x4E2D;&#x7684;&quot;&#x53CC;&#x5DE5;&quot;&#x6982;&#x5FF5;&#xFF0C;&#x6765;&#x8868;&#x793A;Flutter&#x901A;&#x4FE1;&#x7684;&#x80FD;&#x529B;&#x3002;&#x901A;&#x8FC7;&#x5728;Native&#x548C;Dart&#x4FA7;&#x5B9A;&#x4E49;Channel&#x901A;&#x9053;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x5C31;&#x5B9E;&#x73B0;&#x6846;&#x67B6;&#x7EA7;&#x522B;&#x7684;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x3002;&#x8FD9;&#x6BD4;WebView&#x548C;Native&#x76F4;&#x63A5;&#x7684;&#x901A;&#x4FE1;&#x597D;&#x7528;&#x5F88;&#x591A;&#xFF0C;&#x6027;&#x80FD;&#x4E5F;&#x66F4;&#x4F18;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x95EE;&#x9898;&#x5BFC;&#x81F4;&#x7684;&#x901A;&#x4FE1;&#x5185;&#x5BB9;&#x622A;&#x65AD;&#xFF0C;&#x6709;&#x70B9;&#x626F;&#x8FDC;&#x4E86;&#x3002;</p>
+<p>&#x5728;Flutter&#x4E2D;&#xFF0C;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;Channel&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x7EC6;&#x5206;&#xFF0C;&#x76EE;&#x524D;&#x63D0;&#x4F9B;&#x7684;&#x6709;&#xFF1A;</p>
+<ul>
+<li>BasicMessageChannel &#x57FA;&#x7840;&#x6D88;&#x606F;&#x901A;&#x9053;</li>
+<li>MethodChannel &#x65B9;&#x6CD5;&#x901A;&#x9053;</li>
+<li>OptionalMethodChannel &#x7EE7;&#x627F;&#x81EA;MethodChannel</li>
+<li>EventChannel &#x6D41;&#x5F0F;&#x901A;&#x9053;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x8BFB;&#x8005;&#x5BF9;Channel&#x7684;&#x4F7F;&#x7528;&#x4E0D;&#x614E;&#x4E86;&#x89E3;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x901A;&#x9053;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;&#xFF0C;&#x5199;&#x7684;&#x6BD4;&#x8F83;&#x6E05;&#x695A;&#xFF1A;</p>
+<blockquote>
+<p><a href="https://flutter.dev/docs/development/platform-integration/platform-channels" target="_blank">https://flutter.dev/docs/development/platform-integration/platform-channels</a></p>
+</blockquote>
+<h2 id="boost&#x901A;&#x4FE1;&#x901A;&#x9053;"><a name="boost&#x901A;&#x4FE1;&#x901A;&#x9053;" class="anchor-navigation-ex-anchor" href="#boost&#x901A;&#x4FE1;&#x901A;&#x9053;"><i class="fa fa-link" aria-hidden="true"></i></a>Boost&#x901A;&#x4FE1;&#x901A;&#x9053;</h2>
+<p>&#x5728;Boost&#x91CC;&#x9762;&#x901A;&#x4FE1;&#x7684;&#x573A;&#x666F;&#x4E3B;&#x8981;&#x662F;&#x5B9A;&#x4E49;&#x53CC;&#x65B9;&#x7684;&#x9875;&#x9762;&#x6808;&#x64CD;&#x4F5C;&#x548C;&#x76F8;&#x5173;&#x8054;&#x7684;&#x4E8B;&#x4EF6;&#x6D88;&#x606F;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x7684;&#x662F;MethodChannel</p>
+<pre><code class="lang-dart"><span class="hljs-comment"><span class="markdown">/// boost_channel.dart</span></span>
+<span class="hljs-keyword">final</span> MethodChannel _methodChannel = MethodChannel(<span class="hljs-string">&quot;flutter_boost&quot;</span>);
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x901A;&#x9053;&#x672C;&#x8EAB;&#x662F;&#x6709;&#x5F00;&#x9500;&#x7684;&#xFF0C;&#x5728;&#x6574;&#x4E2A;Boost&#x4E2D;&#x53EA;&#x6709;&#x8FD9;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#xFF0C;&#x4ED6;&#x4F5C;&#x4E3A;&#x5168;&#x5C40;&#x5355;&#x4F8B;&#x88AB;&#x5171;&#x4EAB;&#x3002;&#x6211;&#x4EEC;&#x524D;&#x6587;&#x6C47;&#x603B;&#x5206;&#x6790;&#x5230;&#x7684;&#x9875;&#x9762;&#x7684;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#xFF0C;&#x548C;&#x9875;&#x9762;&#x5165;&#x6808;&#x64CD;&#x4F5C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<p>&#x5728;&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;BoostChannel&#x7684;&#x64CD;&#x4F5C;&#x7C7B;&#xFF0C;&#x5185;&#x90E8;&#x5C01;&#x88C5;&#x4E86;MethodChannel&#x7684;&#x4F7F;&#x7528;&#x3002;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x5927;&#x7C7B;&#x64CD;&#x4F5C;&#xFF0C;&#x6536;&#x6D88;&#x606F;&#x548C;&#x53D1;&#x6D88;&#x606F;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x4E00;&#x5F20;&#x56FE;&#xFF0C;&#x6765;&#x6982;&#x62EC;BoostChannel&#x6240;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#xFF1A;
+<img src="assets/boost-channel.png" alt=""></p>
+<p>&#x9488;&#x5BF9;&#x6D88;&#x606F;&#x7C7B;&#x7684;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x6536;&#x8FD8;&#x662F;&#x53D1;&#xFF0C;&#x90FD;&#x7EA6;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x4E8B;&#x4EF6;&#x540D;<code>__event__</code>&#x3002;&#x5BF9;Native&#x4FA7;&#x53D1;&#x6765;&#x7684;&#x6D88;&#x606F;&#x7684;&#x8BC6;&#x522B;&#x548C;&#x76D1;&#x542C;&#xFF0C;&#x4E8B;&#x4EF6;&#x7684;&#x540D;&#x5B57;&#x56FA;&#x5B9A;&#x4E3A;<code>__event__</code>&#x3002;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;&#x5168;&#x90E8;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#xFF0C;&#x5F53;&#x505A;&#x666E;&#x901A;&#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x5916;&#x90E8;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#x76D1;&#x542C;&#x3002;</p>
+<p>&#x53D1;&#x6D88;&#x606F;&#x5305;&#x62EC;&#x4E8B;&#x4EF6;&#x7684;&#x6D88;&#x606F;&#x4E24;&#x7C7B;&#xFF0C;&#x5206;&#x522B;&#x662F;sendEvent&#x548C;invokeXXXMetohd&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-comment"><span class="markdown">/// boost_channel.dart</span></span>
+_methodChannel.setMethodCallHandler((MethodCall call){
+  <span class="hljs-keyword">if</span> (call.method == <span class="hljs-string">&quot;__event__&quot;</span>) {
+    <span class="hljs-built_in">String</span> name = call.arguments[<span class="hljs-string">&quot;name&quot;</span>];
+    <span class="hljs-built_in">Map</span> arg = call.arguments[<span class="hljs-string">&quot;arguments&quot;</span>];
+    <span class="hljs-built_in">List</span>&lt;EventListener&gt; list = _eventListeners[name];
+    <span class="hljs-keyword">if</span> (list != <span class="hljs-keyword">null</span>) {
+      <span class="hljs-keyword">for</span> (EventListener l <span class="hljs-keyword">in</span> list) {
+        l(name, arg);
+      }
+    }
+  }<span class="hljs-keyword">else</span>{
+    <span class="hljs-keyword">for</span>(MethodHandler handler <span class="hljs-keyword">in</span> _methodHandlers) {
+      handler(call);
+    }
+  }
+
+  <span class="hljs-keyword">return</span> Future.value();
+});
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x6700;&#x8FD1;&#x66F4;&#x65B0;
+2020-03-24
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="boost-router.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 页面路由的实现与差异">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Boost全双工通道","level":"2.5","depth":1,"next":{"title":"FlutterActivity载体分析","level":"3.1","depth":1,"ref":"","articles":[]},"previous":{"title":"页面路由的实现与差异","level":"2.4","depth":1,"path":"boost-router.md","ref":"boost-router.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-navigation-ex-toc@0.0.11","tbfed-pagefooter@^0.0.1","terminal","hide-element","flexible-alerts","code","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"最近更新","modify_format":"YYYY-MM-DD"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"anchor-navigation-ex-toc":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"hide-element":{"elements":[".gitbook-link",".copyright"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":true,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","author":"小文字","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Flutter Boost核心原理Dart篇","language":"zh-hans","gitbook":"3.2.3","description":"Flutter Boost源码解读与核心原理分析"},"file":{"path":"method-channel.md","mtime":"2020-03-24T03:36:44.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-25T02:24:21.558Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
